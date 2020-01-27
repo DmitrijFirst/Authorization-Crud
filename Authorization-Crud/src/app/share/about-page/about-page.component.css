@@ -1,0 +1,114 @@
+/*Форма входа*/
+  form {
+      width: 30%;
+      margin: 0 auto;
+      margin-top: 2%;
+      font-size: 1.5vw;
+      border-radius: 5px;
+      box-shadow: 2px 2px 5px 5px rgb(204, 217, 241);
+      background: rgba(226, 238, 225, 0.294);
+  }
+  form:hover{
+    box-shadow: 2px 2px 5px 5px rgb(161, 204, 245);
+  }
+  
+  input[type=text], input[type=password] {
+      height: 40px;
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid rgb(216, 210, 210);
+      box-sizing: border-box;
+      
+  }
+  
+  
+  button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      font-size: 1vw;
+      border-radius: 10px;
+  }
+  button:active {
+      transform: 0.8px;
+  }
+  
+  button:hover {
+      opacity: 0.8;
+  }
+  
+  
+  .container {
+      padding: 16px;
+  }
+  
+  /* Курс валют*/
+  .course-container{
+    float: left;
+    width: 25%;
+    margin-top: 100px;
+    margin-left: 100px;
+    border-collapse: collapse;
+    border-radius: 5px;
+    background: rgba(233, 235, 233, 0.294);
+    box-shadow: 2px 2px 5px 5px rgb(204, 217, 241);
+  }
+  
+  .courses{
+    width: 100%;
+    padding: 3px 3px 3px 3px;
+    font-size: 1vw;
+    font-weight: 600;
+  }
+  
+  .courses td:first-child
+  {
+    width: 15%;
+    padding: 5px;
+    text-align: right;
+    
+    
+  }
+  
+  .courses td:nth-child(2){
+    color: #afa9a9;
+    font-size: 1vw;
+    width: 25%;
+    padding: 5px;
+    
+  }
+  
+  .courses  td:nth-child(3){
+    text-align: right;
+    width: 30%;
+    font-size: 1vw;
+    
+  }
+  .courses  td:last-child{
+    text-align: right;
+    width: 30%;
+    line-height: 2.35;
+    font-size: 1vw;
+  }
+  
+  .title{
+    text-align: center;
+    font-size: 1.5vw;
+    margin: 0;
+  }
+  
+  /*Конвертер*/
+  .conv_content{
+    float: right;
+    width: 30%;
+    margin-top: 100px;
+    border-collapse: collapse;
+    border: 3px solid #f1f1f1;
+  }
+  
