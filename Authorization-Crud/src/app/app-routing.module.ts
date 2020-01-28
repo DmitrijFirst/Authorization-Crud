@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutPageComponent } from './share/about-page/about-page.component';
 
 const routes: Routes = [
   {
@@ -9,7 +10,6 @@ const routes: Routes = [
     redirectTo: 'about' 
   }
 ]
-
 @NgModule({
   declarations: [],
   imports: [
