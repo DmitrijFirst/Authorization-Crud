@@ -3,83 +3,82 @@ import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTT
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 
-import { User, Role } from '../../features/models';
+import { User } from '../models/index';
+
+const users: User[] = 
+[
+    { 
+        id: 1, 
+        username: 'User', 
+        password: 'User', 
+        firstName: 'Dmitrij', 
+        lastName: 'Levchenko' 
+    }
+];
 
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        const users: User[] = [
-            { id: 1, username: 'admin', password: 'admin', firstName: 'Admin', lastName: 'User', role: Role.Admin },
-            { id: 2, username: 'user', password: 'user', firstName: 'Normal', lastName: 'User', role: Role.User }
-        ];
+        const { url, method, headers, body } = request;
 
-        const authHeader = request.headers.get('Authorization');
-        const isLoggedIn = authHeader && authHeader.startsWith('Bearer fake-jwt-token');
-        const roleString = isLoggedIn && authHeader.split('.')[1];
-        const role = roleString ? Role[roleString] : null;
+        // обертка для имитации вызова api 
+        return of(null)
+            .pipe(mergeMap(handleRoute))
+            .pipe(materialize()) 
+            .pipe(delay(500))
+            .pipe(dematerialize());
 
-        // Обертка с задержкой для имитации вызова API сервера
-        return of(null).pipe(mergeMap(() => {
-
-            // authenticate - public
-            if (request.url.endsWith('/users/authenticate') && request.method === 'POST') {
-                const user = users.find(x => x.username === request.body.username && x.password === request.body.password);
-                if (!user) return error('Username or password is incorrect');
-                return ok({
-                    id: user.id,
-                    username: user.username,
-                    firstName: user.firstName,
-                    lastName: user.lastName,
-                    role: user.role,
-                    token: `fake-jwt-token.${user.role}`
-                });
-            }
-
-            // получаем пользователя по id
-            if (request.url.match(/\/users\/\d+$/) && request.method === 'GET') {
-                if (!isLoggedIn) return unauthorised();
-
-                // получаем id с запроса
-                let urlParts = request.url.split('/');
-                let id = parseInt(urlParts[urlParts.length - 1]);
-
-                // открываем досту только обычным пользователям доступ к своей записи
-                const currentUser = users.find(x => x.role === role);
-                if (id !== currentUser.id && role !== Role.Admin) return unauthorised();
-
-                const user = users.find(x => x.id === id);
-                return ok(user);
-            }
-
-            // получаем полный доступ(admin)
-            if (request.url.endsWith('/users') && request.method === 'GET') {
-                if (role !== Role.Admin) return unauthorised();
-                return ok(users);
-            }
-
-            // проходим через любые запросы, не обработанные выше
-            return next.handle(request);
-        }))
-        .pipe(materialize())
-        .pipe(delay(500))
-        .pipe(dematerialize());
-
-        function ok(body) {
-            return of(new HttpResponse({ status: 200, body }));
+        function handleRoute() {
+            switch (true) {
+                case url.endsWith('/users/authenticate') && method === 'POST':
+                    return authenticate();
+                case url.endsWith('/users') && method === 'GET':
+                    return getUsers();
+                default:
+                    //
+                    return next.handle(request);
+            }    
         }
 
-        function unauthorised() {
-            return throwError({ status: 401, error: { message: 'Unauthorised' } });
+        // функции маршрутов
+
+        function authenticate() {
+            const { username, password } = body;
+            const user = users.find(x => x.username === username && x.password === password);
+            if (!user) return error('Пароль пользователя введен неверно');
+            return ok({
+                id: user.id,
+                username: user.username,
+                firstName: user.firstName,
+                lastName: user.lastName
+            })
+        }
+
+        function getUsers() {
+            if (!isLoggedIn()) return unauthorized();
+            return ok(users);
+        }
+
+        function ok(body?) {
+            return of(new HttpResponse({ status: 200, body }))
         }
 
         function error(message) {
-            return throwError({ status: 400, error: { message } });
+            return throwError({ error: { message } });
+        }
+
+        function unauthorized() {
+            return throwError({ status: 401, error: { message: 'Unauthorised' } });
+        }
+
+        function isLoggedIn() {
+            return headers.get('Authorization') === `Basic ${window.btoa('test:test')}`;
         }
     }
 }
 
 export let fakeBackendProvider = {
-    // используем fake бекенд вместо службы http
+    // используем fake бекенд  
     provide: HTTP_INTERCEPTORS,
     useClass: FakeBackendInterceptor,
     multi: true

@@ -6,10 +6,7 @@ import { ShareModule } from './share/share.module';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
-import { fakeBackendProvider } from './features/fake-beckend-auth/fake-beckend';
-import { JwtInterceptor, ErrInterceptor } from './core/interceptors/'
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -23,14 +20,9 @@ import { JwtInterceptor, ErrInterceptor } from './core/interceptors/'
     CoreModule,
     RouterModule,
     HttpClientModule
-
   ],
   
-  providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrInterceptor, multi: true },
-    fakeBackendProvider
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

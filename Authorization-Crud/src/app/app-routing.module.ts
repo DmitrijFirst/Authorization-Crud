@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutPageComponent } from './share/about-page/about-page.component';
+import { HomeComponent } from './share/home/home.component';
+import { LoginComponent } from './share/login/login.component';
+import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
-  {
-    path: '',
-    pathMatch: 'full', 
-    redirectTo: 'about' 
-  }
+  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent },
 ]
+
 @NgModule({
   declarations: [],
   imports: [
