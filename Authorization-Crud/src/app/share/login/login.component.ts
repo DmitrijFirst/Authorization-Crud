@@ -17,16 +17,16 @@ export class LoginComponent implements OnInit {
     submitted = false;
     returnUrl: string;
     error = '';
-    courses: Currency[] = [];
+    curren: Currency[] = [];
 /*############################################################################################ */
 curr = ['UAH', 'USD', 'EUR', 'RUR' ];
 inCurr="UAH";
 outCurr = "UAH";
 inrToForeignRates = {
     UAH: 1,
-    EUR: 27.4,
-    USD: 24.95,
-    RUR: 0.34
+    EUR: 1,
+    USD: 1,
+    RUR: 1
   };
 inputValue = 100;
 /*############################################################################################ */
@@ -36,7 +36,7 @@ inputValue = 100;
         private route: ActivatedRoute,
         private router: Router,
         private authenticationService: AuthService,
-        private http: CurrencyService
+        private currency: CurrencyService
     ) { 
         //перенаправить на /home, если авторизаций уже пройдена
         if (this.authenticationService.currentUserValue) { 
@@ -44,11 +44,23 @@ inputValue = 100;
         }
     }
 
-
 //конвертация валют 
 public currencyVal(){
   return this.inputValue * this.inrToForeignRates[this.inCurr] / this.inrToForeignRates[this.outCurr]
  } 
+
+ public getCurr(){
+    return this.currency.getCurrency().subscribe(res => {
+      this.curren = res;
+      console.log(res)
+      this.inrToForeignRates.USD = this.curren[0].buy;
+      this.inrToForeignRates.EUR = this.curren[1].buy;
+      this.inrToForeignRates.RUR = this.curren[2].buy;
+      console.log(this.inrToForeignRates.USD)
+    })
+  }
+
+
 
     ngOnInit() {
         this.loginForm = this.formBuilder.group({
@@ -59,10 +71,8 @@ public currencyVal(){
         // получаем URL-адрес возврата из параметров маршрутов или по умолчанию «/»
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
         //получаем курсы валют
-        this.http.getCurrency().subscribe(res => {
-          this.courses = res;
-          console.log(res)
-        })
+        this.getCurr();
+     
     }
 
     // быстрый доступ к полям формы

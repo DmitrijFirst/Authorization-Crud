@@ -7,11 +7,12 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BasicAuthInterceptor } from '../core/interceptors/jwt.interceptor';
 import { ErrorInterceptor } from '../core/interceptors/err.interceptor';
 import { fakeBackendProvider } from '../features/fake-beckend-auth/fake-beckend';
+import { ThousandPipe } from './pipes/num.pipe';
 
 
 
 @NgModule({
-  declarations: [ HomeComponent, LoginComponent],
+  declarations: [ HomeComponent, LoginComponent, ThousandPipe],
   imports: [
     CommonModule,
     ReactiveFormsModule,

@@ -26,7 +26,7 @@
             <td>Покупка</td>
             <td>Продажа</td>
           </tr>
-          <tr *ngFor="let cours of courses">
+          <tr *ngFor="let cours of curren">
             <td>{{cours.ccy}}</td>
             <td>{{cours.base_ccy}}</td>
             <td>{{cours.buy | number:'0.1-2'}}</td>
@@ -36,26 +36,26 @@
       </div>
       
   <!-- Конвертер-->
-<div class="conv_content ">
+  <div class="conv_content ">
     <p class="title"><b>Конвертер валют</b></p>
   <div class="content_block">
     <div class="select">
-        <select name="slct" [(ngModel)]="inCurr">
-            <option *ngFor="let item of curr">{{item}}</option>
-        </select>
-</div>
-<p id="lit">в</p>
-<div class="select">
-  <select name="slct" [(ngModel)]="outCurr">
-    <option *ngFor="let item of curr">{{item}}</option>
-  </select>
-</div>
-<div class="values">
-  <input type="text" [(ngModel)]="inputValue" id="value_from"  >
-  <input type="text" [value]="currencyVal() | number: '0.1-2'" id="value_in" >
-</div>
-</div>
-</div>
+    <select name="slct" [(ngModel)]="inCurr">
+     <option *ngFor="let item of curr">{{item}}</option>
+    </select>
+  </div>
+  <p id="lit">в</p>
+  <div class="select">
+    <select name="slct" [(ngModel)]="outCurr">
+      <option *ngFor="let item of curr">{{item}}</option>
+    </select>
+  </div>
+  <div class="values">
+    <input type="text" [(ngModel)]="inputValue" id="value_from"  >
+    <input type="text"  [value]="currencyVal() | number:'0.1-2' | thousand" id="value_in" >
+  </div>
+  </div>
+  </div>
   
       
   
