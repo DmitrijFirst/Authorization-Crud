@@ -1,1 +1,7 @@
-<p>home works!</p>
+<div class="header" *ngIf="currentUser">
+    <a class="logo">MySalary</a>
+    <div class="header-right">
+      <a>{{currentUser.firstName}}</a>
+      <a (click)="logout()"><img class="logout" src="../../../assets/icons8-exit-100.png"></a>
+    </div>
+  </div>

@@ -1,74 +1,78 @@
 *{
-  background: #ebeeee;
+  background: #f1f1f1;
 }
 
 /*Форма входа*/
 form {
-    width: 25%;
-    margin: 0 auto;
-    margin-top: 2%;
-    font-size: 1.5vw;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px 5px rgb(204, 217, 241);
-    background: rgba(226, 238, 225, 0.294);
+  width: 250px;
+  margin: 0 auto;
+  margin-top: 5%;
+  font-size: 1em;
+  background: rgba(226, 238, 225, 0.294);
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+       box-shadow: 0 10px 6px -6px #777;
+    
+    
 }
 form:hover{
   box-shadow: 2px 2px 5px 5px rgb(161, 204, 245);
 }
 
 input[type=text], input[type=password] {
-    height: 40px;
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid rgb(167, 164, 164);
-    box-sizing: border-box;
-    border-radius: 5px;
+  height: 30px;
+  width: 100%;
+  padding: 12px 5px;
+  margin: 10px 0;
+  display: inline-block;
+  border: 1px solid rgb(167, 164, 164);
+  box-sizing: border-box;
+  border-radius: 5px;
     
 }
 
 
 .btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    font-size: 1vw;
-    border-radius: 10px;
+  background-color: rgb(72, 170, 209);
+  color: white;
+  padding: 10px 20px;
+  margin: 15px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 0.8em;
+  border-radius: 5px;
 }
 .btn:active {
-    transform: 0.8px;
+  transform: 0.8px;
 }
 
 .btn:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 
 .container {
-    padding: 16px;
+  padding: 16px;
 }
 
 /* Курс валют*/
 .course-container{
   float: left;
-  width: 30%;
-  margin-top: 50px;
-  margin-left: 100px;
+  width: 300px;
+  margin-top: 100px;
+  margin-left: 15%;
   border-collapse: collapse;
-  border-radius: 5px;
   background: rgba(233, 235, 233, 0.294);
-  box-shadow: 2px 2px 5px 5px rgb(204, 217, 241);
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+       box-shadow: 0 10px 6px -6px #777;
 }
 
 .courses{
   width: 100%;
-  padding: 3px 3px 3px 3px;
-  font-size: 1.5vw;
+  padding: 2px;
+  font-size: 0.9em;
   font-weight: 600;
 }
 
@@ -76,14 +80,11 @@ input[type=text], input[type=password] {
 {
   width: 15%;
   padding: 5px;
-  text-align: right;
-  
-  
-}
+  text-align: right;   
+ }
 
 .courses td:nth-child(2){
   color: #afa9a9;
-  font-size: 1.5vw;
   width: 25%;
   padding: 5px;
   
@@ -92,118 +93,156 @@ input[type=text], input[type=password] {
 .courses  td:nth-child(3){
   text-align: right;
   width: 30%;
-  font-size: 1.5vw;
-  
+
 }
 .courses  td:last-child{
   text-align: right;
   width: 30%;
   line-height: 2.35;
-  font-size: 1.5vw;
+  padding-right: 10px;
 }
 
 .title{
   text-align: center;
-  font-size: 1.5vw;
+  font-size: 1em;
   margin: 0;
 }
 
 /*Конвертер*/
 .conv_content{
-float: right;
-width: 30%;
-margin-top: 50px;
-margin-right: 100px;
-border: 3px solid #f1f1f1;
-padding: 10px ;
-box-shadow: 2px 2px 5px 5px rgb(204, 217, 241);
-}
+  float: right;
+  width: 300px;
+  margin-top: 100px;
+  margin-right: 15%;
+  padding-bottom: 10px ;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+       box-shadow: 0 10px 6px -6px #777;
+  }
 
 .content_block {
-display: flex;
-justify-content: space-around;
-flex-wrap: wrap;
-margin-top: 10%;
-}
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 10%;
+  }
 
 #lit {
-margin-top: 10px;
-font-size: 1.5vw;
-}
+  display: inline-block;
+  margin-top: 2%;
+  font-size: 1.1em;
+  }
 /* Сбросить  стили*/
 select {
-outline: 0;
-box-shadow: none;
-border: 0 !important;
-background: #e9ecf0;
-background-image: none;
-font-size: 1.5vw;
-}
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #e9ecf0;
+  background-image: none;
+  font-size: 1em;
+  padding: 0;
+  }
 
 select::-ms-expand {
-display: none;
-}
+  display: none;
+  }
 
 
 .select {
-position: relative;
-display: flex;
-width: 40%;
-height: 6vh;
-line-height: 2;
-background: #e9ecf0;
-overflow: hidden; 
-outline: none; 
-border: 1px solid #bdb6b6;
-}
+  position: relative;
+  display: flex;
+  width: 100px;
+  height: 30px;
+  margin-bottom: 30px;
+  line-height: 3;
+  background: #e9ecf0;
+  overflow: hidden; 
+  outline: none; 
+  border: 1px solid #bdb6b6;
+  }
 
 select {
-flex: 1;
-font-size: 1.5vw;
-color: rgb(15, 14, 14);
-cursor: pointer;
-
-}
+  flex: 1;
+  font-size: 1em;
+  color: rgb(15, 14, 14);
+  cursor: pointer;
+  }
 
 .select::after {
-content: '\25BC';
-position: absolute;
-top: 5px;
-right: 0;
-padding: 0 1vh;
-background: #e9ecf0;
-cursor: pointer;
-pointer-events: none;
-transition: .25s all ease;
-
+  content: '\25BC';
+  position: absolute;
+  top: -7px;
+  right: -5px;
+  padding: 0 7px;
+  background: #e9ecf0;
+  cursor: pointer;
+  pointer-events: none;
+  transition: .25s all ease;
 }
 
 .select:hover::after {
-color: #08a036;
+  color: #08a036;
 }
 
 .values{
-display: flex;
-justify-content: space-around;
-flex-wrap: wrap;
-margin-top: 9%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 #value_from{
-width: 40%;
-font-size: 1.5vw;
-padding: 5px;
-margin-right: 20px;
+  width: 100px;
+  height: 30px;
+  font-size: 1em;
+  padding: 5px;
+  margin-right: 65px;
+  border-radius: 0px;
+  margin-bottom: 15px;
 }
 
 #value_in{
-width: 40%;
-font-size: 1.5vw;
-padding: 5px;
+  width: 100px;
+  height: 30px;
+  font-size: 1em;
+  padding: 5px;
+  border-radius: 0px;
+  margin-bottom: 15px;
 }
 
 .errorsText{
   text-align: center;
-  color: #f14242;
+  color: #f00808;
   transition: .25s all ease;
 }
+
+
+@media screen and (max-width: 950px) {
+  .course-container{
+    margin-left: 5% ;
+  }
+  .conv_content{
+    margin-right: 10%  ;
+    }
+  }
+
+  @media screen and (max-width: 695px) {
+
+    .course-container{
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%)
+      
+
+    }
+    .conv_content{
+      margin: 0;
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%)
+    }
+  }

@@ -45,7 +45,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         function authenticate() {
             const { username, password } = body;
             const user = users.find(x => x.username === username && x.password === password);
-            if (!user) return error('Пароль пользователя введен неверно');
+            if (!user) return error('Неверный логин или пароль');
             return ok({
                 id: user.id,
                 username: user.username,

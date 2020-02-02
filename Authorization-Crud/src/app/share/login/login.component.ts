@@ -28,7 +28,7 @@ inrToForeignRates = {
     USD: 1,
     RUR: 1
   };
-inputValue = 100;
+inputValue = 0;
 /*############################################################################################ */
 
     constructor(
@@ -59,20 +59,15 @@ public currencyVal(){
       console.log(this.inrToForeignRates.USD)
     })
   }
-
-
-
     ngOnInit() {
         this.loginForm = this.formBuilder.group({
             username: ['', Validators.required],
             password: ['', Validators.required]
         });
-
         // получаем URL-адрес возврата из параметров маршрутов или по умолчанию «/»
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
         //получаем курсы валют
         this.getCurr();
-     
     }
 
     // быстрый доступ к полям формы

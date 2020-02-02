@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #536ff0;
+  padding: 10px 0px;
+  margin: 0;
+  height: 50px;
+}
+
+.header a {
+  float: left;
+  color: rgb(250, 240, 240);
+  text-align: center;
+  padding: 7px;
+  text-decoration: none;
+  font-size: 1.5em; 
+  line-height: 10px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  margin-top: 3px;
+  color: beige;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.header-right {
+  float: right;
+}
+
+.logout {
+    width: 25px;
+    margin-top: -5px;
+}
+.logo_img{
+    width: 30px;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .header-right {
+    float: none;
+  }
+}

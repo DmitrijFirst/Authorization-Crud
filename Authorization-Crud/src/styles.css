@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    background: rgba(243, 243, 243, 0.575);
+    background: rgba(175, 175, 175, 0.575);
+    margin: 0;
+    padding: 0;
   }
