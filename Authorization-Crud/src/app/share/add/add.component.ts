@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, FormArray } from "@angular/forms";
+import { FormGroup, FormControl, FormBuilder, FormArray, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-add',
@@ -15,19 +15,27 @@ export class AddComponent implements OnInit {
 
 
   onFormSubmit() {
-    console.log(this.personsForm.value);
+    const control = this.personsForm.controls;
+    if (this.personsForm.invalid) {
+      /** Если форма не валидна, то помечаем все контролы как touched*/
+      Object.keys(control)
+       .forEach(controlName => control[controlName].markAsTouched());
+              /** Прерываем выполнение метода*/
+       return;
+    }else{
+      console.log(this.personsForm.value);
+    }  
   }
 
 addPerson(){
   const users = this.personsForm.get('persons') as FormArray;
   users.push(this.fb.group({
-    name: [''],
-    surname: [''],
-    pers_num: [''],
-    length_of_work: [''],
-    status: [''],
-    phone: [''],
-    salary: ['']
+    surname: ['',[Validators.required]],
+    pers_num: ['',[Validators.required]],
+    length_of_work: ['',[Validators.required]],
+    status: ['',[Validators.required]],
+    phone: ['',[Validators.required]],
+    salary: ['',[Validators.required]]
   }))
 }
 
@@ -42,7 +50,7 @@ addPerson(){
   ngOnInit() {
     this.personsForm = this.fb.group({
       id: new FormControl(''),
-      title: new FormControl(''),
+      title: ['',[Validators.required]],
       persons: this.fb.array([])
   });
   }

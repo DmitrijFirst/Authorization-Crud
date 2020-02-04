@@ -1,108 +1,66 @@
 <div class="container">
-    <form [formGroup]="personsForm" (submit)="onFormSubmit()">
-        <div class="title"> 
-            <label for="title group">Название ведомости </label>       
-            <input type="text" id="title" formControlName="title" required>
-            <span class="bar"></span>          
+    <form [formGroup]="personsForm" (submit)="onFormSubmit()" novalidate>
+        <div class="title">       
+            <input type="text" id="title" formControlName="title" placeholder="Название ведомости" >
+            <span class="titel_bar"></span> 
+            <div class="alert-danger" *ngIf="personsForm.get('title').errors?.required && personsForm.get('title').touched"></div>         
         </div>
-        <div formArrayName="persons" class="form_arr">
-        <div *ngFor="let person of persons; let i = index;" [formGroupName]="i">
-            <div class="forms">
-                <div class="name group">
-                    <label for="name">Имя</label>
-                    <input type="text" placeholder="Имя сотрудника {{ i + 1 }}"  id="name" formControlName="name" required>
-                    <span class="bar"></span>
-                    <div class="alert-danger" *ngIf="personsForm.get('name').hasError('required') && personsForm.get('name').touched">  
-                        <p>Укажите имя сотрудника</p>
-                    </div>
-                </div>
+        <div formArrayName="persons" class="persons"> 
+          <div *ngFor="let person of persons; let i = index;" [formGroupName]="i" class="form_arr">
+            <fieldset>
+              <div class="forms">
                 <div class="surname group">
                     <label for="surname">Фамилия</label>
-                    <input type="text" placeholder="Фамилия сотрудника {{ i + 1 }}"  id="surname" formControlName="surname" required>
+                    <input type="text" id="surname" formControlName="surname">
                     <span class="bar"></span>
-                    <div class="alert-danger" *ngIf="personsForm.get('surname').hasError('required') && personsForm.get('surname').touched">  
-                        <p>Укажите фамилию</p>
-                    </div>
+                    <div class="alert-danger" *ngIf="personsForm.get('surname').errors?.required && personsForm.get('surname').touched"></div>
                 </div>
                 <div class="pers_num group">
-                    <label for="pers_num">Табельный номер</label>
-                    <input placeholder="Фамилия сотрудника {{ i + 1 }}" type="text" id="pers_num" formControlName="pers_num" required>
+                    <label for="pers_num">Табельный №</label>
+                    <input type="text" id="pers_num" formControlName="pers_num">
                     <span class="bar"></span>
-                    <div class="alert-danger" *ngIf="personsForm.get('pers_num').hasError('required') && personsForm.get('pers_num').touched">  
-                        <p>Укажите табельный номер</p>
-                    </div>
                 </div>
-    
                 <div class="length_of_work group">
-                    <label for="length_of_work">Дата трудоустройства</label>
-                    <input placeholder="Фамилия сотрудника {{ i + 1 }}" type="text" id="length_of_work" formControlName="length_of_work" required>
+                    <label for="length_of_work">Работает с:</label>
+                    <!-- <input type="data"  id="length_of_work" formControlName="length_of_work"> -->
+                <input type="date" id="length_of_work" name="length_of_work"  min="2000-01-01" max="2020-01-31" formControlName="length_of_work">
                     <span class="bar"></span>
-                    <div class="alert-danger" *ngIf="personsForm.get('length_of_work').hasError('required') && personsForm.get('length_of_work').touched">  
-                        <p>Укажите дату</p>
-                    </div>
                 </div>
-    
                 <div class="status group">
                     <label for="status">Статус</label>
                     <select id="status" formControlName="status">
-                        <option selected value="">Статус сотрудника</option>
                         <option value="Работает">Работает</option>
                         <option value="Отпуск">Отпуск</option>
                         <option value="Больничный">Больничный</option>
                     </select>
-                    <div class="alert-danger" *ngIf="personsForm.get('status').hasError('required') && personsForm.get('status').touched">  
-                        <p>Выберете статус сотрудника</p>
-                    </div>
                 </div>
-                
                 <div class="phone group">
                     <label for="phone">Телефон</label>
-                    <input placeholder="Телефон {{ i + 1 }}" type="text" id="phone" formControlName="phone" required>
+                    <input  type="text" id="phone" formControlName="phone">
                     <span class="bar"></span>
-                    <div class="alert-danger" *ngIf="personsForm.get('phone').hasError('required') && personsForm.get('phone').touched">  
-                        <p>Выберете статус сотрудника</p>
-                    </div>
                 </div>
-                
                 <div class="salary group">
-                    <label for="salary">Телефон</label>
-                    <input placeholder="salary {{ i + 1 }}" type="text" id="salary" formControlName="salary" required>
-                    <span class="bar"></span>
-                    <div class="alert-danger" *ngIf="personsForm.get('salary').hasError('required') && personsForm.get('salary').touched">  
-                        <p>Введите телефон</p>
-                    </div>
+                    <label for="salary">Сумма</label>
+                    <input type="text" id="salary" formControlName="salary">
+                    <span class="bar"></span>  
+                 </div>
+                <div class="remove_person">
+                  <input type="button" (click)="removePerson(i)" value="Удалить">
                 </div>
-                <div class="clearfix"></div>
-              </div>
-            </div>
-            </div>
-            
-        <br><br><br><br>
-        <button type="button" (click)="addPerson()">Add Person</button>
-        <br><br><br><br><br><br>
-        <button>
-          Submit
-        </button>
-      </form>
+                </div>
+              </fieldset>
+                </div>
+          </div>  
+          <div class="add_person">
+            <input type="button" (click)="addPerson()" value="Add Person"> 
+          </div>
+          <hr>
+          <div class="sumitted">
+            <button >Отправить</button>
+            <button >Отмена</button>
+          </div>  
+    </form>          
+</div> 
 
 
-</div>
 
-<!--
-<div class="container">
-    <h2>Google Material Design на CSS3<small>Пример для input'ов</small></h2> 
-    <form>
-      <div class="group">      
-        <input type="text" required>
-        <span class="bar"></span>
-        <label>Имя</label>
-      </div>
-        
-      <div class="group">      
-        <input type="text" required>
-        <span class="bar"></span>
-        <label>Email</label>
-      </div>  
-    </form>    
-  </div>
-  -->
