@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, FormArray, Validators } from "@angular/forms";
+import { HttpService } from '../../core/services/http-firebase/http.service';
+import { Salary } from 'src/app/features/models';
 
 @Component({
   selector: 'app-add',
@@ -9,8 +11,12 @@ import { FormGroup, FormControl, FormBuilder, FormArray, Validators } from "@ang
 export class AddComponent implements OnInit {
 
   personsForm: FormGroup;
-  inputValue = "";
-  constructor(private fb: FormBuilder) {}
+  salary: Salary = new Salary();
+
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpService
+    ) {}
 
 
 
@@ -23,6 +29,7 @@ export class AddComponent implements OnInit {
               /** Прерываем выполнение метода*/
        return;
     }else{
+      this.http.addSalarySheet(this.personsForm.value);
       console.log(this.personsForm.value);
     }  
   }
@@ -49,7 +56,6 @@ addPerson(){
 
   ngOnInit() {
     this.personsForm = this.fb.group({
-      id: new FormControl(''),
       title: ['',[Validators.required]],
       persons: this.fb.array([])
   });

@@ -4,7 +4,17 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:4000'
+  apiUrl: 'http://localhost:4000',
+  firebase : {
+    apiKey: "AIzaSyCvTXKooO8Hlcewaf7s7D2RotM_AZbLqEw",
+    authDomain: "salary-ec5ce.firebaseapp.com",
+    databaseURL: "https://salary-ec5ce.firebaseio.com",
+    projectId: "salary-ec5ce",
+    storageBucket: "salary-ec5ce.appspot.com",
+    messagingSenderId: "509839737483",
+    appId: "1:509839737483:web:6fe4b35e963fe963cb4a8e",
+    measurementId: "G-27F6TR0YZ2"
+  }
 };
 
 /*
@@ -15,3 +25,28 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+/*
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCvTXKooO8Hlcewaf7s7D2RotM_AZbLqEw",
+    authDomain: "salary-ec5ce.firebaseapp.com",
+    databaseURL: "https://salary-ec5ce.firebaseio.com",
+    projectId: "salary-ec5ce",
+    storageBucket: "salary-ec5ce.appspot.com",
+    messagingSenderId: "509839737483",
+    appId: "1:509839737483:web:6fe4b35e963fe963cb4a8e",
+    measurementId: "G-27F6TR0YZ2"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+
+
+
+
+
+
+*/
