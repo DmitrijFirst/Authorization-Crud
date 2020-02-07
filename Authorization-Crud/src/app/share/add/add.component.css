@@ -227,8 +227,9 @@ opacity: 0;
 }
 
 input.ng-touched.ng-invalid,
-textarea.ng-touched.ng-invalid,
-select.ng-touched.ng-invalid
+input[type=date].ng-touched.ng-invalid,
+#status.ng-touched.ng-invalid
 {
     border-color: red;
 }
+

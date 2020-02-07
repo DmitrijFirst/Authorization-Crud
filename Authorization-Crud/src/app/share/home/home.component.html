@@ -5,3 +5,15 @@
       <a (click)="logout()"><img class="logout" src="../../../assets/icons8-exit-100.png"></a>
     </div>
   </div>
+
+  <div *ngFor="let emp of employee">
+    <p>{{emp.title}}</p>
+    <ul *ngFor="let persons of emp.persons">
+      <li>{{persons.surname}}</li>
+      <li>{{persons.pers_num}}</li>
+      <li>{{persons.length_of_work}}</li>
+      <li>{{persons.status}}</li>
+      <li>{{persons.phone}}</li>
+      <li>{{persons.salary}}</li>
+    </ul>
+  </div>

@@ -6,13 +6,14 @@
             <div class="alert-danger" *ngIf="personsForm.get('title').errors?.required && personsForm.get('title').touched"></div>         
         </div>
         <div formArrayName="persons" class="persons"> 
-          <div *ngFor="let person of persons; let i = index;" [formGroupName]="i" class="form_arr">
+          <div *ngFor="let person of personsForm.get('persons').controls; let i = index;" [formGroupName]="i" class="form_arr">
             <fieldset>
               <div class="forms">
                 <div class="surname group">
                     <label for="surname">Фамилия</label>
                     <input type="text" id="surname" formControlName="surname">
                     <span class="bar"></span>
+                    <div class="alert-danger" *ngIf="person.get('surname').errors?.required && person.get('surname').touched"></div> 
                 </div>
                 <div class="pers_num group">
                     <label for="pers_num">Табельный №</label>

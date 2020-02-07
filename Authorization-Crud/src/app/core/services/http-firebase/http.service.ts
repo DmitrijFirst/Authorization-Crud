@@ -14,10 +14,11 @@ export class HttpService {
     this.usersRef = db.list(this.dpPath);
   }
 
-public addSalarySheet(salary: Salary):any{
-  this.usersRef.push(salary);
-
+  public addSalarySheet(salary: Salary):any{
+    this.usersRef.push(salary);
   }
 
-
+  public getSalarySheet(): AngularFireList<Salary>{
+    return this.usersRef;
+   }
 }
