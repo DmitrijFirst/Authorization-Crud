@@ -9,6 +9,7 @@ import { ErrorInterceptor } from '../core/interceptors/err.interceptor';
 import { fakeBackendProvider } from '../features/fake-beckend-auth/fake-beckend';
 import { ThousandPipe } from './pipes/num.pipe';
 import { AddComponent } from './add/add.component';
+import { SharedRoutingModule } from './share-routing.module';
 
 
 
@@ -17,7 +18,8 @@ import { AddComponent } from './add/add.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    FormsModule 
+    FormsModule,
+    SharedRoutingModule
     
   ], 
   providers: [

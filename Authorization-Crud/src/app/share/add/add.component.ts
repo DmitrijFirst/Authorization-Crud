@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, FormArray, Validators } from "@angular/forms";
 import { HttpService } from '../../core/services/http-firebase/http.service';
 import { Salary } from 'src/app/features/models';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add',
@@ -12,10 +13,12 @@ export class AddComponent implements OnInit {
 
   personsForm: FormGroup;
   salary: Salary = new Salary();
+  
 
   constructor(
     private fb: FormBuilder,
-    private http: HttpService
+    private http: HttpService,
+    private router: Router
     ) {}
 
 
@@ -23,10 +26,7 @@ export class AddComponent implements OnInit {
   onFormSubmit() {
     const control = this.personsForm.controls;
     if (this.personsForm.invalid) {
-      /** Если форма не валидна, то помечаем все контролы как touched*/
-      Object.keys(control)
-       .forEach(controlName => control[controlName].markAsTouched());
-              /** Прерываем выполнение метода*/
+      this.personsForm.markAllAsTouched();
        return;
     }else{
       this.http.addSalarySheet(this.personsForm.value);
@@ -37,6 +37,7 @@ export class AddComponent implements OnInit {
 addPerson(){
   const users = this.personsForm.get('persons') as FormArray;
   users.push(this.fb.group({
+    name: ['',[Validators.required]],
     surname: ['',[Validators.required]],
     pers_num: ['',[Validators.required]],
     length_of_work: ['',[Validators.required]],
@@ -45,7 +46,7 @@ addPerson(){
     salary: ['',[Validators.required]]
   }))
 }
-
+/*autor: ['', [Validators.required, Validators.minLength(5),Validators.maxLength(25)]], */
   get persons() {
     return (<FormArray>this.personsForm.get("persons")).controls;
   }

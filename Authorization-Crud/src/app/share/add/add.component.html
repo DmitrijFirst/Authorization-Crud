@@ -9,6 +9,12 @@
           <div *ngFor="let person of personsForm.get('persons').controls; let i = index;" [formGroupName]="i" class="form_arr">
             <fieldset>
               <div class="forms">
+                <div class="name group">
+                  <label for="name">Имя</label>
+                  <input type="text" id="name" formControlName="name">
+                  <span class="bar"></span>
+                  <div class="alert-danger" *ngIf="person.get('name').errors?.required && person.get('name').touched"></div> 
+              </div>
                 <div class="surname group">
                     <label for="surname">Фамилия</label>
                     <input type="text" id="surname" formControlName="surname">
@@ -36,7 +42,7 @@
                 </div>
                 <div class="phone group">
                     <label for="phone">Телефон</label>
-                    <input  type="text" id="phone" formControlName="phone">
+                    <input  type="text" id="phone" formControlName="phone" >
                     <span class="bar"></span>
                 </div>
                 <div class="salary group">
@@ -45,7 +51,7 @@
                     <span class="bar"></span>  
                  </div>
                 <div class="remove_person">
-                  <input type="button" (click)="removePerson(i)" value="Удалить">
+                  <input type="image" (click)="removePerson(i)" value="Удалить" src="../../../assets/icons8-удалить-навсегда-100.png">
                 </div>
                 </div>
               </fieldset>
@@ -56,8 +62,8 @@
           </div>
           <hr>
           <div class="sumitted">
-            <button >Отправить</button>
-            <button >Отмена</button>
+            <button type="submit" class="signupbtn">Отправить</button>
+            <button type="button" class="cancelbtn" routerLinkActive="active" routerLink='/'>Отмена</button>
           </div>  
     </form>          
 </div> 

@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
 
   currentUser: User;
   employee: any;
+  isShown: boolean = false ;
 
   constructor(
       private router: Router,
@@ -39,6 +40,10 @@ export class HomeComponent implements OnInit {
       console.log(this.employee)
     })
   }
+
+  toggleShow() {
+    this.isShown = ! this.isShown;
+    }
 
   ngOnInit() {
     this.getEmployes()
