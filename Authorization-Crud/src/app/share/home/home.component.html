@@ -5,41 +5,29 @@
       <a (click)="logout()"><img class="logout" src="../../../assets/icons8-exit-100.png"></a>
     </div>
   </div>
-<!--
-  <div *ngFor="let emp of employee">
-    <p>{{emp.title}}</p>
-    <ul *ngFor="let persons of emp.persons">
-      <li>{{persons.surname}}</li>
-      <li>{{persons.pers_num}}</li>
-      <li>{{persons.length_of_work}}</li>
-      <li>{{persons.status}}</li>
-      <li>{{persons.phone}}</li>
-      <li>{{persons.salary}}</li>
-    </ul>
+
+<div class="demo" *ngFor="let emp of employee; let i = index;">
+  <input class="hide" id="hd-1" type="checkbox">
+  <label for="hd-1">{{emp.title}}</label>
+  <div class="content">
+    <table class="content-table" >
+      <tr class="header-table">
+        <td>№</td>
+        <td>Имя</td>
+        <td>Фамилия</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr *ngFor="let persons of emp.persons; let i = index;">
+        <td>{{ i + 1 }}</td>
+        <td>{{persons.name}}</td>
+        <td>{{persons.surname}}</td>
+        <td><input type="button" value="Изменить"></td>
+        <td><input type="button" value="Удалить" (click)="deleteEmp()"></td>
+        <td><input type="button" value="Просмотр" (click)="getEmpInfo()"></td>
+      </tr>
+    </table>
   </div>
  
-  <div class="salary_sheet" *ngFor="let emp of employee">
-    <input class="hide" id="hd-1" type="checkbox">
-    <label for="hd-1">{{emp.title}}</label>
-  </div>
-
- -->
- <div class="button_show" *ngFor="let emp of employee">
-    <button (click)="toggleShow()" type="checkbox">{{emp.title}}</button>
- <div class="content" *ngIf="isShown">
-  <table class="style" >
-    <tr class="header-table">
-      <td>Фамилия</td>
-      <td>Имя</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr *ngFor="let persons of emp.persons">
-      <td>{{persons.surname}}</td>
-      <td>{{persons.pers_num}}</td>
-      <td></td>
-      <td></td>
-    </tr>
-  </table>
- </div>
 </div>

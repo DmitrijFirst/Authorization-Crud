@@ -3,8 +3,9 @@ import { User } from 'src/app/features/models';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/authentication/auth/auth.service';
 import { HttpService } from 'src/app/core/services/http-firebase/http.service';
-import { map } from 'rxjs/operators';
-import { Salary } from 'src/app/features/models/salary';
+import { map, catchError } from 'rxjs/operators';
+import { ModalService } from 'src/app/core/services/modal/modal.service';
+import { throwError } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -20,17 +21,18 @@ export class HomeComponent implements OnInit {
   constructor(
       private router: Router,
       private authenticationService: AuthService,
-      private http: HttpService
+      private http: HttpService,
+      private modal: ModalService
   ) {
       this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
   }
 
-  logout() {
+  public logout() {
       this.authenticationService.logout();
       this.router.navigate(['/login']);
   }
 
-  getEmployes(){
+  public getEmployes(){
     this.http.getSalarySheet().snapshotChanges().pipe(
       map(changes => changes.map(c => ({
         key: c.payload.key, ...c.payload.val()
@@ -41,10 +43,23 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  toggleShow() {
-    this.isShown = ! this.isShown;
-    }
+  public getEmpInfo(){
+    this.modal.openEmpInfo();
 
+  }
+
+  public deleteEmp() {
+    this.modal.openDeleteDialog().afterClosed().subscribe(res => {
+      if(res){
+
+      }
+    }),catchError(error => {
+      return throwError(error)
+    }
+    )
+  }
+    
+  
   ngOnInit() {
     this.getEmployes()
   }

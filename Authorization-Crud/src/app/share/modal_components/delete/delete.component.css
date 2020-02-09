@@ -1,0 +1,61 @@
+button {
+    background-color: rgb(57, 60, 235);
+    color: white;
+    padding: 10px 10px;
+    margin: 8px 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    border-radius: 10px;
+    outline: none;
+  
+}
+
+button:active,
+button:hover
+ {
+    opacity:1;
+    transform: scale(1.0);
+    outline: none;
+    border:none;
+}
+
+
+  .cancelbtn {
+    padding: 10px 20px;
+    background-color: #888282;
+    margin-left: 60px;
+}
+
+
+.cancelbtn, .signupbtn {
+  width: 30%;
+  outline: none;
+  border: none;
+}
+
+.title {
+  display: flex;
+  justify-content: center;  
+  text-align: center; 
+  margin-top: 20px;
+  border-bottom: 1px solid #888282;
+}
+
+@media screen and (max-width: 400px) {
+  .cancelbtn, .signupbtn {
+    width: 50%;
+  }
+  .signupbtn {
+    margin-left: 60px;
+  }
+}
+
+@media screen and (max-width: 310px) {
+  .cancelbtn, .signupbtn {
+    width: 60%;
+    margin-left: 40px;
+  }
+
+}

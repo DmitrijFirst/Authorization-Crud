@@ -10,23 +10,29 @@ import { fakeBackendProvider } from '../features/fake-beckend-auth/fake-beckend'
 import { ThousandPipe } from './pipes/num.pipe';
 import { AddComponent } from './add/add.component';
 import { SharedRoutingModule } from './share-routing.module';
+import { EmpInfoComponent } from './modal_components/emp-info/emp-info.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DeleteComponent } from './modal_components/delete/delete.component';
 
 
 
 @NgModule({
-  declarations: [ HomeComponent, LoginComponent, ThousandPipe, AddComponent],
+  declarations: [ HomeComponent, LoginComponent, ThousandPipe, AddComponent, EmpInfoComponent, DeleteComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-    SharedRoutingModule
-    
+    SharedRoutingModule,
+    MatDialogModule, 
+    BrowserAnimationsModule
   ], 
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     fakeBackendProvider
 ],
-  exports: [HomeComponent,LoginComponent]
+  exports: [HomeComponent,LoginComponent],
+  entryComponents: [EmpInfoComponent, DeleteComponent]
 })
 export class ShareModule { }

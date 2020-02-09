@@ -1,0 +1,17 @@
+<div class="container" *ngFor="let emp of employee">
+    <table class="content-table" >
+        <tr class="header-table">
+          <td>№</td>
+          <td>Имя</td>
+          <td>Фамилия</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr *ngFor="let persons of emp.persons; let i = index;">
+          <td>{{ i + 1 }}</td>
+          <td>{{persons.name}}</td>
+          <td>{{persons.surname}}</td>
+        </tr>
+      </table>
+</div>

@@ -46,16 +46,23 @@
 
 /*#########################################################################################*/
 
-/* salary_sheet контейнер */
-.salary_sheet {
-  float: left;
-  max-width: 1024px;
-  padding: 0 20px;
-  margin: 5% 10%;
+
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+/* demo контейнер */
+.demo {
+    max-width: 80%;
+    padding: 0 20px;
+    margin: 5% 10%;
 }
 /* скрываем чекбоксы и блоки с содержанием */
 .hide,
-.hide + label ~ .content {
+.hide + label ~ div {
     display: none;
 }
 /* вид текста label */
@@ -78,7 +85,7 @@
     -moz-box-shadow: inset 3px 3px 10px #7d8e8f;
     -webkit-box-shadow: inset 3px 3px 10px #7d8e8f;
     box-shadow: inset 3px 3px 10px #7d8e8f;
-    margin-left: 20px;
+    margin-left: 10px;
     padding: 10px;
     /* чуточку анимации при появлении */
      -webkit-animation:fade ease-in 0.5s; 
@@ -118,6 +125,73 @@ to { opacity: 1 }
 .hide:checked + label:before {
     content: "\2212";
 }
+
+.content{
+  margin-top: 15%;
+  width: 60%;
+}
+
+.content-table{
+  
+  padding: 5px;
+  font-size: 0.9em;
+  
+}
+
+.content-table .header-table{
+  padding: 10px;
+  font-weight: 600;
+}
+.content-table td{
+  border-bottom: 1px solid silver;
+}
+.content-table td:first-child{
+  width: 20%;
+  padding: 5px; 
+  line-height: 2.35;
+ }
+
+ .content-table td:nth-child(2){
+  width: 20%;
+  padding: 5px;
+  line-height: 2.35;
+  
+}
+
+ .content-table td:nth-child(3){
+  width: 40%;
+  padding: 5px;
+  line-height: 2.35;
+  
+}
+
+.content-table td:nth-child(4){
+  width: 40%;
+  padding: 5px;
+  text-align: right;
+  line-height: 2.35;
+}
+
+.content-table td:nth-child(4){
+  width: 40%;
+  padding: 5px;
+  text-align: right;
+  line-height: 2.35;
+}
+
+.content-table td:last-child{
+  text-align: right;
+  width: 30%;
+  line-height: 2.35;
+  padding-right: 10px;
+}
+
+
+
+
+
+
+
 /*##########################################################################################################*/
 @media screen and (max-width: 500px) {
   .header a {

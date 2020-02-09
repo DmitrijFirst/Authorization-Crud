@@ -23,20 +23,41 @@ export class AddComponent implements OnInit {
 
 
 
-  onFormSubmit() {
+  public onFormSubmit() {
     const control = this.personsForm.controls;
     if (this.personsForm.invalid) {
       this.personsForm.markAllAsTouched();
        return;
     }else{
       this.http.addSalarySheet(this.personsForm.value);
+      this.personsForm.reset();
+      setTimeout(() =>{
+        this.router.navigateByUrl('home');
+      }, 1000) 
       console.log(this.personsForm.value);
     }  
   }
 
-addPerson(){
+  /*
+         this.addForm.reset();
+          setTimeout(() =>{
+            this.router.navigateByUrl('home');
+          }, 1000)    
+            this.logger.log('Успех - переадресация выполнена => "/home"');
+        }),
+           error => {
+              this.logger.error('Возникла ошибка', error)
+            };
+        };
+  
+  
+  
+  */
+
+ public addPerson(){
   const users = this.personsForm.get('persons') as FormArray;
   users.push(this.fb.group({
+    empId: [],
     name: ['',[Validators.required]],
     surname: ['',[Validators.required]],
     pers_num: ['',[Validators.required]],

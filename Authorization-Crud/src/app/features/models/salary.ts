@@ -2,6 +2,7 @@ export class Salary {
     title: string;
     persons: [
     {
+        empId: number;
         surname: string;
         status: string;
         length_of_work: number;

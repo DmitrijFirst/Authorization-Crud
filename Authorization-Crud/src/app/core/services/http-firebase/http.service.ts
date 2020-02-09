@@ -8,10 +8,13 @@ import { Salary } from 'src/app/features/models/salary';
 export class HttpService {
 
   private dpPath = '/salary';
+  private dbPathEmp = '/salary/persons'
   usersRef: AngularFireList<Salary> = null;
+  personRef: AngularFireList<Salary> = null;
 
   constructor(private db: AngularFireDatabase) { 
     this.usersRef = db.list(this.dpPath);
+    
   }
 
   public addSalarySheet(salary: Salary):any{

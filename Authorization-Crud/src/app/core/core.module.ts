@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { AngularFireModule } from '@angular/fire' ; 
 import { AngularFireDatabaseModule } from '@angular/fire/database' ; 
 import { environment } from 'src/environments/environment';
+import { LayoutModule } from '@angular/cdk/layout';
+
 
 
 @NgModule({
@@ -10,7 +12,8 @@ import { environment } from 'src/environments/environment';
   imports: [
     CommonModule,
     AngularFireDatabaseModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    LayoutModule
   ]
 })
 export class CoreModule { }
