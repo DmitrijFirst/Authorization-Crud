@@ -17,14 +17,14 @@ export class EmpInfoComponent implements OnInit {
     private http: HttpService
   ) { }
 
-  getEmployes(){
+  public getEmployes(){
     this.http.getSalarySheet().snapshotChanges().pipe(
       map(changes => changes.map(c => ({
         key: c.payload.key, ...c.payload.val()
       })))
     ).subscribe(res => {
       this.employee = res;
-      console.log(this.employee)
+      console.log(res)
     })
   }
 

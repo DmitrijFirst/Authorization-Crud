@@ -1,133 +1,71 @@
-/*Базовые стии*/
-/*.container {
-  
-  margin: 0 auto;
-  display: block;
-  background: #FFF;
-  padding: 10px 50px;
-  box-shadow: 0px 1px 2px 2px #a09898;
-  border-radius: 5px;
-  background-color: #e4e7ec;
-}
-*/
-
 *{
   font-family: Open Sans Condensed;
 }
-
+.forms{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 .group {
   position: relative;
   margin-bottom: 30px;
+  margin-right: 15px;
+  width: 12%;
+  min-width: 120px;
 }
-
 .title{
   margin: 0 auto;
   width: 270px;
   margin-top: 10px;
 }
-
-#title {
-width: 100%;
-padding: 10px;
-}
-
 .persons{
  margin-top: 50px;
 }
-.name,
-.surname,
-.length_of_work,
-.phone,
-.salary {
-  margin-top: 20px;
-  float: left;
-  width: 90px;
-  margin-left: 70px;
-  padding-top: 5px;
-}
-
-.status {
-  margin-top: 20px;
-  float: left;
-  width: 80px;
-  margin-left: 40px;
-  padding-top: 5px;
-}
-
-.pers_num{
-  margin-top: 20px;
-  float: left;
-  width: 90px;
-  margin-left: 40px;
-  padding-top: 5px;
-}
-
-.remove_person{
-  float: left;
-  margin-top: 10px;
-  margin-left: 30px;
-}
-
 input {
   font-size: 16px;
-  padding: 5px;
-  width: 110px;
-  display: block;
-  margin: 0;
   border: none;
   border-bottom: 1px solid #ccc;
-  
-
+  width: 100%;
+  padding: 4px;
+  box-sizing: border-box;
 }
-
+input[type=date]{
+  padding: 3px;
+}
 select {
   outline: 0;
   box-shadow: none;
-  border-top: 0 !important;
-  border-right: 0 !important;
-  border-left: 0 !important;
+  border: none;
+  border-bottom: 1px solid #ccc;
   background: #feffff;
   font-size: 16px;
+  width: 100%;
   padding: 3px;
+  box-sizing: border-box;
 }
-
-#status {
-  width: 110px;
-  padding: 5px;
-  display: block;
-  border: 1px solid #ccc;
-}
-
 input:focus {
   outline: none;
+  animation: none;
 }
 
 label {
   color: rgb(99, 96, 96);
   font-size: 16px;
   pointer-events: none;
-  position: absolute;
-  top: -15px;
   display: block;
-
 }
 
 .bar {
   position: relative;
   display: block;
-  width: 120px;
+  width: 100%;
 }
 
 .titel_bar {
   position: relative;
   display: block;
-  width: 290px;
+  width: 100%;
 }
-
-.salary{
-  margin-right: 100px;
-}
-
 .bar:before,
 .bar:after,
 .titel_bar:before,
@@ -173,8 +111,8 @@ width: 50%;
 
 fieldset{
   border: 2px solid rgba(229, 241, 229, 0.294);
-  width: 100%;
-  margin-left: 40px;
+  width: 80%;
+  margin: 0 auto;
   margin-top: 10px;
   background: white;
   -webkit-box-shadow: 0 10px 6px -6px #777;
@@ -195,8 +133,9 @@ fieldset{
 }
 
 .add_person {
-margin-left: 60px;
-margin-top: 20px;
+  margin-left: 60px;
+  margin-top: 20px;
+  width: 100px;
 }
 
 .sumitted {
@@ -215,7 +154,6 @@ margin: 10px;
 
 input[type=date]{
 background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
-padding: 4px;
 
 }
 input[type=date]::-webkit-inner-spin-button {
@@ -273,4 +211,3 @@ input[type=date].ng-touched.ng-invalid,
 {
     border-color: red;
 }
-

@@ -13,7 +13,7 @@ export class AddComponent implements OnInit {
 
   personsForm: FormGroup;
   salary: Salary = new Salary();
-  
+  inputValue = "+380";
 
   constructor(
     private fb: FormBuilder,
@@ -57,14 +57,13 @@ export class AddComponent implements OnInit {
  public addPerson(){
   const users = this.personsForm.get('persons') as FormArray;
   users.push(this.fb.group({
-    empId: [],
     name: ['',[Validators.required]],
     surname: ['',[Validators.required]],
-    pers_num: ['',[Validators.required]],
+    pers_num: ['',[Validators.required, Validators.pattern("^[0-9]*$"),Validators.maxLength(8)]],
     length_of_work: ['',[Validators.required]],
     status: ['',[Validators.required]],
-    phone: ['',[Validators.required]],
-    salary: ['',[Validators.required]]
+    phone: ['',[Validators.required,Validators.minLength(10), Validators.maxLength(13)]],
+    salary: ['',[Validators.required, Validators.pattern("^[0-9]*$"),Validators.maxLength(10)]]
   }))
 }
 /*autor: ['', [Validators.required, Validators.minLength(5),Validators.maxLength(25)]], */

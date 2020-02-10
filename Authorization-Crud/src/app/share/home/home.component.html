@@ -1,14 +1,15 @@
 <div class="header" *ngIf="currentUser">
     <a class="logo">MySalary</a>
     <div class="header-right">
-      <a>{{currentUser.firstName}}</a>
+      <a class="name_user">{{currentUser.firstName}}</a>
       <a (click)="logout()"><img class="logout" src="../../../assets/icons8-exit-100.png"></a>
     </div>
   </div>
 
-<div class="demo" *ngFor="let emp of employee; let i = index;">
-  <input class="hide" id="hd-1" type="checkbox">
-  <label for="hd-1">{{emp.title}}</label>
+<div class="demo" *ngFor="let emp of employes; let i = index;">
+  <input type="button" value="Удалить" (click)="deleteEmployee()">
+    <input class="hide" id="{{ i + 1 }}" type="checkbox">
+    <label for="{{ i + 1 }}">{{emp.title}}</label>
   <div class="content">
     <table class="content-table" >
       <tr class="header-table">
@@ -23,9 +24,9 @@
         <td>{{ i + 1 }}</td>
         <td>{{persons.name}}</td>
         <td>{{persons.surname}}</td>
-        <td><input type="button" value="Изменить"></td>
-        <td><input type="button" value="Удалить" (click)="deleteEmp()"></td>
-        <td><input type="button" value="Просмотр" (click)="getEmpInfo()"></td>
+        <td><input type="button" value="Изменить" (click)="updateActive()"></td>
+        <td><input type="button" value="Удалить" (click)="delete()"></td>
+        <td><input type="button" value="Просмотр" (click)="getEmpInfo(i)"></td>
       </tr>
     </table>
   </div>
