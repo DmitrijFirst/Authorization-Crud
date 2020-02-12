@@ -14,11 +14,12 @@ import { EmpInfoComponent } from './modal_components/emp-info/emp-info.component
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DeleteComponent } from './modal_components/delete/delete.component';
+import { UpdateComponent } from './update/update.component';
 
 
 
 @NgModule({
-  declarations: [ HomeComponent, LoginComponent, ThousandPipe, AddComponent, EmpInfoComponent, DeleteComponent],
+  declarations: [ HomeComponent, LoginComponent, ThousandPipe, AddComponent, EmpInfoComponent, DeleteComponent, UpdateComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

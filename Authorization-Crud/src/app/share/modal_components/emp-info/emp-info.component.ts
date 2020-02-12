@@ -9,7 +9,8 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./emp-info.component.css']
 })
 export class EmpInfoComponent implements OnInit {
-  employee: any;
+  employes: any;
+  usersInfo: any;
 
   constructor(
     private matDialogRef: MatDialogRef<EmpInfoComponent>,
@@ -23,10 +24,13 @@ export class EmpInfoComponent implements OnInit {
         key: c.payload.key, ...c.payload.val()
       })))
     ).subscribe(res => {
-      this.employee = res;
+      this.employes = res;
       console.log(res)
     })
   }
+
+
+
 
   ngOnInit() {
     this.getEmployes()

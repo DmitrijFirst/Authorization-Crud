@@ -7,7 +7,7 @@
   </div>
 
 <div class="demo" *ngFor="let emp of employes; let i = index;">
-  <input type="button" value="Удалить" (click)="deleteEmployee()">
+  <input type="button" value="Удалить" (click)="deleteEmployee(emp)">
     <input class="hide" id="{{ i + 1 }}" type="checkbox">
     <label for="{{ i + 1 }}">{{emp.title}}</label>
   <div class="content">
@@ -25,8 +25,8 @@
         <td>{{persons.name}}</td>
         <td>{{persons.surname}}</td>
         <td><input type="button" value="Изменить" (click)="updateActive()"></td>
-        <td><input type="button" value="Удалить" (click)="delete()"></td>
-        <td><input type="button" value="Просмотр" (click)="getEmpInfo(i)"></td>
+        <td><input type="button" value="Удалить" (click)="deleteUser(emp)"></td>
+        <td><input type="button" value="Просмотр" (click)="getEmpInfo(emp)"></td>
       </tr>
     </table>
   </div>

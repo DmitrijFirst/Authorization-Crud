@@ -19,6 +19,8 @@ export class HomeComponent implements OnInit {
   currentUser: User;
   employes: any;
   isShown: boolean = false ;
+  user = [];
+  uderInfo;
 
   @Input()
   employee: Salary;
@@ -52,21 +54,34 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  public getEmpInfo(i){
+  public getEmpInfo(id){
     this.modal.openEmpInfo();
-
   }
 
-  public deleteEmployee() {
+      /*Удаление ведомости */
+  public deleteEmployee({key}) {
     this.modal.openDeleteDialog().afterClosed().subscribe(res => {
       if(res){
-        this.http.deleteEmp(this.employee.key).catch(err => console.log(err));
+        this.http.deleteEmp(key);
       }
     }),catchError(error => {
       return throwError(error)
     }
     )
   }
+
+   /*Удаление  */
+  public deleteUser({key}){
+    let data = this.employes;
+    let val = Object.keys(data).forEach(el => {
+      this.user = data[el]['persons'].splice(0,1).filter(u => u !== el);
+      //this.user = [...this.user].map(x => x.id === data.id ? data : x)
+      //this.user = this.user.filter(u => u !== this.user); 
+    })
+    this.http.updateUser(key, {"/persons/": this.user}).catch(err => console.log(err))
+   // console.log(key)    
+  }
+   
 
 
 
