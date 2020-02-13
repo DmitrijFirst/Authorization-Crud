@@ -1,7 +1,6 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Input } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { HttpService } from 'src/app/core/services/http-firebase/http.service';
-import { map } from 'rxjs/operators';
+import { Salary } from 'src/app/features/models';
 
 @Component({
   selector: 'app-emp-info',
@@ -9,31 +8,16 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./emp-info.component.css']
 })
 export class EmpInfoComponent implements OnInit {
-  employes: any;
-  usersInfo: any;
+  
+  employes : Salary;
+
+  @Input() user: any;
 
   constructor(
-    private matDialogRef: MatDialogRef<EmpInfoComponent>,
-    @Inject(MAT_DIALOG_DATA) public data,
-    private http: HttpService
-  ) { }
-
-  public getEmployes(){
-    this.http.getSalarySheet().snapshotChanges().pipe(
-      map(changes => changes.map(c => ({
-        key: c.payload.key, ...c.payload.val()
-      })))
-    ).subscribe(res => {
-      this.employes = res;
-      console.log(res)
-    })
-  }
+    private matDialogRef: MatDialogRef<EmpInfoComponent>, 
+    @Inject(MAT_DIALOG_DATA) public data: any) {}
 
 
-
-
-  ngOnInit() {
-    this.getEmployes()
-  }
+  ngOnInit() {}
 
 }

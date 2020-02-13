@@ -164,26 +164,38 @@ to { opacity: 1 }
   
 }
 
- .content-table td:nth-child(3){
+.content-table td:nth-child(3){
+  width: 20%;
+  padding: 5px;
+  line-height: 2.35;
+  text-align: left;
+  
+}
+.content-table td:nth-child(4){
   width: 40%;
   padding: 5px;
   line-height: 2.35;
+  text-align: right;
   
 }
 
-.content-table td:nth-child(4){
+ .content-table td:nth-child(5){
+  width: 40%;
+  padding: 5px;
+  line-height: 2.35;
+  text-align: right;
+  
+}
+
+
+.content-table td:nth-child(6){
   width: 40%;
   padding: 5px;
   text-align: right;
   line-height: 2.35;
 }
 
-.content-table td:nth-child(4){
-  width: 40%;
-  padding: 5px;
-  text-align: right;
-  line-height: 2.35;
-}
+
 
 .content-table td:last-child{
   text-align: right;

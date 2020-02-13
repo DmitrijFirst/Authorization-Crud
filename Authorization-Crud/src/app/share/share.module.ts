@@ -10,11 +10,11 @@ import { fakeBackendProvider } from '../features/fake-beckend-auth/fake-beckend'
 import { ThousandPipe } from './pipes/num.pipe';
 import { AddComponent } from './add/add.component';
 import { SharedRoutingModule } from './share-routing.module';
-import { EmpInfoComponent } from './modal_components/emp-info/emp-info.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DeleteComponent } from './modal_components/delete/delete.component';
 import { UpdateComponent } from './update/update.component';
+import { EmpInfoComponent } from './modal_components/emp-info/emp-info.component';
 
 
 

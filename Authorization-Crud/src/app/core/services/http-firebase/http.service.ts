@@ -18,14 +18,6 @@ export class HttpService {
   
   constructor(private db: AngularFireDatabase, private http: HttpClient) { 
     this.usersRef = db.list(this.dpPath);
-    this.items = this.usersRef.snapshotChanges().pipe(
-      map((changes: any) => {
-        const test = changes.map(d => ({ key: d.payload.key,  ...d.payload.val()}))
-        console.log(test)
-        return test;
-      })
-    )
-
    }
 
 
