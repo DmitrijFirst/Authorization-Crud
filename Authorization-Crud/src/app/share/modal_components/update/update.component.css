@@ -1,0 +1,204 @@
+*{
+    font-family: Open Sans Condensed;
+  }
+  .forms{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .group {
+    position: relative;
+    margin-bottom: 30px;
+    margin-right: 15px;
+    width: 12%;
+    min-width: 120px;
+  }
+  .title{
+    margin: 0 auto;
+    width: 270px;
+    margin-top: 10px;
+  }
+  .persons{
+   margin-top: 50px;
+  }
+  input {
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    padding: 4px;
+    box-sizing: border-box;
+  }
+  input[type=date]{
+    padding: 3px;
+  }
+  select {
+    outline: 0;
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background: #feffff;
+    font-size: 16px;
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+  }
+  input:focus {
+    outline: none;
+    animation: none;
+  }
+  
+  label {
+    color: rgb(99, 96, 96);
+    font-size: 16px;
+    pointer-events: none;
+    display: block;
+  }
+  
+  .bar {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+  
+  .titel_bar {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+  .bar:before,
+  .bar:after,
+  .titel_bar:before,
+  .titel_bar:after
+  {
+    content: "";
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    position: absolute;
+    background: #5264AE;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+  
+  .bar:before,
+  .titel_bar:before {
+    left: 50%;
+  }
+  
+  .bar:after,
+  .titel_bar:after {
+    right: 50%;
+  }
+  
+  input:focus ~ label, input:valid ~ label {
+  top: -15px;
+  font-size: 14px;
+  color: #5264AE;
+  }
+  
+  
+  input:focus ~ .titel_bar:before,
+  input:focus ~ .titel_bar:after {
+  width: 50%;
+  }
+  
+  input:focus ~ .bar:before,
+  input:focus ~ .bar:after {
+  width: 50%;
+  }
+  
+  .form{
+    width: 70%;
+    margin: 0;
+  
+  }
+  
+  .form_arr {
+    margin-right: 100px;
+  }
+  
+  .add_person {
+    margin-left: 60px;
+    margin-top: 20px;
+    width: 100px;
+  }
+  
+  .sumitted {
+  display: flex;
+  justify-content: center;
+  
+  }
+  
+  hr {
+  margin-top: 50px;
+  }
+  
+  button {
+  margin: 10px;
+  }
+  
+  input[type=date]{
+  background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
+  
+  }
+  input[type=date]::-webkit-inner-spin-button {
+  display: none;
+  }
+  input[type=date]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  }
+  input[type=image]{
+    width: 50px;
+    border: none;
+    margin:0;
+  }
+  
+  button {
+    background-color: rgb(57, 60, 235);
+    color: white;
+    padding: 10px 10px;
+    margin: 8px 10px;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    opacity: 0.9;
+    border-radius: 10px;
+    outline: none;
+  
+  }
+  
+  button:active,
+  button:hover
+  {
+  opacity:1;
+  transform: scale(1.0);
+  outline: none;
+  border:none;
+  }
+  
+  .btn {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .cancelbtn {
+    padding: 10px 20px;
+    background-color: #888282;
+  }
+  
+  
+  .cancelbtn, .signupbtn {
+  float: left;
+  width: 10%;
+  outline: none;
+  border: none;
+  }
+  
+  input.ng-touched.ng-invalid,
+  input[type=date].ng-touched.ng-invalid,
+  #status.ng-touched.ng-invalid
+  {
+      border-color: red;
+  }

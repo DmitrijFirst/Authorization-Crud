@@ -13,13 +13,19 @@ import { SharedRoutingModule } from './share-routing.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DeleteComponent } from './modal_components/delete/delete.component';
-import { UpdateComponent } from './update/update.component';
 import { EmpInfoComponent } from './modal_components/emp-info/emp-info.component';
-
+import { UpdateComponent } from './modal_components/update/update.component';
 
 
 @NgModule({
-  declarations: [ HomeComponent, LoginComponent, ThousandPipe, AddComponent, EmpInfoComponent, DeleteComponent, UpdateComponent],
+  declarations: [ 
+    HomeComponent, 
+    LoginComponent, 
+    ThousandPipe, 
+    AddComponent, 
+    EmpInfoComponent, 
+    DeleteComponent, 
+    UpdateComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -34,6 +40,6 @@ import { EmpInfoComponent } from './modal_components/emp-info/emp-info.component
     fakeBackendProvider
 ],
   exports: [HomeComponent,LoginComponent],
-  entryComponents: [EmpInfoComponent, DeleteComponent]
+  entryComponents: [EmpInfoComponent, DeleteComponent,UpdateComponent]
 })
 export class ShareModule { }

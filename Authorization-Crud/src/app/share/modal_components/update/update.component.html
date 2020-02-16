@@ -1,0 +1,55 @@
+<form [formGroup]="personsForm" (submit)="onFormSubmit()" novalidate>
+    <mat-dialog-content>
+        <div class="forms">
+            <div class="name group">
+                <label for="name">Имя</label>
+                <input type="text" id="name" formControlName="name">
+                <span class="bar"></span>
+                <div class="alert-danger" *ngIf="personsForm.get('name').errors?.required && personsForm.get('name').touched"></div> 
+            </div>
+            <div class="surname group">
+                <label for="surname">Фамилия</label>
+                <input type="text" id="surname" formControlName="surname">
+                <span class="bar"></span>
+                <div class="alert-danger" *ngIf="personsForm.get('surname').errors?.required && personsForm.get('surname').touched"></div> 
+            </div>
+            <div class="pers_num group">
+                <label for="pers_num">Табельный №</label>
+                <input type="text" id="pers_num" formControlName="pers_num">
+                <span class="bar"></span>
+                <div class="alert-danger" *ngIf="personsForm.get('surname').errors?.required && personsForm.get('surname').touched"></div>
+            </div>
+            <div class="length_of_work group">
+                <label for="length_of_work">Работает с:</label>
+                <input type="date" id="length_of_work" name="length_of_work"  min="2000-01-01" max="2020-01-31" formControlName="length_of_work">
+                <span class="bar"></span>
+                <div class="alert-danger" *ngIf="personsForm.get('surname').errors?.required && personsForm.get('surname').touched"></div>
+            </div>
+            <div class="status group">
+                <label for="status">Статус</label>
+                <select id="status" formControlName="status">
+                    <option value="Работает">Работает</option>
+                    <option value="Отпуск">Отпуск</option>
+                    <option value="Больничный">Больничный</option>
+                </select>
+            </div>
+            <div class="phone group">
+                <label for="phone">Телефон</label>
+                <input  type="text" id="phone" formControlName="phone">
+                <span class="bar"></span>
+            </div>
+            <div class="salary group">
+                <label for="salary">Сумма</label>
+                <input type="text" id="salary" formControlName="salary">
+                <span class="bar"></span>  
+             </div>
+        </div>       
+    </mat-dialog-content>
+    <div class="btn">
+        <button type="submit" class="signupbtn" mat-button (click)="updateEmploee()">Обновить</button>
+        <button type="button" class="cancelbtn" mat-button mat-dialog-close>Отмена</button>
+    </div>
+</form>
+
+
+  

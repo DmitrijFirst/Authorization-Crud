@@ -8,7 +8,6 @@ import { AddComponent } from './share/add/add.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
-  { path: 'add', component: AddComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   
 ]

@@ -20,8 +20,8 @@ export class HomeComponent implements OnInit {
   employes: any;
   isShown: boolean = false ;
   user = {};
+  getObjEmp;
   employeInfo = {};
-
   employee: Salary;
 
 
@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
     })
   }
 
-    /*Вывод информации о пользователе в модалке*/
+  /*Вывод информации о пользователе в модалке*/
     public getEmpInfo(index: number){
       let data = this.employes;
       let val = Object.keys(data).forEach(el => {
@@ -63,7 +63,7 @@ export class HomeComponent implements OnInit {
         console.log(this.user[index])
       };
 
-      /*Удаление ведомости */
+  /*Удаление ведомости */
   public deleteEmployee({key}) {
     this.modal.openDeleteDialog().afterClosed().subscribe(res => {
       if(res){
@@ -75,28 +75,52 @@ export class HomeComponent implements OnInit {
     )
   }
 
-   /*Удаление  */
-  public deleteUser({key}){
+   /*Удаление  одного юзера*/
+  public deleteUser({key}, index: number){
     this.modal.openDeleteDialog().afterClosed().subscribe(res => {
       if(res){
+        //получаем массив сотрудников
         let data = this.employes;
-        let val = Object.keys(data).forEach(el => {
-          this.user = data[el]['persons'].splice(0,1).filter(u => u !== el);
-        })
-        this.http.updateUser(key, {"/persons/": this.user}).catch(err => console.log(err))
-       // console.log(key)  
+        let res = Object.keys(data).forEach(el => {
+        this.getObjEmp = data[el]['persons'];
+      });
+      //изменяем с помощью фильтра массив сотрудников 
+        let resl = Object.keys(data).forEach(el => {
+        this.user = data[el]['persons'];
+      });
+      //передаем измененный массив объектов
+        let result = this.getObjEmp.filter(u => u != this.user[index])
+        this.http.updateUser(key, {'/persons/': result}).catch(err => console.log(err)); 
         }
       }),catchError(error => {
-      return throwError(error)
+        return throwError(error)
       }
   )}
+
+  public updateEmploee(index: number){
+    let data = this.employes;
+    let val = Object.keys(data).forEach(el => {
+      this.user = data[el]['persons']
+    })
+    this.modal.updateEmp(this.user[index])
+      console.log(this.user[index])
+    };
+    
   
 
-  updateActive( isActive: boolean){
-    this.http.updateUser(this.employee.key, { active: isActive }).catch(err => console.log(err));
-  }
+/*
+ 
+  public getEmpInfo(index: number){
+    let data = this.employes;
+    let val = Object.keys(data).forEach(el => {
+      this.user = data[el]['persons']
+    })
+    this.modal.openEmpInfo(this.user[index])
+      console.log(this.user[index])
+    };
 
 
+*/
 
   ngOnInit() {
     this.getEmployes()

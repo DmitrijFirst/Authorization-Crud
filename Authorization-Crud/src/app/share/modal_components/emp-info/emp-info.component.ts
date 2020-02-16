@@ -9,10 +9,6 @@ import { Salary } from 'src/app/features/models';
 })
 export class EmpInfoComponent implements OnInit {
   
-  employes : Salary;
-
-  @Input() user: any;
-
   constructor(
     private matDialogRef: MatDialogRef<EmpInfoComponent>, 
     @Inject(MAT_DIALOG_DATA) public data: any) {}

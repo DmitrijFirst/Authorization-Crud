@@ -38,22 +38,6 @@ export class AddComponent implements OnInit {
     }  
   }
 
-  /*
-         this.addForm.reset();
-          setTimeout(() =>{
-            this.router.navigateByUrl('home');
-          }, 1000)    
-            this.logger.log('Успех - переадресация выполнена => "/home"');
-        }),
-           error => {
-              this.logger.error('Возникла ошибка', error)
-            };
-        };
-  
-  
-  
-  */
-
  public addPerson(){
   const users = this.personsForm.get('persons') as FormArray;
   users.push(this.fb.group({
@@ -83,3 +67,7 @@ export class AddComponent implements OnInit {
   }
 
 }
+/*
+
+
+*/
