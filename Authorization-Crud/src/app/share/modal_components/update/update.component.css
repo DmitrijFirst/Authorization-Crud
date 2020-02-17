@@ -1,10 +1,12 @@
 *{
     font-family: Open Sans Condensed;
   }
+
   .forms{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 10px;
   }
   .group {
     position: relative;
@@ -181,6 +183,7 @@
   .btn {
     display: flex;
     justify-content: center;
+    margin-top: -10px;
   }
   
   .cancelbtn {
@@ -195,6 +198,10 @@
   outline: none;
   border: none;
   }
+
+  .mat-dialog-container {
+    padding-bottom: 0 !important;
+    }
   
   input.ng-touched.ng-invalid,
   input[type=date].ng-touched.ng-invalid,
@@ -202,3 +209,5 @@
   {
       border-color: red;
   }
+
+  

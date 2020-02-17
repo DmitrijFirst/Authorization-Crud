@@ -6,6 +6,7 @@ import { first } from 'rxjs/operators';
 import { AuthService } from '../../core/services/authentication/auth/auth.service';
 import { CurrencyService } from 'src/app/core/services/currency/currency.service';
 import { Currency } from 'src/app/features/models';
+import { LoggerService } from 'src/app/core/services/logger/logger.service';
 
 @Component({ 
   templateUrl: 'login.component.html' ,
@@ -36,26 +37,30 @@ inputValue = 0;
         private route: ActivatedRoute,
         private router: Router,
         private authenticationService: AuthService,
-        private currency: CurrencyService
+        private currency: CurrencyService,
+        private logger: LoggerService
     ) { 
         //перенаправить на /home, если авторизаций уже пройдена
         if (this.authenticationService.currentUserValue) { 
             this.router.navigate(['/']);
+            this.logger.log('Auterization success, redirect /home')
         }
     }
 
 //конвертация валют 
 public currencyVal(){
-  return this.inputValue * this.inrToForeignRates[this.inCurr] / this.inrToForeignRates[this.outCurr]
+  this.logger.log('conversion success')
+  return this.inputValue * this.inrToForeignRates[this.inCurr] / this.inrToForeignRates[this.outCurr];
+
  } 
 
  public getCurr(){
     return this.currency.getCurrency().subscribe(res => {
       this.curren = res;
-      console.log(res)
       this.inrToForeignRates.USD = this.curren[0].buy;
       this.inrToForeignRates.EUR = this.curren[1].buy;
       this.inrToForeignRates.RUR = this.curren[2].buy;
+      this.logger.log('Get currency sucess')
       console.log(this.inrToForeignRates.USD)
     })
   }
@@ -75,9 +80,9 @@ public currencyVal(){
 
     onSubmit() {
         this.submitted = true;
-
         // если форма не валидна отменяем
         if (this.loginForm.invalid) {
+            this.logger.warn('data is not correct')
             return;
         }
 

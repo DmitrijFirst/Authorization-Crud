@@ -30,6 +30,7 @@ export class ModalService {
         width: '90%',
         data : { name,surname,length_of_work,phone,pers_num,status,salary }
       })
+      
   }
  
   public openDeleteDialog(){

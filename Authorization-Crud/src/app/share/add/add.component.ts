@@ -3,6 +3,7 @@ import { FormGroup, FormControl, FormBuilder, FormArray, Validators } from "@ang
 import { HttpService } from '../../core/services/http-firebase/http.service';
 import { Salary } from 'src/app/features/models';
 import { Router } from '@angular/router';
+import { LoggerService } from 'src/app/core/services/logger/logger.service';
 
 @Component({
   selector: 'app-add',
@@ -18,7 +19,8 @@ export class AddComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private http: HttpService,
-    private router: Router
+    private router: Router,
+    private logger: LoggerService
     ) {}
 
 
@@ -27,6 +29,7 @@ export class AddComponent implements OnInit {
     const control = this.personsForm.controls;
     if (this.personsForm.invalid) {
       this.personsForm.markAllAsTouched();
+      this.logger.warn('required fields are not filled')
        return;
     }else{
       this.http.addSalarySheet(this.personsForm.value);
@@ -34,7 +37,7 @@ export class AddComponent implements OnInit {
       setTimeout(() =>{
         this.router.navigateByUrl('home');
       }, 1000) 
-      console.log(this.personsForm.value);
+      this.logger.log('Success add form data');
     }  
   }
 
@@ -50,18 +53,25 @@ export class AddComponent implements OnInit {
     salary: ['',[Validators.required, Validators.pattern("^[0-9]*$"),Validators.maxLength(10)]]
   }))
 }
-/*autor: ['', [Validators.required, Validators.minLength(5),Validators.maxLength(25)]], */
-  get persons() {
+
+  public get persons() {
     return (<FormArray>this.personsForm.get("persons")).controls;
   }
 
-  removePerson(i) {
+  public removePerson(i) {
     (<FormArray>this.personsForm.get("persons")).removeAt(i);
   }
 
   ngOnInit() {
     this.personsForm = this.fb.group({
       title: ['',[Validators.required]],
+      name: ['',[Validators.required]],
+      surname: ['',[Validators.required]],
+      pers_num: ['',[Validators.required, Validators.pattern("^[0-9]*$"),Validators.maxLength(8)]],
+      length_of_work: ['',[Validators.required]],
+      status: ['',[Validators.required]],
+      phone: ['',[Validators.required,Validators.minLength(10), Validators.maxLength(13)]],
+      salary: ['',[Validators.required, Validators.pattern("^[0-9]*$"),Validators.maxLength(10)]],
       persons: this.fb.array([])
   });
   }

@@ -6,11 +6,11 @@
     </div>
   </div>
 
-<div class="demo" *ngFor="let emp of employes; let el = index;">
-  <input type="button" value="Удалить" (click)="deleteEmployee(emp)">
+
+<div class="demo" *ngFor="let emp of employes; let el = index;" >
     <input class="hide" id="{{ el + 1 }}" type="checkbox">
     <label for="{{ el + 1 }}">{{emp.title}}</label>
-  <div class="content">
+  <div class="content" >
     <table class="content-table" >
       <tr class="header-table">
         <td>№</td>
@@ -24,12 +24,14 @@
         <td>{{ i + 1 }}</td>
         <td>{{persons.name}}</td>
         <td>{{persons.surname}}</td>
-        <td>{{persons.salary}} грн</td>
+        <td>{{persons.salary | number:'0.1-2' | thousand}} грн</td>
         <td><input type="button" value="Изменить" (click)="updateEmploee(i)"></td>
         <td><input type="button" value="Удалить" (click)="deleteUser(emp, i)"></td>
-        <td><input type="button" value="Просмотр" (click)="getEmpInfo(i)"></td>
+        <td><input type="button" value="Просмотр" (click)="getEmpInfo(emp, i)"></td>
       </tr>
     </table>
+    <input type="button" value="Удалить" (click)="deleteEmployee(emp)">
   </div>
  
 </div>
+

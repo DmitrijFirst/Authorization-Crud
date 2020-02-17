@@ -1,14 +1,21 @@
 h4{
     display: flex;
     justify-content: center;
+    margin: 10px;
+    margin-top: -10px;
+}
+
+td{
+  height: 20px;
 }
 
 .btn {
     display: flex;
     justify-content: center;
+    margin-top: 10px;
 }
 
-button {
+.button {
     background-color: rgb(57, 60, 235);
     color: white;
     padding: 10px 10px;
@@ -32,9 +39,15 @@ button {
 
 table {
     width: 100%;
-    height: 250px;
+    height: 200px;
     margin: 0 auto;
+    border: 1px solid silver;
+    border-radius: 5px;
+    padding: 15px;
+    background: rgba(226, 238, 225, 0.294);
+
 }
+
 
 .table_content td:first-child{
     width: 60%;

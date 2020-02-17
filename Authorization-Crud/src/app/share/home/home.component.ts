@@ -5,8 +5,8 @@ import { AuthService } from 'src/app/core/services/authentication/auth/auth.serv
 import { HttpService } from 'src/app/core/services/http-firebase/http.service';
 import { map, catchError } from 'rxjs/operators';
 import { ModalService } from 'src/app/core/services/modal/modal.service';
-import { throwError, Observable } from 'rxjs';
-import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import { throwError} from 'rxjs';
+import { LoggerService } from 'src/app/core/services/logger/logger.service';
 
 
 @Component({
@@ -18,12 +18,11 @@ export class HomeComponent implements OnInit {
 
   currentUser: User;
   employes: any;
-  isShown: boolean = false ;
   user = {};
   getObjEmp;
   employeInfo = {};
   employee: Salary;
-
+  show = false;
 
 
   constructor(
@@ -31,6 +30,7 @@ export class HomeComponent implements OnInit {
       private authenticationService: AuthService,
       private http: HttpService,
       private modal: ModalService,
+      private logger: LoggerService
    
   ) {
       this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
@@ -40,6 +40,7 @@ export class HomeComponent implements OnInit {
   public logout() {
       this.authenticationService.logout();
       this.router.navigate(['/login']);
+      this.logger.log('Logout success')
   }
 
   public getEmployes(){
@@ -49,25 +50,26 @@ export class HomeComponent implements OnInit {
       })))
     ).subscribe(res => {
       this.employes = res;
-     //console.log(this.employes)
+      this.logger.log('Get data success');
+    }),catchError(error => {
+      return throwError(error);
     })
   }
 
   /*Вывод информации о пользователе в модалке*/
-    public getEmpInfo(index: number){
-      let data = this.employes;
-      let val = Object.keys(data).forEach(el => {
-        this.user = data[el]['persons']
-      })
+    public getEmpInfo(el: any, index: any){
+      let data = el;
+      this.user = data.persons;
       this.modal.openEmpInfo(this.user[index])
-        console.log(this.user[index])
-      };
+      this.logger.log('Get data modal success');
+    };
 
   /*Удаление ведомости */
   public deleteEmployee({key}) {
     this.modal.openDeleteDialog().afterClosed().subscribe(res => {
       if(res){
         this.http.deleteEmp(key);
+        this.logger.log('Delete data success');
       }
     }),catchError(error => {
       return throwError(error)
@@ -90,7 +92,8 @@ export class HomeComponent implements OnInit {
       });
       //передаем измененный массив объектов
         let result = this.getObjEmp.filter(u => u != this.user[index])
-        this.http.updateUser(key, {'/persons/': result}).catch(err => console.log(err)); 
+        this.http.updateUser(key, {'/persons/': result}); 
+        this.logger.log('Delete emploee success');
         }
       }),catchError(error => {
         return throwError(error)
@@ -104,23 +107,12 @@ export class HomeComponent implements OnInit {
     })
     this.modal.updateEmp(this.user[index])
       console.log(this.user[index])
+    this.logger.log('Update emploee success');
     };
     
-  
-
-/*
- 
-  public getEmpInfo(index: number){
-    let data = this.employes;
-    let val = Object.keys(data).forEach(el => {
-      this.user = data[el]['persons']
-    })
-    this.modal.openEmpInfo(this.user[index])
-      console.log(this.user[index])
-    };
-
-
-*/
+  public isShow(){
+    this.show = !this.show
+  }
 
   ngOnInit() {
     this.getEmployes()

@@ -15,12 +15,14 @@
 }
 .title{
   margin: 0 auto;
+  margin-bottom: 20px;
   width: 270px;
   margin-top: 10px;
 }
 .persons{
- margin-top: 50px;
+ margin-top: 20px;
 }
+
 input {
   font-size: 16px;
   border: none;
@@ -46,6 +48,14 @@ select {
 input:focus {
   outline: none;
   animation: none;
+}
+
+.static_persons{
+  width: 92.5%;
+}
+
+#rem_pers{
+  visibility: hidden;
 }
 
 label {
@@ -133,9 +143,38 @@ fieldset{
 }
 
 .add_person {
-  margin-left: 60px;
+  margin-left: 110px;
   margin-top: 20px;
   width: 100px;
+}
+
+a.add_emp {
+  position: relative;
+  display: inline-block;
+  font-size: 90%;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  padding: .5em 1em;
+  outline: none;
+  border-radius: 3px;
+  background: linear-gradient(#888282);
+  box-shadow:
+   0 1px rgba(255,255,255,.2) inset,
+   0 3px 5px rgba(0,1,6,.5),
+   0 0 1px 1px rgba(0,1,6,.2);
+  transition: .2s ease-in-out;
+}
+a.add_emp:hover:not(:active) {
+  background: linear-gradient(rgb(126,126,134), rgb(70,71,76)) rgb(126,126,134);
+}
+a.add_emp:active {
+  top: 1px;
+  background: linear-gradient(rgb(76,77,82), rgb(56,57,62)) rgb(76,77,82);
+  box-shadow:
+   0 0 1px rgba(0,0,0,.5) inset,
+   0 2px 3px rgba(0,0,0,.5) inset,
+   0 1px 1px rgba(255,255,255,.1);
 }
 
 .sumitted {
@@ -164,10 +203,15 @@ opacity: 0;
 }
 input[type=image]{
   width: 50px;
+  margin-top: 13px;
   border: none;
-  margin:0;
+ 
 }
-
+/*
+input[type=image]:active{
+  
+}
+*/
 button {
   background-color: rgb(57, 60, 235);
   color: white;
