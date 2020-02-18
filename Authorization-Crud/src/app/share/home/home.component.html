@@ -1,37 +1,49 @@
 <div class="header" *ngIf="currentUser">
     <a class="logo">MySalary</a>
     <div class="header-right">
-      <a class="name_user">{{currentUser.firstName}}</a>
-      <a (click)="logout()"><img class="logout" src="../../../assets/icons8-exit-100.png"></a>
+      <a class="name_user" title="Имя пользователя">{{currentUser.firstName}}</a>
+      <a (click)="logout()"><img class="logout" src="../../../assets/icons8-exit-100.png" title="Выход"></a>
     </div>
   </div>
 
+<div class="title_content">
+  <div class="title" *ngFor="let emp of employes; let el = index;">
+    <label class="title_label" for="{{ el + 1 }}">{{emp.title}}</label>
+</div>
+  <button class="add_" routerLinkActive="active" routerLink='/add'>Add</button>
+</div>
 
-<div class="demo" *ngFor="let emp of employes; let el = index;" >
-    <input class="hide" id="{{ el + 1 }}" type="checkbox">
-    <label for="{{ el + 1 }}">{{emp.title}}</label>
-  <div class="content" >
-    <table class="content-table" >
-      <tr class="header-table">
-        <td>№</td>
-        <td>Имя</td>
-        <td>Фамилия</td>
-        <td>К выплате</td>
-        <td></td>
-        <td></td>
+<div class="demo" *ngFor="let emp of employes; let el = index;">
+  <div class="map" >
+      <input type="radio" class="hide" name="map" id="{{ el + 1 }}" checked="checked" />
+  <div class="content">
+  <table>
+    <thead>
+      <tr>
+        <th>№</th>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Сумма</th>
+        <th></th>
       </tr>
-      <tr *ngFor="let persons of emp.persons; let i = index;">
-        <td>{{ i + 1 }}</td>
-        <td>{{persons.name}}</td>
-        <td>{{persons.surname}}</td>
-        <td>{{persons.salary | number:'0.1-2' | thousand}} грн</td>
-        <td><input type="button" value="Изменить" (click)="updateEmploee(i)"></td>
-        <td><input type="button" value="Удалить" (click)="deleteUser(emp, i)"></td>
-        <td><input type="button" value="Просмотр" (click)="getEmpInfo(emp, i)"></td>
+    </thead>
+    <tbody *ngFor="let persons of emp.persons; let i= index;">
+      <tr>
+        <td data-label="№">{{ i + 1 }}</td>
+        <td data-label="Имя">{{persons.name}}</td>
+        <td data-label="Фамилия">{{persons.surname}}</td>
+        <td data-label="Сумма">{{persons.salary | number:'0.1-2' | thousand}} грн</td>
+        <td><button class="table_btn show_btn" (click)="getEmpInfo(emp,i)">Просмотр</button>
+            <button class="table_btn update_btn" (click)="updateEmploee(emp, i)">Изменить</button>
+            <button class="table_btn delete_btn" (click)="deleteUser(emp, i)">Удалить </button>
+        </td>
       </tr>
-    </table>
-    <input type="button" value="Удалить" (click)="deleteEmployee(emp)">
+    </tbody>
+  </table>
+      <div class="del_btn_st">
+        <input type="button" class="delete_statement" value="Удалить" (click)="deleteEmployee(emp)">
+      </div>
   </div>
- 
+</div>
 </div>
 

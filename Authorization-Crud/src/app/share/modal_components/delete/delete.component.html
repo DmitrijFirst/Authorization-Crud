@@ -1,9 +1,11 @@
 <div class="container">
     <div class="title">
-        <h5 mat-dialog-title>Вы дествительно хотите удалить сотрудника?</h5>
+        <h5 mat-dialog-title>Вы дествительно хотите удалить?</h5>
     </div>
     <mat-dialog-actions>
-        <button type="button" class="cancelbtn" [mat-dialog-close]="false">Отмена</button>
-        <button type="submit" class="signupbtn" [mat-dialog-close]="true">Удалить</button>
+        <div class="btn">
+            <button type="button" class="cancelbtn" [mat-dialog-close]="false">Отмена</button>
+            <button type="submit" class="signupbtn" [mat-dialog-close]="true">Удалить</button>
+        </div>
     </mat-dialog-actions>
 </div>

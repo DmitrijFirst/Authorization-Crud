@@ -65,13 +65,6 @@ export class AddComponent implements OnInit {
   ngOnInit() {
     this.personsForm = this.fb.group({
       title: ['',[Validators.required]],
-      name: ['',[Validators.required]],
-      surname: ['',[Validators.required]],
-      pers_num: ['',[Validators.required, Validators.pattern("^[0-9]*$"),Validators.maxLength(8)]],
-      length_of_work: ['',[Validators.required]],
-      status: ['',[Validators.required]],
-      phone: ['',[Validators.required,Validators.minLength(10), Validators.maxLength(13)]],
-      salary: ['',[Validators.required, Validators.pattern("^[0-9]*$"),Validators.maxLength(10)]],
       persons: this.fb.array([])
   });
   }

@@ -1,4 +1,4 @@
-<form [formGroup]="personsForm" (submit)="onFormSubmit()" novalidate>
+<form [formGroup]="personsForm" novalidate>
     <mat-dialog-content>
         <div class="forms">
             <div class="name group">
@@ -47,7 +47,7 @@
     </mat-dialog-content>
     <div class="btn">
         <button type="button" class="cancelbtn" mat-button mat-dialog-close>Отмена</button>
-        <button type="submit" class="signupbtn" mat-button (click)="updateEmploee()">Обновить</button>   
+        <button type="submit" class="signupbtn" mat-dialog-close mat-button (click)="updateEmploee()">Обновить</button>   
     </div>
 </form>
 

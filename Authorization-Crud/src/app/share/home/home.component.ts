@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
   getObjEmp;
   employeInfo = {};
   employee: Salary;
-  show = false;
+  key: any;
 
 
   constructor(
@@ -100,19 +100,14 @@ export class HomeComponent implements OnInit {
       }
   )}
 
-  public updateEmploee(index: number){
-    let data = this.employes;
-    let val = Object.keys(data).forEach(el => {
-      this.user = data[el]['persons']
-    })
-    this.modal.updateEmp(this.user[index])
-      console.log(this.user[index])
-    this.logger.log('Update emploee success');
+  public updateEmploee(el: any, index: number,){
+    let data = el;
+    this.user = data.persons;
+    this.key = data.key;
+    this.modal.updateEmp(this.user[index], this.key, index, this.user)
+    console.log(this.user[index], this.key, index, this.user)   
     };
     
-  public isShow(){
-    this.show = !this.show
-  }
 
   ngOnInit() {
     this.getEmployes()

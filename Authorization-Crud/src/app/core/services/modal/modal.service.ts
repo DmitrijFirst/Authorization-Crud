@@ -24,11 +24,11 @@ export class ModalService {
     });
   }
 
-  public updateEmp({name,surname,length_of_work,phone,pers_num,status,salary}){
+  public updateEmp({name,surname,length_of_work,phone,pers_num,status,salary},key, index, persons){
     return this.dialog.open(UpdateComponent, 
       {
         width: '90%',
-        data : { name,surname,length_of_work,phone,pers_num,status,salary }
+        data : { name,surname,length_of_work,phone,pers_num,status,salary,key, index, persons }
       })
       
   }

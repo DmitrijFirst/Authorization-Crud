@@ -1,39 +1,77 @@
-button {
-    background-color: rgb(57, 60, 235);
-    color: white;
-    padding: 10px 10px;
-    margin: 8px 10px;
-    border: none;
+.signupbtn{
+  background-color: #e97975;
+  outline:0;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e98c75), color-stop(50%, #f1594e), 
+  color-stop(50%, #f84134), color-stop(100%, #f1430e));
+  border-top: 1px solid #f34223;
+  border-right: 1px solid #f04014;
+  border-bottom: 1px solid #e92d0c;
+  border-left: 1px solid #eb290f;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 0 2px 0 rgba(255, 57, 57, 0.8);
+  box-shadow: inset 0 0 2px 0 rgba(255, 64, 57, 0.8);
+  color: #fff;
+  font: bold 12px/1 "helvetica neue", helvetica, arial, sans-serif;
+  padding: 7px 0;
+  text-shadow: 0 -1px 1px #d9201a;
+  width: 80px;
+}
+
+.signupbtn:hover{
+    background-color: #e85d5d;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e8625d), color-stop(50%, #e02f22), color-stop(50%, #d92404), color-stop(100%, #de370d));
     cursor: pointer;
-    width: 100%;
-    opacity: 0.9;
-    border-radius: 10px;
-    outline: none;
-  
 }
 
-button:active,
-button:hover
- {
-    opacity:1;
-    transform: scale(1.0);
-    outline: none;
-    border:none;
+.signupbtn:active{
+    border-top: 1px solid #b3201b;
+    border-right: 1px solid #992017;
+    border-bottom: 1px solid #801313;
+    border-left: 1px solid #992617;
+    -webkit-box-shadow: inset 0 0 5px 2px #a01e1a, 0 1px 0 #eeeeee;
+    box-shadow: inset 0 0 5px 2px #a02e1a, 0 1px 0 #eeeeee; 
+}
+
+.cancelbtn{
+  background-color: #949390;
+  outline:0;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #8d8f92), color-stop(50%, #828488), color-stop(50%, #6b6b6b), color-stop(100%, #78797a));
+  border-top: 1px solid #7e7d7d15;
+  border-right: 1px solid #7f8183;
+  border-bottom: 1px solid #575555;
+  border-left: 1px solid #646568;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 0 2px 0 rgba(179, 183, 189, 0.8);
+  box-shadow: inset 0 0 2px 0 rgba(168, 172, 179, 0.8);
+  color: #fff;
+  font: bold 12px/1 "helvetica neue", helvetica, arial, sans-serif;
+  padding: 7px 0;
+  text-shadow: 0 -1px 1px #a0a5af;
+  width: 80px;
+  margin: 10px;
+  }
+
+.cancelbtn:hover {
+  background-color: #bcbdc0;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #aeb1b8), color-stop(50%, #787b80), color-stop(50%, #76787a), color-stop(100%, #7d7d7e));
+  cursor: pointer;
+  }
+
+.cancelbtn:active{
+  border-top: 1px solid #74767a;
+  border-right: 1px solid #717274;
+  border-bottom: 1px solid #707174;
+  border-left: 1px solid #747579;
+  -webkit-box-shadow: inset 0 0 5px 2px #ccced1, 0 1px 0 #eeeeee;
+  box-shadow: inset 0 0 5px 2px #8f9194, 0 1px 0 #eeeeee; 
+}
+
+.btn {
+  margin: 0 auto;
 }
 
 
-  .cancelbtn {
-    padding: 10px 20px;
-    background-color: #888282;
-    margin-left: 60px;
-}
 
-
-.cancelbtn, .signupbtn {
-  width: 30%;
-  outline: none;
-  border: none;
-}
 
 .title {
   display: flex;
