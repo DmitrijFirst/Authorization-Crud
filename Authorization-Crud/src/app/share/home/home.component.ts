@@ -19,11 +19,9 @@ export class HomeComponent implements OnInit {
   currentUser: User;
   employes: any;
   user = {};
-  getObjEmp;
-  employeInfo = {};
-  employee: Salary;
+  getObjEmp: any;
   key: any;
-
+  isShown: any;
 
   constructor(
       private router: Router,
@@ -42,7 +40,7 @@ export class HomeComponent implements OnInit {
       this.router.navigate(['/login']);
       this.logger.log('Logout success')
   }
-
+ /*Получаем данные с сервера */
   public getEmployes(){
     this.http.getSalarySheet().snapshotChanges().pipe(
       map(changes => changes.map(c => ({
@@ -77,7 +75,6 @@ export class HomeComponent implements OnInit {
     )
   }
 
-   /*Удаление  одного юзера*/
   public deleteUser({key}, index: number){
     this.modal.openDeleteDialog().afterClosed().subscribe(res => {
       if(res){
@@ -106,7 +103,12 @@ export class HomeComponent implements OnInit {
     this.key = data.key;
     this.modal.updateEmp(this.user[index], this.key, index, this.user)
     console.log(this.user[index], this.key, index, this.user)   
-    };
+  };
+
+  public isShownown(el: any) {
+    this.isShown = el;
+    console.log(el)
+}
     
 
   ngOnInit() {

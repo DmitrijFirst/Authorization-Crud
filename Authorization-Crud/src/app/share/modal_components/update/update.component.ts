@@ -44,10 +44,10 @@ export class UpdateComponent implements OnInit {
   }
 
   public updateEmploee(){
-    let res = this.persons.splice(this.id + 1, 1)
-    res.push(this.personsForm.value);
-    console.log(res)
-    this.http.updateUser(this.data.key, {'/persons/' : res}).catch(err => console.log(err)); 
+    let res = this.persons.splice(this.id, 1 )
+    this.persons.splice(this.id, 0, this.personsForm.value);
+    console.log(this.persons);
+    this.http.updateUser(this.data.key, {'/persons/' : this.persons }).catch(err => console.log(err)); 
   }
 
   ngOnInit() {

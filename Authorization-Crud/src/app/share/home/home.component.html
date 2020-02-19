@@ -8,14 +8,18 @@
 
 <div class="title_content">
   <div class="title" *ngFor="let emp of employes; let el = index;">
-    <label class="title_label" for="{{ el + 1 }}">{{emp.title}}</label>
+    <a id="statement" [ngClass]="{'title_check': isShown == el}"
+      (click)="isShownown(el)"><label for="{{ el + 1 }}" name="map">{{emp.title}}</label></a>
+  </div>
+  <div class="add_btn_st">
+    <button class="add_statement" routerLinkActive="active" routerLink='/add'>Добавить</button>
+  </div>
 </div>
-  <button class="add_" routerLinkActive="active" routerLink='/add'>Add</button>
-</div>
+
 
 <div class="demo" *ngFor="let emp of employes; let el = index;">
   <div class="map" >
-      <input type="radio" class="hide" name="map" id="{{ el + 1 }}" checked="checked" />
+      <input type="radio" class="hide" name="map" id="{{ el + 1 }}" />
   <div class="content">
   <table>
     <thead>

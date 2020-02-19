@@ -1,120 +1,133 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .header {
-  overflow: hidden;
-  background-color: #536ff0;
-  padding: 10px 0px;
-  margin: 0;
-  height: 50px;
+overflow: hidden;
+background-color: #536ff0;
+padding: 10px 0px;
+margin: 0;
+height: 50px;
 }
 
 .header a {
-  float: left;
-  color: rgb(250, 240, 240);
-  text-align: center;
-  padding: 7px;
-  text-decoration: none;
-  font-size: 1.5em; 
-  line-height: 10px;
-  border-radius: 4px;
+float: left;
+color: rgb(250, 240, 240);
+text-align: center;
+padding: 7px;
+text-decoration: none;
+font-size: 1.5em; 
+line-height: 10px;
+border-radius: 4px;
 }
 
 .header a.logo {
-  margin-top: 3px;
-  color: beige;
-  font-size: 1.3em;
-  font-weight: bold;
+margin-top: 3px;
+color: beige;
+font-size: 1.3em;
+font-weight: bold;
 }
 
 .name_user{
-  color: beige;
-  margin-top: 3px;
-  font-size: 1.1em !important;
+color: beige;
+margin-top: 3px;
+font-size: 1.1em !important;
 }
 
 
 .header-right {
-  float: right;
+float: right;
 }
 
 .logout {
-    width: 25px;
-    margin-top: -5px;
+  width: 25px;
+  margin-top: -5px;
 }
 .logo_img{
-    width: 30px;
+  width: 30px;
 }
 
 .button_show{
-  display: flex;
+display: flex;
 }
 
 /*#########################################################################################*/
 
 
 
-body {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
+
+
+
+.title_content{
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 60%;
+  margin-top: 3%;
+  margin-left: 15%;
+  
 }
+
+.add_btn_st{
+  display: inline-flex;
+ margin-left: 2%;
+  
+}
+
+
 /* demo контейнер */
 .demo {
   margin: 0 auto;
-  margin-top: 15%;
+  margin-top: 5%;
   width: 60%;
 
-}
-
-.title_content{
-  margin-left: 5%;
-  margin-top: 2%;
-  display: inline-flex;
-  
 }
 
 input[name="map"],
 input[name="map"]:not(:checked) + div {
     display: none;
 }
- 
+
+
 .title{
-  font-weight: 500;
-  font-size: 1.3em;
-  padding-right: 50px;
+  padding: 10px;
+  font-weight: 600;
+  margin-left: 25px;
  }
 
-.title > label:after{
-  content: "▼";
+ 
+ #statement:after {  
+  background: url("https://image.flaticon.com/icons/png/512/130/130884.png") no-repeat 50% 50%/ 10px 10px ;
+  width: 1em;
+  height: 1em;  
+  content: "";
+  position: absolute;
+  transition: transform .5s;
+  margin: 5px;
+  margin-top: 2px;
+}
+
+.title_check:after{
+  transform: rotateZ(90deg);
   text-align: center;
   font-family: monospace;
   font-weight: bold;
   margin: 5px;
-  
 }
 
-.title > label:checked{
-  content: "▲";
-  text-align: center;
-  font-family: monospace;
-  font-weight: bold;
-  color: red
+
+.title_check{
+  color: red;
+  -webkit-animation:fade ease-in 0.5s; 
+  -moz-animation:fade ease-in 0.5s;
+   animation:fade ease-in 0.5s; 
 }
 
-.map > input[type="radio"]:checked + label:after{ 
-  content: "▲";
-  text-align: center;
-  font-family: monospace;
-  font-weight: bold;
-  color: red
-  
-}
 
 .content{
   margin-top: 100px;
+  -webkit-animation:fade ease-in 0.5s; 
+  -moz-animation:fade ease-in 0.5s;
+   animation:fade ease-in 0.5s; 
 }
 
 table {
@@ -178,7 +191,7 @@ table th {
   text-transform: uppercase;
 }
 
-/*Кнопки таблицы*/
+
 .table_btn{
   margin: 3px;
   width: 80px;
@@ -264,9 +277,42 @@ table th {
   margin: 20px;
 }
 
+.add_statement{
+   background-color: #759ae9;
+   outline:0;
+   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #759ae9), color-stop(50%, #376fe0), color-stop(50%, #1a5ad9), color-stop(100%, #2463de));
+   border-top: 1px solid #1f58cc;
+   border-right: 1px solid #1b4db3;
+   border-bottom: 1px solid #174299;
+   border-left: 1px solid #1b4db3;
+   border-radius: 4px;
+   -webkit-box-shadow: inset 0 0 2px 0 rgba(57, 140, 255, 0.8);
+   box-shadow: inset 0 0 2px 0 rgba(57, 140, 255, 0.8);
+   color: #fff;
+   font: bold 12px/1 "helvetica neue", helvetica, arial, sans-serif;
+   padding: 7px 0;
+   text-shadow: 0 -1px 1px #1a5ad9;
+   width: 80px;
+   height: 30px;
+   
+   }
+
+ .add_statement:hover {
+   background-color: #5d89e8;
+   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5d89e8), color-stop(50%, #2261e0), color-stop(50%, #044bd9), color-stop(100%, #0d53de));
+   cursor: pointer;
+   }
+
+ .add_statement:active{
+   border-top: 1px solid #1b4db3;
+   border-right: 1px solid #174299;
+   border-bottom: 1px solid #133780;
+   border-left: 1px solid #174299;
+   -webkit-box-shadow: inset 0 0 5px 2px #1a47a0, 0 1px 0 #eeeeee;
+   box-shadow: inset 0 0 5px 2px #1a47a0, 0 1px 0 #eeeeee; 
+ }
 
 
-/*####################################################################################*/
 @media screen and (max-width: 1150px) {
   table {
     border: 0;
@@ -290,30 +336,30 @@ table
 td:first-child,
 th:first-child
 {
-  width: 100%;
+  width: 98%;
   text-align: right;
 }
 table th:nth-child(4),
 table td:nth-child(4) {
-  width: 100%;
+  width: 98%;
   text-align: right;
 }
 
 table th:nth-child(2),
 table td:nth-child(2) {
-  width: 100%;
+  width: 98%;
   text-align: right;
 }
 
 table th:nth-child(3),
 table td:nth-child(3) {
-  width: 100%;
+  width: 98%;
   text-align: right;
 }
 
 table th:last-child,
 table td:last-child {
-width: 100%;
+width: 98%;
 padding: .625em;
 
 }
@@ -362,20 +408,25 @@ td:last-child
 }
 
 
-
-
-
-
-
-/*##########################################################################################################*/
-@media screen and (max-width: 500px) {
-  .header a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
+@media screen and (max-width: 370px){
   
-  .header-right {
-    float: none;
+  .add_btn_st {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 676px){
+  
+  .add_btn_st {
+    margin-right: 260px;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (max-width: 676px){
+  
+  .add_btn_st {
+    margin-right: 260px;
+    margin-top: 5px;
   }
 }
