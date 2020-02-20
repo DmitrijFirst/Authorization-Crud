@@ -14,7 +14,7 @@ export class AddComponent implements OnInit {
 
   personsForm: FormGroup;
   salary: Salary = new Salary();
-  inputValue = "+380";
+  //inputValue = "+380";
 
   constructor(
     private fb: FormBuilder,
@@ -50,8 +50,9 @@ export class AddComponent implements OnInit {
     length_of_work: ['',[Validators.required]],
     status: ['',[Validators.required]],
     phone: ['',[Validators.required,Validators.minLength(10), Validators.maxLength(13)]],
-    salary: ['',[Validators.required, Validators.pattern("^[0-9]*$"),Validators.maxLength(10)]]
+    salary: ['',[Validators.required,Validators.maxLength(10)]]
   }))
+  this.logger.log('form emploee add success');
 }
 
   public get persons() {
@@ -65,8 +66,9 @@ export class AddComponent implements OnInit {
   ngOnInit() {
     this.personsForm = this.fb.group({
       title: ['',[Validators.required]],
-      persons: this.fb.array([])
+      persons: this.fb.array([],[Validators.required])
   });
+  this.logger.log('form initialized success')
   }
 
 }

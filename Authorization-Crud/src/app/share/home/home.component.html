@@ -1,7 +1,7 @@
 <div class="header" *ngIf="currentUser">
     <a class="logo">MySalary</a>
     <div class="header-right">
-      <a class="name_user" title="Имя пользователя">{{currentUser.firstName}}</a>
+      <a class="name_user" title="Имя пользователя">{{currentUser.firstName}}&nbsp;{{currentUser.lastName}}</a>
       <a (click)="logout()"><img class="logout" src="../../../assets/icons8-exit-100.png" title="Выход"></a>
     </div>
   </div>
@@ -9,13 +9,13 @@
 <div class="title_content">
   <div class="title" *ngFor="let emp of employes; let el = index;">
     <a id="statement" [ngClass]="{'title_check': isShown == el}"
-      (click)="isShownown(el)"><label for="{{ el + 1 }}" name="map">{{emp.title}}</label></a>
+      (click)="isShownown(el)"><label for="{{ el + 1 }}" name="map" title="Открыть ведомость">{{emp.title}}</label></a>
   </div>
-  <div class="add_btn_st">
-    <button class="add_statement" routerLinkActive="active" routerLink='/add'>Добавить</button>
+  <div class="buttonHolder">
+    <a class="button cross" routerLinkActive="active" routerLink='/add' title="Добавить ведомость"></a>
   </div>
 </div>
-
+<!---->
 
 <div class="demo" *ngFor="let emp of employes; let el = index;">
   <div class="map" >
@@ -37,15 +37,15 @@
         <td data-label="Имя">{{persons.name}}</td>
         <td data-label="Фамилия">{{persons.surname}}</td>
         <td data-label="Сумма">{{persons.salary | number:'0.1-2' | thousand}} грн</td>
-        <td><button class="table_btn show_btn" (click)="getEmpInfo(emp,i)">Просмотр</button>
-            <button class="table_btn update_btn" (click)="updateEmploee(emp, i)">Изменить</button>
-            <button class="table_btn delete_btn" (click)="deleteUser(emp, i)">Удалить </button>
+        <td><button class="table_btn show_btn" (click)="getEmpInfo(emp,i)" title="Открыть дополнительну информацию о сотруднике">Просмотр</button>
+            <button class="table_btn update_btn" (click)="updateEmploee(emp, i)" title="Изменить данные сотрудика">Изменить</button>
+            <button class="table_btn delete_btn" (click)="deleteUser(emp, i)" title="Удалить сотрудника">Удалить </button>
         </td>
       </tr>
     </tbody>
   </table>
       <div class="del_btn_st">
-        <input type="button" class="delete_statement" value="Удалить" (click)="deleteEmployee(emp)">
+        <input type="button" class="delete_statement" value="Удалить" (click)="deleteEmployee(emp)" title="Удалить ведомость">
       </div>
   </div>
 </div>

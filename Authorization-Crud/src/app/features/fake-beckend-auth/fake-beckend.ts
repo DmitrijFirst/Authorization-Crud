@@ -13,6 +13,13 @@ const users: User[] =
         password: 'User', 
         firstName: 'Dmitrij', 
         lastName: 'Levchenko' 
+    },
+    { 
+        id: 2, 
+        username: 'test', 
+        password: '12345', 
+        firstName: 'Test', 
+        lastName: 'Testov' 
     }
 ];
 

@@ -15,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DeleteComponent } from './modal_components/delete/delete.component';
 import { EmpInfoComponent } from './modal_components/emp-info/emp-info.component';
 import { UpdateComponent } from './modal_components/update/update.component';
+import { NgxMaskModule } from 'ngx-mask'
+
 
 
 @NgModule({
@@ -32,14 +34,15 @@ import { UpdateComponent } from './modal_components/update/update.component';
     FormsModule,
     SharedRoutingModule,
     MatDialogModule, 
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxMaskModule.forRoot()
   ], 
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     fakeBackendProvider
 ],
-  exports: [HomeComponent,LoginComponent],
+  exports: [HomeComponent,LoginComponent, ],
   entryComponents: [EmpInfoComponent, DeleteComponent,UpdateComponent]
 })
 export class ShareModule { }

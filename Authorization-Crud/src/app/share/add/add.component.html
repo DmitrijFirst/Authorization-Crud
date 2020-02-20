@@ -29,7 +29,6 @@
                 </div>
                 <div class="length_of_work group">
                     <label for="length_of_work">Работает с:</label>
-                    <!-- <input type="data"  id="length_of_work" formControlName="length_of_work"> -->
                 <input type="date" id="length_of_work" name="length_of_work"  min="2000-01-01" max="2020-01-31" formControlName="length_of_work">
                     <span class="bar"></span>
                 </div>
@@ -39,32 +38,33 @@
                         <option value="Работает">Работает</option>
                         <option value="Отпуск">Отпуск</option>
                         <option value="Больничный">Больничный</option>
+                        <option value="Уволен">Уволен</option>
                     </select>
                 </div>
                 <div class="phone group">
                     <label for="phone">Телефон</label>
-                    <input  type="text" id="phone" formControlName="phone" [value]="inputValue">
+                    <input  type="text" id="phone" formControlName="phone" prefix="+38" mask="(000) 000 00 00">
                     <span class="bar"></span>
                 </div>
                 <div class="salary group">
                     <label for="salary">Сумма</label>
-                    <input type="text" id="salary" formControlName="salary">
+                    <input type="text" id="salary" formControlName="salary" mask="separator.2">
                     <span class="bar"></span>  
                  </div>
                 <div class="remove_person">
-                  <input type="image" (click)="removePerson(i)" value="Удалить" src="../../../assets/icons8-удалить-навсегда-100.png">
+                  <input type="image" id="del_emp" (click)="removePerson(i)" value="Удалить" title="Удалить сотрудника" src="../../../assets/icons8-удалить-навсегда-100.png">
                 </div>
                 </div>
               </fieldset>
                 </div>
           </div>  
           <div class="add_person">
-            <a class="add_emp" (click)="addPerson()">Добавить</a>
+            <input type="button" class="add_emp" (click)="addPerson()" value="Добавить" title="Добавить сотрудника">
           </div>
           <hr>
           <div class="sumitted">
-            <button type="button" class="cancelbtn" routerLinkActive="active" routerLink='/'>Отмена</button>
-            <button type="submit" class="signupbtn">Отправить</button>
+            <button type="button" class="cancelbtn" routerLinkActive="active" routerLink='/' title="Отменить отправку и вернуться на главную">Отмена</button>
+            <button type="submit" class="signupbtn" title="Отправить ведомость">Отправить</button>
           </div>  
     </form>          
 </div> 

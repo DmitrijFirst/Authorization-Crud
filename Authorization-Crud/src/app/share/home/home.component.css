@@ -40,9 +40,14 @@ float: right;
 }
 
 .logout {
-  width: 25px;
-  margin-top: -5px;
+  width: 20px;
 }
+
+.logout:active{
+  transform: scale(1,.8);
+}
+
+
 .logo_img{
   width: 30px;
 }
@@ -51,27 +56,84 @@ float: right;
 display: flex;
 }
 
+/*#####################################AddButton################################################*/
+
+.buttonHolder{
+  display: inline-flex;
+  margin-left: 5%;
+ 
+}
+
+
+.button{
+	background-image: -webkit-linear-gradient(linear left top, #f4f1ee, #fff);
+	background-image: linear-gradient(linear left top , #f4f1ee, #fff);
+	border-radius: 50%;
+	box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), inset 0px 4px 1px 1px rgb(122, 135, 253), inset 0px -3px 1px 1px rgb(127, 139, 248);
+	float:left;
+	height: 35px;
+	margin: 0 30px 30px 0;
+	position: relative;
+	width: 35px;			
+	-webkit-transition: all .1s linear;
+  transition: all .1s linear;
+  background: rgb(122, 135, 253);
+}
+
+.button:after{
+	color: white;
+	content: "";
+	display: block;
+	font-size: 30px;
+	height: 50px;
+	text-decoration: none;
+	text-shadow: 0px -1px 1px #bdb5b4, 1px 1px 1px white;
+	position: absolute;
+	width: 50px;
+}
+
+.cross:after{
+	content: "✚";
+	left: 4px;
+	top: -5px;
+}
+
+.button:hover{
+  background-image: -webkit-linear-gradient(linear left top, #fff, #f4f1ee);
+  background-image: linear-gradient(linear left top, #fff, #f4f1ee);
+  color:#0088cc;
+}
+
+
+.cross:hover:after{
+	text-shadow:0px 0px 6px #a6f0b2e8;
+}
+
+.button:active{
+  background-image: -webkit-linear-gradient(linear left top, #1a78d1, #3069f0);
+  background-image: linear-gradient(linear left top, #0ca2e7, #1661ec);
+  box-shadow: 0 3px 5px 0 rgba(0,0,0,.4), inset 0px -3px 1px 1px rgba(64, 118, 180, 0.5);
+}		
+
+
+.button:active:after{
+	color:#dbd2d2;
+	text-shadow: 0px -1px 1px #bdb5b4, 0px 1px 1px white;
+}
+
+
+
+
 /*#########################################################################################*/
-
-
-
-
-
-
 .title_content{
   display: inline-flex;
   flex-wrap: wrap;
-  width: 60%;
+  width: 80%;
   margin-top: 3%;
-  margin-left: 15%;
+  margin-left: 10%;
   
 }
 
-.add_btn_st{
-  display: inline-flex;
- margin-left: 2%;
-  
-}
 
 
 /* demo контейнер */

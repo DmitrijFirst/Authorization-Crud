@@ -75,39 +75,36 @@ export class HomeComponent implements OnInit {
     )
   }
 
-  public deleteUser({key}, index: number){
+ /*Удаление сотрудника */
+  public deleteUser(el: any, index: number){
     this.modal.openDeleteDialog().afterClosed().subscribe(res => {
       if(res){
-        //получаем массив сотрудников
-        let data = this.employes;
-        let res = Object.keys(data).forEach(el => {
-        this.getObjEmp = data[el]['persons'];
-      });
-      //изменяем с помощью фильтра массив сотрудников 
-        let resl = Object.keys(data).forEach(el => {
-        this.user = data[el]['persons'];
-      });
-      //передаем измененный массив объектов
-        let result = this.getObjEmp.filter(u => u != this.user[index])
-        this.http.updateUser(key, {'/persons/': result}); 
-        this.logger.log('Delete emploee success');
-        }
-      }),catchError(error => {
-        return throwError(error)
+        let data = el;
+        this.key = data.key;
+        let emp = data.persons;
+        let result = emp.filter(u => u != emp[index])
+        this.http.updateUser(this.key, {'/persons/': result}).catch(err => console.log(err));
+        this.logger.log('Emploee delete sucess');
+        this.logger.log(emp[index]);
       }
-  )}
-
+    }),catchError(error => {
+      return throwError(error)
+  })
+}
+    
+  
+ /*Изменение сотрудника */
   public updateEmploee(el: any, index: number,){
     let data = el;
     this.user = data.persons;
     this.key = data.key;
     this.modal.updateEmp(this.user[index], this.key, index, this.user)
-    console.log(this.user[index], this.key, index, this.user)   
+    this.logger.log('open update window sucess');
   };
 
   public isShownown(el: any) {
     this.isShown = el;
-    console.log(el)
+    this.logger.log('Opened statement sucess ' + el);
 }
     
 

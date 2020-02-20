@@ -58,6 +58,14 @@ input:focus {
   visibility: hidden;
 }
 
+#del_emp{
+  width: 40px;
+}
+
+#del_emp:active{
+  transform: scale(1, .8);
+}
+
 label {
   color: rgb(99, 96, 96);
   font-size: 16px;
@@ -121,8 +129,8 @@ width: 50%;
 
 fieldset{
   border: 2px solid rgba(229, 241, 229, 0.294);
-  width: 80%;
-  margin: 0 auto;
+  width: 90%;
+  margin-left: 100px;
   margin-top: 10px;
   background: white;
   -webkit-box-shadow: 0 10px 6px -6px #777;
@@ -146,35 +154,6 @@ fieldset{
   margin-left: 110px;
   margin-top: 20px;
   width: 100px;
-}
-
-a.add_emp {
-  position: relative;
-  display: inline-block;
-  font-size: 90%;
-  font-weight: 700;
-  color: white;
-  text-decoration: none;
-  padding: .5em 1em;
-  outline: none;
-  border-radius: 3px;
-  background: linear-gradient(#888282);
-  box-shadow:
-   0 1px rgba(255,255,255,.2) inset,
-   0 3px 5px rgba(0,1,6,.5),
-   0 0 1px 1px rgba(0,1,6,.2);
-  transition: .2s ease-in-out;
-}
-a.add_emp:hover:not(:active) {
-  background: linear-gradient(rgb(126,126,134), rgb(70,71,76)) rgb(126,126,134);
-}
-a.add_emp:active {
-  top: 1px;
-  background: linear-gradient(rgb(76,77,82), rgb(56,57,62)) rgb(76,77,82);
-  box-shadow:
-   0 0 1px rgba(0,0,0,.5) inset,
-   0 2px 3px rgba(0,0,0,.5) inset,
-   0 1px 1px rgba(255,255,255,.1);
 }
 
 .sumitted {
@@ -207,11 +186,43 @@ input[type=image]{
   border: none;
  
 }
-/*
-input[type=image]:active{
-  
+
+.add_emp {
+  background-color: #759ae9;
+  outline:0;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #acc0eb), color-stop(50%, #8baef3), color-stop(50%, #597dc5), color-stop(100%, #6597fa));
+  border-top: 1px solid #a7c2f8;
+  border-right: 1px solid #8095be;
+  border-bottom: 1px solid #818ca3;
+  border-left: 1px solid #a0b5df;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 0 2px 0 rgba(81, 154, 255, 0.8);
+  box-shadow: inset 0 0 2px 0 rgba(100, 138, 190, 0.8);
+  color: #fff;
+  font: bold 12px/1 "helvetica neue", helvetica, arial, sans-serif;
+  padding: 7px 0;
+  text-shadow: 0 -1px 1px #7794cc;
+  width: 80px;
 }
-*/
+
+.add_emp:hover {
+  background-color: #5d89e8;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7488b3), color-stop(50%, #8da6d8), color-stop(50%, #8c99b3), color-stop(100%, #b1bbd1));
+  cursor: pointer;
+ }
+
+ .add_emp:active{
+  border-top: 1px solid #7da1e9;
+  border-right: 1px solid #5272b3;
+  border-bottom: 1px solid #516388;
+  border-left: 1px solid #667696;
+  -webkit-box-shadow: inset 0 0 5px 2px #6b7994, 0 1px 0 #eeeeee;
+  box-shadow: inset 0 0 5px 2px #848fa7, 0 1px 0 #eeeeee; 
+}
+
+
+
+
 .signupbtn
 {
   background-color: #759ae9;
@@ -285,4 +296,18 @@ input[type=date].ng-touched.ng-invalid,
 #status.ng-touched.ng-invalid
 {
     border-color: red;
+}
+
+.add_person.ng-invalid{
+  color: red;
+}
+
+#title::-webkit-input-placeholder {
+  text-align: center;
+}
+
+@media screen and (max-width: 750px){
+  fieldset{
+    margin-left: 65px;
+  }
 }

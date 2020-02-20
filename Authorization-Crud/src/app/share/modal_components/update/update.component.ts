@@ -4,6 +4,7 @@ import { Salary } from 'src/app/features/models';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { HttpService } from 'src/app/core/services/http-firebase/http.service';
 import { Router } from '@angular/router';
+import { LoggerService } from 'src/app/core/services/logger/logger.service';
 
 
 
@@ -25,6 +26,7 @@ export class UpdateComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     private http: HttpService,
+    private logger: LoggerService,
     private matDialogRef: MatDialogRef<UpdateComponent>, 
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
@@ -46,8 +48,8 @@ export class UpdateComponent implements OnInit {
   public updateEmploee(){
     let res = this.persons.splice(this.id, 1 )
     this.persons.splice(this.id, 0, this.personsForm.value);
-    console.log(this.persons);
     this.http.updateUser(this.data.key, {'/persons/' : this.persons }).catch(err => console.log(err)); 
+    this.logger.log('Update emploee success')
   }
 
   ngOnInit() {
