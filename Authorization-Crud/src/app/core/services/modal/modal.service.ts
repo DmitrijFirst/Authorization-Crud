@@ -10,6 +10,7 @@ import { UpdateComponent } from 'src/app/share/modal_components/update/update.co
   providedIn: 'root'
 })
 export class ModalService {
+  [x: string]: any;
 
   @Input() employes: Salary;
 

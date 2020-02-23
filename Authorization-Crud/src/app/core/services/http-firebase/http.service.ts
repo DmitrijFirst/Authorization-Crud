@@ -3,7 +3,6 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { Salary } from 'src/app/features/models/salary';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { map, catchError } from 'rxjs/operators';
 
 
 

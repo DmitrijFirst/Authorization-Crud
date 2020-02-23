@@ -8,9 +8,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 1. Логин: User 
    Пароль: User 
+
 2. Логин: test
    Пароль: 12345 
 
+
 ### Для хранения данных созданных ведомостей используется Firebase RealTime
 
-Для установки `Firebase` используйте npm install angular-firebase --save 
+**Для установки `Firebase` используйте npm install angular-firebase --save 
