@@ -1,4 +1,30 @@
-<!-- Авторизация-->
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="group">
+      <input type="text" class="form-control" formControlName="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" required>
+        <span class="highlight"></span><span class="bar"></span>
+      <label for="username">Логин</label>
+      <div *ngIf="submitted && f.username.errors" class="errorsText">
+        <div *ngIf="f.username.errors.required">Введите логин</div>
+      </div>
+    </div>
+    <div class="group">
+      <input type="password" class="form-control" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" required>
+      <span class="highlight"></span><span class="bar"></span>
+      <label for="password">Пароль</label>
+      <div *ngIf="submitted && f.password.errors" class="errorsText">
+        <div *ngIf="f.password.errors.required">Введите пароль</div>
+    </div>
+    </div>
+    <div class="button-container">
+      <button [disabled]="loading" class="btn button"><span>Войти</span></button>
+    </div>
+    <div *ngIf="error" class="errorsText">{{error}}</div>
+
+</form>
+
+
+<!-- Авторизация 
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div class="container">
         <label for="username"><b>Логин</b></label>
@@ -15,7 +41,7 @@
     <button [disabled]="loading" class="btn">Войти</button>
     <div *ngIf="error" class="errorsText">{{error}}</div>
 </div>
-</form>
+</form>-->
   <!-- ------------------->   
     <div class="course-container">
       <p class="title"><b>Курс валют</b></p>
