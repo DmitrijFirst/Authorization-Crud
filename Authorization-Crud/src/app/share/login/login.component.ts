@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
     returnUrl: string;
     error = '';
     curren: Currency[] = [];
+    isShown: boolean = false;
 /*############################################################################################ */
 curr = ['UAH', 'USD', 'EUR', 'RUR' ];
 inCurr="UAH";
@@ -47,6 +48,10 @@ inputValue = 0;
         }
     }
 
+    public isShownown(el: any) {
+        this.isShown = el;
+    }
+
 //конвертация валют 
 public currencyVal(){
   this.logger.log('conversion success')
@@ -66,8 +71,8 @@ public currencyVal(){
   }
     ngOnInit() {
         this.loginForm = this.formBuilder.group({
-            username: ['', Validators.required],
-            password: ['', Validators.required]
+            username: ['', [Validators.required]],
+            password: ['', [Validators.required]]
         });
         // получаем URL-адрес возврата из параметров маршрутов или по умолчанию «/»
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';

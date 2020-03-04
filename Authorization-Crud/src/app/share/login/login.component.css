@@ -70,8 +70,8 @@ input[type=text], input[type=password] {
 .courses{
   width: 100%;
   padding: 2px;
-  font-size: 0.9em;
-  font-weight: 600;
+  font-size:16px;
+  
 }
 
 .courses td:first-child
@@ -209,12 +209,12 @@ select {
 }
 
 .errorsText{
+  position: relative;
+  padding: 10px;
   text-align: center;
   color: #f00808;
-  transition: .25s all ease;
+
 }
-
-
 /*#####################################################################*/
 
 form {
@@ -229,12 +229,12 @@ form {
   
 }
 
-/* form starting stylings ------------------------------- */
-.group 			  { 
+/*  ------------------------------- */
+.group { 
   position:relative; 
   margin-bottom:45px; 
 }
-input 				{
+input {
   font-size:18px;
   padding:10px 10px 10px 5px;
   display:block;
@@ -244,7 +244,7 @@ input 				{
 }
 input:focus 		{ outline:none; }
 
-/* LABEL ======================================= */
+/*  ======================================= */
 label 				 {
   color:#999; 
   font-size:18px;
@@ -261,7 +261,7 @@ label 				 {
 /* active state */
 input:focus ~ label, input:valid ~ label 		{
   top:-20px;
-  font-size:14px;
+  font-size:18px;
   color:#5264AE;
 }
 
@@ -269,7 +269,8 @@ input:focus ~ label, input:valid ~ label 		{
 .bar { 
   position:relative; 
   display:block; 
-  width:100%; }
+  width:100%; 
+}
 
 .bar:before, .bar:after 	{
   content:'';
@@ -391,29 +392,179 @@ input:focus ~ .highlight {
   outline: none;
 }
 
+.conv_content{
+  display: block;
+}
+
+#bg {
+  display: none;
+}
+.courses_container{
+  display: block;
+}
+
+.icon{
+  display: none;
+}
 
 
 
+/*############################################################################################################*/
+@media screen and (max-width:  999px){
+
+
+}
+
+@media screen and (max-width:  500px){
+
+  .icon{
+    display: block;
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+  }
 
 
 
+  form {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 10%;
+    padding: 2em 2em 1em 2em;
+    background: white;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    -webkit-box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);        
+    box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);
+  }
+
+.course-container{
+  display: none;
+}
+
+
+.conv_content{
+  display:none ;
+
+}
+
+#bg{
+  display: block;
+}
+
+input 				{
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:100%;
+  border:none;
+  border-bottom:1px solid #757575;
+}
+
+.group 			  { 
+  position:relative; 
+  margin-bottom:45px; 
+}
+
+.btn{
+  position: relative;
+  top: -20px;
+}
 
 
 
+.bar{
+  width: 100%;
+}
+
+.course-container{
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 30%;
+}
 
 
 
+/*###############################################################################################*/
+.module{
+  position:relative;  
+  width:80%;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: 10%;
+  border-radius:5px;
+  background: rgb(240, 240, 236);
+  -webkit-box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);        
+  box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);
+}
+.module ul{
+  list-style-type: none;
+  
+
+}
+
+.tab{
+  float:left;
+  height:60px;
+  margin: 0;
+  padding-top:20px;
+  box-sizing:border-box;
+  background:#eee8e8;  
+  text-align:center;
+  cursor:pointer;
+  font-size:18px;
+  transition: background .4s;
+}
+
+.tab:first-child{  
+  position: relative;
+  -webkit-border-radius: 5px 0px 0px 0px;
+  border-radius: 5px 0px 0px 0px;
+  width: 50%;
+
+}
+
+.tab:last-child{  
+  position: relative;
+  top: 20%;
+  -webkit-border-radius: 0px 5px 0px 0px;
+  border-radius: 0px 5px 0px 0px;
+  width:  50%;
+ 
+}
+
+.tab:hover{  
+  background-color:rgba(0,0,0,.1);
+}
+
+
+.activeTab{
+  background:#fff;
+
+}
+
+
+.courses_container{
+  display: block;
+}
+
+
+.courses{
+  padding-right: 20px;
+}
+
+table{
+  background:#fff
+}
+.textbox:focus{
+  outline:none;
+   border:rgba(24,149,215,1) 2px solid;
+   color:rgba(24,149,215,1);
+}
 
 
 
-
-
-
-
-
-
-
-
+}
 
 
 @media screen and (max-width: 950px) {

@@ -1,3 +1,9 @@
+<div class="icon">
+  <img src="https://img.icons8.com/bubbles/100/000000/salary-male.png">
+
+</div>
+
+
 
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div class="group">
@@ -20,7 +26,6 @@
       <button [disabled]="loading" class="btn button"><span>Войти</span></button>
     </div>
     <div *ngIf="error" class="errorsText">{{error}}</div>
-
 </form>
 
 
@@ -60,6 +65,49 @@
         </tr>
       </table>
     </div>   
+<!------------------------------------------------------------------------------->
+    <div id="bg">
+      <div class="module">
+        <ul>
+          <li class="tab activeTab" >Courses</li>
+          <li class="tab" >Конвертер валют</li>
+        </ul>
+        <table class="courses">
+          <tr class="header-table">
+            <td></td>
+            <td></td>
+            <td>Покупка</td>
+            <td>Продажа</td>
+          </tr>
+          <tr *ngFor="let cours of curren">
+            <td>{{cours.ccy}}</td>
+            <td>{{cours.base_ccy}}</td>
+            <td>{{cours.buy | number:'0.1-2'}}</td>
+            <td>{{cours.sale | number:'0.1-2'}}</td>
+          </tr>
+        </table>
+        <div class="conv_content" *ngIf="show">
+          <p class="title"><b>Конвертер валют</b></p>
+        <div class="content_block">
+          <div class="select">
+            <select name="slct" [(ngModel)]="inCurr">
+               <option *ngFor="let item of curr">{{item}}</option>
+            </select>
+        </div>
+          <p id="lit">в</p>
+        <div class="select">
+            <select name="slct" [(ngModel)]="outCurr">
+                <option *ngFor="let item of curr">{{item}}</option>
+            </select>
+        </div>
+        <div class="values">
+            <input type="text" [(ngModel)]="inputValue" id="value_from"  >
+            <input type="text"  [value]="currencyVal() | number:'0.1-2' | thousand" id="value_in" >
+        </div>
+        </div>
+        </div>
+      </div>
+    </div>
 <!-- Конвертер-->
 <div class="conv_content ">
     <p class="title"><b>Конвертер валют</b></p>
@@ -79,8 +127,8 @@
       <input type="text" [(ngModel)]="inputValue" id="value_from"  >
       <input type="text"  [value]="currencyVal() | number:'0.1-2' | thousand" id="value_in" >
   </div>
-  </div>
-  </div>
+</div>
+</div>
 
 
   
