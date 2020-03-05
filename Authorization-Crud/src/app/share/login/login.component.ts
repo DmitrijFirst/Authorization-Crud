@@ -22,8 +22,8 @@ export class LoginComponent implements OnInit {
     isShown: boolean = false;
 /*############################################################################################ */
 curr = ['UAH', 'USD', 'EUR', 'RUR' ];
-inCurr="UAH";
-outCurr = "UAH";
+inCurr="";
+outCurr = "";
 inrToForeignRates = {
     UAH: 1,
     EUR: 1,

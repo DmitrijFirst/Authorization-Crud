@@ -2,14 +2,11 @@
   <img src="https://img.icons8.com/bubbles/100/000000/salary-male.png">
 
 </div>
-
-
-
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div class="group">
       <input type="text" class="form-control" formControlName="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" required>
         <span class="highlight"></span><span class="bar"></span>
-      <label for="username">Логин</label>
+      <label class="aut_form_lable" for="username">Логин</label>
       <div *ngIf="submitted && f.username.errors" class="errorsText">
         <div *ngIf="f.username.errors.required">Введите логин</div>
       </div>
@@ -17,7 +14,7 @@
     <div class="group">
       <input type="password" class="form-control" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" required>
       <span class="highlight"></span><span class="bar"></span>
-      <label for="password">Пароль</label>
+      <label class="aut_form_lable" for="password">Пароль</label>
       <div *ngIf="submitted && f.password.errors" class="errorsText">
         <div *ngIf="f.password.errors.required">Введите пароль</div>
     </div>
@@ -28,29 +25,10 @@
     <div *ngIf="error" class="errorsText">{{error}}</div>
 </form>
 
-
-<!-- Авторизация 
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <div class="container">
-        <label for="username"><b>Логин</b></label>
-        <input type="text" formControlName="username" class="form-control" 
-        [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-        <div *ngIf="submitted && f.username.errors" class="errorsText">
-            <div *ngIf="f.username.errors.required">Введите логин</div>
-        </div>
-        <label for="password"><b>Пароль</b></label>
-        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-        <div *ngIf="submitted && f.password.errors" class="errorsText">
-            <div *ngIf="f.password.errors.required">Введите пароль</div>
-        </div>
-    <button [disabled]="loading" class="btn">Войти</button>
-    <div *ngIf="error" class="errorsText">{{error}}</div>
-</div>
-</form>-->
   <!-- ------------------->   
-    <div class="course-container">
+    <div class="course-container_desktop">
       <p class="title"><b>Курс валют</b></p>
-      <table class="courses" >
+      <table class="courses_desktop" >
         <tr class="header-table">
           <td></td>
           <td></td>
@@ -65,28 +43,129 @@
         </tr>
       </table>
     </div>   
-<!------------------------------------------------------------------------------->
+
+  
+  <div class="conv_content_desktop ">
+      <p class="title_desktop"><b>Конвертер валют</b></p>
+    <div class="content_block_desktop">
+      <div class="select">
+        <select class="select-text" [(ngModel)]="inCurr" required>
+          <option value="" disabled selected></option>
+          <option *ngFor="let item of curr">{{item}}</option>
+        </select>
+          <span class="select-highlight"></span>
+          <span class="select-bar"></span>
+          <label class="select-label">Валюта</label>
+      </div>
+      <div class="lit_rsp">
+        <p id="lit"><img src="https://img.icons8.com/android/24/000000/sorting-arrows-horizontal.png"></p>
+      </div>
+      <div class="select">
+        <select class="select-text" [(ngModel)]="outCurr" required>
+          <option value="" disabled selected></option>
+          <option *ngFor="let item of curr">{{item}}</option>
+        </select>
+          <span class="select-highlight"></span>
+          <span class="select-bar"></span>
+          <label class="select-label">Валюта</label>
+      </div>
+      <div class="values">
+        <div class="val_input">
+          <input type="text" id="value_from" [(ngModel)]="inputValue" >
+          <span class="highlight_conv"></span>
+          <span class="bar_conv"></span>
+        </div>
+        <div class="rasp">
+          <p id="lit"></p>
+        </div>
+        <div class="val_input">
+          <input type="text" id="value_in" [value]="currencyVal() | number:'0.1-2' | thousand">
+          <span class="highlight_conv"></span>
+          <span class="bar_conv"></span>
+        </div>
+    </div>
+  </div>
+
+
+
+
+
+<!---------------------------------Mobile-------------------------------------------->
     <div id="bg">
       <div class="module">
-        <ul>
-          <li class="tab activeTab" >Courses</li>
-          <li class="tab" >Конвертер валют</li>
-        </ul>
-        <table class="courses">
-          <tr class="header-table">
-            <td></td>
-            <td></td>
-            <td>Покупка</td>
-            <td>Продажа</td>
-          </tr>
-          <tr *ngFor="let cours of curren">
-            <td>{{cours.ccy}}</td>
-            <td>{{cours.base_ccy}}</td>
-            <td>{{cours.buy | number:'0.1-2'}}</td>
-            <td>{{cours.sale | number:'0.1-2'}}</td>
-          </tr>
-        </table>
-        <div class="conv_content" *ngIf="show">
+        <div class="map">
+          <div class="title_table">
+          <label class="tab " for="courses" name="map"><span class="courses_tab">Курс валют</span></label>
+          <label class="tab"  for="converter" name="map" >Конвертер валют</label>
+        </div> 
+        <input type="radio" class="hide" name="map" id="courses"  /> 
+        <div class="content">
+          <table class="courses" >
+            <tr class="header-table">
+              <td></td>
+              <td></td>
+              <td>Покупка</td>
+              <td>Продажа</td>
+            </tr>
+            <tr *ngFor="let cours of curren">
+              <td>{{cours.ccy}}</td>
+              <td>{{cours.base_ccy}}</td>
+              <td>{{cours.buy | number:'0.1-2'}}</td>
+              <td>{{cours.sale | number:'0.1-2'}}</td>
+            </tr>
+          </table>
+        </div>
+        <input type="radio" class="hide" name="map" id="converter" checked/>
+        <div class="content">
+          <div class="content_block">
+            <div class="select">
+              <select class="select-text" [(ngModel)]="inCurr" required>
+                <option value="" disabled selected></option>
+                <option *ngFor="let item of curr">{{item}}</option>
+              </select>
+                <span class="select-highlight"></span>
+                <span class="select-bar"></span>
+                <label class="select-label">Валюта</label>
+            </div>
+            <div>
+              <p id="lit"><img src="https://img.icons8.com/android/24/000000/sorting-arrows-horizontal.png"></p>
+            </div>
+            <div class="select">
+              <select class="select-text" [(ngModel)]="outCurr" required>
+                <option value="" disabled selected></option>
+                <option *ngFor="let item of curr">{{item}}</option>
+              </select>
+                <span class="select-highlight"></span>
+                <span class="select-bar"></span>
+                <label class="select-label">Валюта</label>
+            </div>
+            <div class="values">
+              <div class="val_input">
+                <input type="text" id="value_from" [(ngModel)]="inputValue" >
+                <span class="highlight_conv"></span>
+                <span class="bar_conv"></span>
+              </div>
+              <div class="rasp">
+                <p id="lit"></p>
+              </div>
+              <div class="val_input">
+                <input type="text" id="value_in" [value]="currencyVal() | number:'0.1-2' | thousand">
+                <span class="highlight_conv"></span>
+                <span class="bar_conv"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!--
+      <div class="conv_content" *ngIf="show">
           <p class="title"><b>Конвертер валют</b></p>
         <div class="content_block">
           <div class="select">
@@ -108,27 +187,13 @@
         </div>
       </div>
     </div>
+-->
+
+
+
+
 <!-- Конвертер-->
-<div class="conv_content ">
-    <p class="title"><b>Конвертер валют</b></p>
-  <div class="content_block">
-    <div class="select">
-      <select name="slct" [(ngModel)]="inCurr">
-         <option *ngFor="let item of curr">{{item}}</option>
-      </select>
-  </div>
-    <p id="lit">в</p>
-  <div class="select">
-      <select name="slct" [(ngModel)]="outCurr">
-          <option *ngFor="let item of curr">{{item}}</option>
-      </select>
-  </div>
-  <div class="values">
-      <input type="text" [(ngModel)]="inputValue" id="value_from"  >
-      <input type="text"  [value]="currencyVal() | number:'0.1-2' | thousand" id="value_in" >
-  </div>
-</div>
-</div>
+
 
 
   

@@ -1,60 +1,8 @@
+/*##########################################Desktop##############################################################*/
 * { box-sizing:border-box; }
-/*Форма входа*//*
-form {
-  width: 250px;
-  margin: 0 auto;
-  margin-top: 5%;
-  font-size: 1em;
-  background: rgba(226, 238, 225, 0.294);
-  -webkit-box-shadow: 0 10px 6px -6px #777;
-  -moz-box-shadow: 0 10px 6px -6px #777;
-       box-shadow: 0 10px 6px -6px #777;
-    
-    
-}
-form:hover{
-  box-shadow: 2px 2px 5px 5px rgb(161, 204, 245);
-}
 
-input[type=text], input[type=password] {
-  height: 30px;
-  width: 100%;
-  padding: 12px 5px;
-  margin: 10px 0;
-  display: inline-block;
-  border: 1px solid rgb(167, 164, 164);
-  box-sizing: border-box;
-  border-radius: 5px;
-    
-}
-
-
-.btn {
-  background-color: rgb(72, 170, 209);
-  color: white;
-  padding: 10px 20px;
-  margin: 15px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  font-size: 0.8em;
-  border-radius: 5px;
-}
-.btn:active {
-  transform: 0.8px;
-}
-
-.btn:hover {
-  opacity: 0.8;
-}
-
-
-.container {
-  padding: 16px;
-}
-*/
-/* Курс валют*/
-.course-container{
+/*Конвртер*/
+.course-container_desktop{
   float: left;
   width: 300px;
   margin-left: 15%;
@@ -67,33 +15,33 @@ input[type=text], input[type=password] {
        box-shadow: 0 10px 6px -6px #777;
 }
 
-.courses{
+.courses_desktop{
   width: 100%;
   padding: 2px;
   font-size:16px;
   
 }
 
-.courses td:first-child
+.courses_desktop td:first-child
 {
   width: 15%;
   padding: 5px;
   text-align: right;   
  }
 
-.courses td:nth-child(2){
+.courses_desktop td:nth-child(2){
   color: #afa9a9;
   width: 25%;
   padding: 5px;
   
 }
 
-.courses  td:nth-child(3){
+.courses_desktop  td:nth-child(3){
   text-align: right;
   width: 30%;
 
 }
-.courses  td:last-child{
+.courses_desktop  td:last-child{
   text-align: right;
   width: 30%;
   line-height: 2.35;
@@ -105,117 +53,7 @@ input[type=text], input[type=password] {
   font-size: 1em;
   margin: 0;
 }
-
-/*Конвертер*/
-.conv_content{
-  float: left;
-  width: 300px;
-  margin-top: 100px;
-  margin-left: 15%;
-  padding-bottom: 10px ;
-  background: rgb(251, 255, 251);
-  -webkit-box-shadow: 0 10px 6px -6px #777;
-  -moz-box-shadow: 0 10px 6px -6px #777;
-       box-shadow: 0 10px 6px -6px #777;
-  }
-
-.content_block {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 10%;
-  }
-
-#lit {
-  display: inline-block;
-  margin-top: 2%;
-  font-size: 1.1em;
-  }
-/* Сбросить  стили*/
-select {
-  outline: 0;
-  box-shadow: none;
-  border: 0 !important;
-  background: #e9ecf0;
-  background-image: none;
-  font-size: 1em;
-  padding: 0;
-  }
-
-select::-ms-expand {
-  display: none;
-  }
-
-
-.select {
-  position: relative;
-  display: flex;
-  width: 100px;
-  height: 30px;
-  margin-bottom: 30px;
-  line-height: 3;
-  background: #e9ecf0;
-  overflow: hidden; 
-  outline: none; 
-  border: 1px solid #bdb6b6;
-  }
-
-select {
-  flex: 1;
-  font-size: 1em;
-  color: rgb(15, 14, 14);
-  cursor: pointer;
-  }
-
-.select::after {
-  content: '\25BC';
-  position: absolute;
-  top: -7px;
-  right: -5px;
-  padding: 0 7px;
-  background: #e9ecf0;
-  cursor: pointer;
-  pointer-events: none;
-  transition: .25s all ease;
-}
-
-.select:hover::after {
-  color: #08a036;
-}
-
-.values{
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-#value_from{
-  width: 100px;
-  height: 30px;
-  font-size: 1em;
-  padding: 5px;
-  margin-right: 65px;
-  border-radius: 0px;
-  margin-bottom: 15px;
-}
-
-#value_in{
-  width: 100px;
-  height: 30px;
-  font-size: 1em;
-  padding: 5px;
-  border-radius: 0px;
-  margin-bottom: 15px;
-}
-
-.errorsText{
-  position: relative;
-  padding: 10px;
-  text-align: center;
-  color: #f00808;
-
-}
-/*#####################################################################*/
+/*##########################################Auth###############################################################*/
 
 form {
   width: 300px;
@@ -229,7 +67,6 @@ form {
   
 }
 
-/*  ------------------------------- */
 .group { 
   position:relative; 
   margin-bottom:45px; 
@@ -244,8 +81,7 @@ input {
 }
 input:focus 		{ outline:none; }
 
-/*  ======================================= */
-label 				 {
+.aut_form_lable {
   color:#999; 
   font-size:18px;
   font-weight:normal;
@@ -327,7 +163,6 @@ input:focus ~ .highlight {
   to 	{ width:0; background:transparent; }
 }
 
-
 .button-container{
   display: flex;
   justify-content: center;
@@ -406,10 +241,271 @@ input:focus ~ .highlight {
 .icon{
   display: none;
 }
+/*#################################################Converter-DESKTOP###########################################################*/
+.conv_content_desktop {
+  float: right;
+  width: 300px;
+  height: 190px;
+  margin-right: 15%;
+  margin-top: 8%;
+  border: 1px solid rgb(179, 176, 176);
+  border-collapse: collapse;
+  background: rgb(251, 255, 251);
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+       box-shadow: 0 10px 6px -6px #777;
+}
 
+.title_desktop{
+  text-align: center;
+  margin-top: 0px;
+}
 
+.content_block_desktop {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 10%;
+}
 
-/*############################################################################################################*/
+#lit {
+  margin-top: 50px;
+  margin-left: -10px;
+  font-size: 1.3em;
+}
+  
+.lit_rsp {
+  position: absolute;
+
+}
+  /* Сбросить  стили*/
+  select {
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: #eff1f5;
+    background-image: none;
+    font-size: 1em;
+    padding: 0;
+    
+    }
+  
+  select::-ms-expand {
+    display: none;
+    }
+  
+  /*##############################################################################################################*/
+  .select {
+    font-family: 'Roboto','Helvetica','Arial',sans-serif;
+    position: relative;
+    width: 100px;
+    margin-top: 0px;
+    border-bottom: 1px solid #777
+  }
+  
+  .select-text {
+    position: relative;
+    font-family: inherit;
+    background-color: transparent;
+    width: 100px;
+    padding: 10px 10px 5px 0;
+    font-size: 14px;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0, 0.12);
+    
+  }
+  
+  /* Remove focus */
+  .select-text:focus {
+    outline: none;
+    border-bottom: 1px solid rgba(0,0,0, 0);
+  }
+  
+    /* Use custom arrow */
+  .select .select-text {
+    appearance: none;
+    -webkit-appearance:none;
+  }
+  
+  .select:after {
+    position: absolute;
+    top: 18px;
+    right: 10px;
+    /* Стилизация стрелки вниз */
+    width: 0;
+    height: 0;
+    padding: 0;
+    content: '';
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid rgba(0, 0, 0, 0.12);
+    pointer-events: none;
+  }
+  
+  
+  /* LABEL ======================================= */
+  .select-label {
+    color: rgba(0,0,0, 0.26);
+    font-size: 14px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+  }
+  
+  /* активное состояние */
+  .select-text:focus ~ .select-label, .select-text:valid ~ .select-label {
+    color: #2F80ED;
+    top: -10px;
+    left: -1px;
+    transition: 0.2s ease all;
+    font-size: 13px;
+  }
+  
+  
+  
+  
+  /* BOTTOM BARS ================================= */
+  .select-bar {
+    position: relative;
+    display: block;
+    width: 100px;
+  }
+  
+  .select-bar:before, .select-bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: -1px;
+    position: absolute;
+    background: #2F80ED;
+    transition: 0.2s ease all;
+  
+  }
+  
+  .select-bar:before {
+    left: 50%;
+  }
+  
+  .select-bar:after {
+    right: 50%;
+  }
+  
+  /* active state */
+  .select-text:focus ~ .select-bar:before, .select-text:focus ~ .select-bar:after {
+    width: 50%;
+  }
+  
+  /* HIGHLIGHTER ================================== */
+  .select-highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 10%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  
+  
+  
+  .values{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 100px;
+    width: 100%;
+    margin: 5px;
+    
+  }
+  
+  #value_from{
+    position: relative;
+    width: 100px;
+    font-size: 1em;
+    padding: 5px;
+  
+    top: 10px;
+    border-radius: 0px;
+    margin-bottom: 15px;
+  }
+  
+  #value_in{
+    position: relative;
+    width: 90px;
+    font-size: 1em;
+    padding: 5px;
+    top: 10px;
+    border-radius: 0px;
+    border-bottom: 1px solid #777;
+  }
+  
+  .content_block{
+    border: 1px solid white;
+    background: white;
+  }
+  
+  .val_input{
+    font-family: 'Roboto','Helvetica','Arial',sans-serif;
+    position: relative;
+    width: 100px;
+    margin-top: 20px;
+  }
+  
+  .rasp{
+    width: 20px
+  }
+  
+  /*####################################BAR_VAL_INPUT##########################################*/
+  .bar_conv { 
+    position:relative; 
+    display:block; 
+    width: 100px; 
+    right: 0px;
+    top: -3px;
+    }
+  
+  .bar_conv_in{
+    position:relative; 
+    display:block; 
+    width: 100px; 
+    left: -100px;
+    top: -3px;
+  }
+  
+  #value_in ~ .bar_conv {
+    position:relative;
+    top: 11px;
+  }
+  
+  .bar_conv:before, .bar_conv:after, bar_conv_in:before, bar_conv_in:after   {
+    content:'';
+    height:2px; 
+    width: 0%;
+    bottom:1px; 
+    position:absolute;
+    background:#2F80ED; 
+    transition:0.2s ease all; 
+    -moz-transition:0.2s ease all; 
+    -webkit-transition:0.2s ease all;
+  }
+  .bar_conv:before, bar_conv_in:before {
+    left:50%;
+  }
+  .bar_conv:after, bar_conv_in:after  {
+    right:50%; 
+  }
+  
+  /* active state */
+  input:focus ~ .bar_conv:before,  input:focus ~ .bar_conv:after {
+    width:50%;
+  }
+  
+
+/*################################################MOBILE###########################################################*/
 @media screen and (max-width:  999px){
 
 
@@ -424,12 +520,17 @@ input:focus ~ .highlight {
     margin-top: 2%;
   }
 
+.content_block_desktop,
+.conv_content_desktop{
+  display: none;
+}
+
 
 
   form {
     width: 80%;
     margin: 0 auto;
-    margin-top: 10%;
+    margin-top: 5%;
     padding: 2em 2em 1em 2em;
     background: white;
     padding-bottom: 10px;
@@ -438,7 +539,7 @@ input:focus ~ .highlight {
     box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);
   }
 
-.course-container{
+.course-container_desktop{
   display: none;
 }
 
@@ -448,9 +549,7 @@ input:focus ~ .highlight {
 
 }
 
-#bg{
-  display: block;
-}
+
 
 input 				{
   font-size:18px;
@@ -471,39 +570,47 @@ input 				{
   top: -20px;
 }
 
-
-
 .bar{
   width: 100%;
 }
 
-.course-container{
-  width: 100%;
-  margin: 0 auto;
-  margin-top: 30%;
-}
-
+/*###############################################################################################################################*/
 
 
 /*###############################################################################################*/
+#bg{
+  display: block;
+  margin-top: -130px;
+  
+}
+
 .module{
   position:relative;  
-  width:80%;
+  width: 100%;
+  
   margin-left:auto;
   margin-right:auto;
-  margin-top: 10%;
+  margin-top: 150px;
   border-radius:5px;
   background: rgb(240, 240, 236);
   -webkit-box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);        
   box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);
 }
-.module ul{
-  list-style-type: none;
-  
 
+.module .title_table{
+  list-style-type:none;
+  width: 100%;
+  margin-right: 5%;
+}
+
+input[name="map"],
+input[name="map"]:not(:checked) + div {
+    display: none;
 }
 
 .tab{
+  font-family: 'Roboto', 'Helvetica Neue, Helvetica, Arial', sans-serif;
+  font-size: 16px;
   float:left;
   height:60px;
   margin: 0;
@@ -512,8 +619,11 @@ input 				{
   background:#eee8e8;  
   text-align:center;
   cursor:pointer;
-  font-size:18px;
-  transition: background .4s;
+  transition:background .4s;
+}
+
+lable:active{
+  background: white;
 }
 
 .tab:first-child{  
@@ -524,17 +634,36 @@ input 				{
 
 }
 
+
 .tab:last-child{  
   position: relative;
-  top: 20%;
   -webkit-border-radius: 0px 5px 0px 0px;
   border-radius: 0px 5px 0px 0px;
   width:  50%;
- 
+  
 }
+
 
 .tab:hover{  
   background-color:rgba(0,0,0,.1);
+  transition: background 0.5s;
+}
+
+
+.active:checked{  
+  background-color:white;
+  transition: background 0s;
+}
+
+table{
+  background:#fff
+}
+
+
+.textbox:focus{
+  outline:none;
+   border:rgba(24,149,215,1) 2px solid;
+   color:rgba(24,149,215,1);
 }
 
 
@@ -562,9 +691,344 @@ table{
    color:rgba(24,149,215,1);
 }
 
+/*########################################Courses#######################################################*/
+.course-container{
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 30%;
+  border: 1px solid rgb(179, 176, 176);
+  border-collapse: collapse;
+  background: rgb(251, 255, 251);
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+       box-shadow: 0 10px 6px -6px #777;
+}
+
+.courses{
+  font-family: 'Helvetica';
+  width: 100%;
+  padding: 2px;
+  font-size:16px;
+  
+}
+
+.courses td:first-child
+{
+  width: 15%;
+  padding: 5px;
+  text-align: right;   
+ }
+
+.courses td:nth-child(2){
+  color: #afa9a9;
+  width: 25%;
+  padding: 5px;
+  
+}
+
+.courses  td:nth-child(3){
+  text-align: right;
+  width: 30%;
+
+}
+.courses  td:last-child{
+  text-align: right;
+  width: 30%;
+  line-height: 2.35;
+  padding-right: 10px;
+}
+
+
+
+
+/*#########################################Converter####################################################*/
+.converter_conteiner{
+  display: dlock;
+ 
+}
+
+.content_block {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 10%;
+  height: 170px;
+  }
+
+#lit {
+  position: absolute;
+  bottom: 35px;
+  left: 47%;
+  font-size: 1.3em;
+  }
+/* Сбросить  стили*/
+select {
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #eff1f5;
+  background-image: none;
+  font-size: 1em;
+  padding: 0;
+  
+  }
+
+select::-ms-expand {
+  display: none;
+  }
+
+/*##############################################################################################################*/
+.select {
+  font-family: 'Roboto','Helvetica','Arial',sans-serif;
+	position: relative;
+	width: 100px;
+  margin-top: 20px;
+  border-bottom: 1px solid #777
+}
+
+.select-text {
+	position: relative;
+	font-family: inherit;
+	background-color: transparent;
+	width: 75px;
+	padding: 10px 10px 5px 0;
+	font-size: 14px;
+	border-radius: 0;
+	border: none;
+	border-bottom: 1px solid rgba(0,0,0, 0.12);
+  
+}
+
+.courses_tab{
+  position: relative;
+  left: -20px;
+}
+
+/* Remove focus */
+.select-text:focus {
+	outline: none;
+	border-bottom: 1px solid rgba(0,0,0, 0);
+}
+
+	/* Use custom arrow */
+.select .select-text {
+	appearance: none;
+	-webkit-appearance:none;
+}
+
+.select:after {
+	position: absolute;
+	top: 18px;
+	right: 10px;
+	/* Стилизация стрелки вниз */
+	width: 0;
+	height: 0;
+	padding: 0;
+	content: '';
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid rgba(0, 0, 0, 0.12);
+	pointer-events: none;
+}
+
+
+/* LABEL ======================================= */
+.select-label {
+  font-family: 'Roboto','Helvetica','Arial',sans-serif;
+	color:#999;
+	font-size: 18px;
+	font-weight: normal;
+	position: absolute;
+	pointer-events: none;
+	left: 5px;
+	top: 10px;
+	transition: 0.2s ease all;
+}
+
+/* активное состояние */
+.select-text:focus ~ .select-label, .select-text:valid ~ .select-label {
+  font-family: 'Roboto','Helvetica','Arial',sans-serif;
+	color: #2F80ED;
+	top: -15px;
+  left: -1px;
+	transition: 0.2s ease all;
+	font-size: 16px;
+}
+
+
+
+
+/* BOTTOM BARS ================================= */
+.select-bar {
+	position: relative;
+	display: block;
+	width: 100px;
+}
+
+.select-bar:before, .select-bar:after {
+	content: '';
+	height: 2px;
+	width: 0;
+	bottom: -10px;
+	position: absolute;
+	background: #2F80ED;
+	transition: 0.2s ease all;
+
+}
+
+.select-bar:before {
+	left: 50%;
+}
+
+.select-bar:after {
+	right: 50%;
+}
+
+/* active state */
+.select-text:focus ~ .select-bar:before, .select-text:focus ~ .select-bar:after {
+	width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.select-highlight {
+	position: absolute;
+	height: 60%;
+	width: 100px;
+	top: 10%;
+	left: 0;
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+
+
+.values{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: 90px;
+  width: 100%;
+  margin: 5px;
+  
+}
+
+#value_from{
+  position: relative;
+  width: 100px;
+  font-size: 1em;
+  padding: 5px;
+
+  top: 10px;
+  border-radius: 0px;
+  margin-bottom: 15px;
+}
+
+#value_in{
+  position: relative;
+  width: 100px;
+  font-size: 1em;
+  padding: 5px;
+  top: 10px;
+  border-radius: 0px;
+  border-bottom: 1px solid #777;
+}
+
+.content_block{
+  border: 1px solid white;
+  background: white;
+}
+
+.val_input{
+  font-family: 'Roboto','Helvetica','Arial',sans-serif;
+	position: relative;
+	width: 100px;
+  margin-top: 20px;
+}
+
+.rasp{
+  width: 20px
+}
+
+/*####################################BAR_VAL_INPUT##########################################*/
+.bar_conv { 
+  position:relative; 
+  display:block; 
+  width: 100px; 
+  right: 0px;
+  top: -3px;
+  }
+
+.bar_conv_in{
+  position:relative; 
+  display:block; 
+  width: 100px; 
+  left: -100px;
+  top: -3px;
+}
+
+#value_in ~ .bar_conv {
+  position:relative;
+  top: 11px;
+}
+
+.bar_conv:before, .bar_conv:after, bar_conv_in:before, bar_conv_in:after   {
+  content:'';
+  height:2px; 
+  width: 0%;
+  bottom:1px; 
+  position:absolute;
+  background:#2F80ED; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.bar_conv:before, bar_conv_in:before {
+  left:50%;
+}
+.bar_conv:after, bar_conv_in:after  {
+  right:50%; 
+}
+
+/* active state */
+input:focus ~ .bar_conv:before,  input:focus ~ .bar_conv:after {
+  width:50%;
+}
+
+
+
+
+
+
+
+/*###############################################################################################*/
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media screen and (max-width: 950px) {
