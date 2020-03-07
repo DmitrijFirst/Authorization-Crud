@@ -1,51 +1,65 @@
 <div class="header" *ngIf="currentUser">
-    <a class="logo">MySalary</a>
+  <div class="header_left">
+    <img class="logo_desk" src="https://img.icons8.com/bubbles/100/000000/salary-male.png">
+    <span class="logo">MySalary</span>
+  </div>
     <div class="header-right">
-      <a class="name_user" title="Имя пользователя">{{currentUser.firstName}}&nbsp;{{currentUser.lastName}}</a>
-      <a (click)="logout()"><img class="logout" src="../../../assets/icons8-exit-100.png" title="Выход"></a>
+      <a class="name_user" title="Имя пользователя">{{currentUser.firstName}}</a>
+      <a class="logout_a" (click)="logout()"><img class="logout" src="../../../assets/exit.svg" title="Выход"></a>
     </div>
   </div>
 
 <div class="title_content">
   <div class="title" *ngFor="let emp of employes; let el = index;">
-    <a id="statement" [ngClass]="{'title_check': isShown == el}"
-      (click)="isShownown(el)"><label for="{{ el + 1 }}" name="map" title="Открыть ведомость">{{emp.title}}</label></a>
+    <a class="statement" [ngClass]="{'title_check a_check': isShown == el + 1}"
+      (click)="isShownown(el + 1)"><label for="{{ el + 1 }}" name="map" title="Ведомость {{emp.title}}">{{emp.title}}</label></a>
   </div>
   <div class="buttonHolder">
-    <a class="button cross" routerLinkActive="active" routerLink='/add' title="Добавить ведомость"></a>
+    <div class="wrapper" >
+      <input class="hidden-trigger" id="toogle" type="checkbox" routerLinkActive="active" routerLink='/add'>
+      <label class="circle" for="toogle" title="Добавить ведомость"  >
+        <img class="add_img" src="https://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/2x/btw_ic_speeddial_white_24dp_2x.png" alt="" />
+      </label>
+    </div>
   </div>
 </div>
 <!---->
 
 <div class="demo" *ngFor="let emp of employes; let el = index;">
   <div class="map" >
-      <input type="radio" class="hide" name="map" id="{{ el + 1 }}" />
+      <input type="radio" class="hide" name="map" id="{{ el + 1 }}" [checked]="isShown == el + 1" />
   <div class="content">
-  <table>
-    <thead>
-      <tr>
-        <th>№</th>
-        <th>Имя</th>
-        <th>Фамилия</th>
-        <th>Сумма</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody *ngFor="let persons of emp.persons; let i= index;">
-      <tr>
-        <td data-label="№">{{ i + 1 }}</td>
-        <td data-label="Имя">{{persons.name}}</td>
-        <td data-label="Фамилия">{{persons.surname}}</td>
-        <td data-label="Сумма">{{persons.salary | number:'0.1-2' | thousand}} грн</td>
-        <td><button class="table_btn show_btn" (click)="getEmpInfo(emp,i)" title="Открыть дополнительну информацию о сотруднике">Просмотр</button>
-            <button class="table_btn update_btn" (click)="updateEmploee(emp, i)" title="Изменить данные сотрудика">Изменить</button>
-            <button class="table_btn delete_btn" (click)="deleteUser(emp, i)" title="Удалить сотрудника">Удалить </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    <h3 class="title_salary">{{emp.title}}</h3>
+    <div class="table_content">
+      <table>
+        <thead>
+          <tr>
+            <th>№</th>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Сумма</th>
+            <th><span class="mob_title">Действие&nbsp;&nbsp;&nbsp;&nbsp;</span></th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let persons of emp.persons; let i= index;">
+          <tr>
+            <td data-label="№">{{ i + 1 }}</td>
+            <td data-label="Имя">{{persons.name}}</td>
+            <td data-label="Фамилия">{{persons.surname}}</td>
+            <td data-label="Сумма">{{persons.salary | number:'0.1-2' | thousand}} грн</td>
+            <td><button class="table_btn pure-material-button-contained" (click)="getEmpInfo(emp,i)" title="Открыть дополнительну информацию о сотруднике">Просмотр</button>
+                <input type="image" class="mob_btn info_btn" src="../../../assets/details-24px.svg"  (click)="getEmpInfo(emp,i)">
+                <button class="table_btn pure-material-button-contained " (click)="updateEmploee(emp, i)" title="Изменить данные сотрудика">Изменить</button>
+                <input type="image" class="mob_btn change_btn" src="../../../assets/create-24px.svg"  (click)="updateEmploee(emp, i)">
+                <button class="table_btn delete-material-button-contained del_btn" (click)="deleteUser(emp, i)" title="Удалить сотрудника">Удалить </button>
+                <input type="image" class="mob_btn change_btn" src="../../../assets/delete_forever-24px.svg"  (click)="deleteUser(emp, i)">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
       <div class="del_btn_st">
-        <input type="button" class="delete_statement" value="Удалить" (click)="deleteEmployee(emp)" title="Удалить ведомость">
+        <button class="delete_statement"  (click)="deleteEmployee(emp)" title="Удалить ведомость">Удалить ведомость</button>
       </div>
   </div>
 </div>

@@ -1,7 +1,8 @@
 <div class="container">
     <form [formGroup]="personsForm" (submit)="onFormSubmit()" novalidate>
         <div class="title">       
-            <input type="text" id="title" formControlName="title" placeholder="Название ведомости" >
+            <input type="text" id="title" formControlName="title"  required >
+            <label class="title_create_sheets" for="title">Название ведомости</label>
             <span class="titel_bar"></span> 
             <div class="alert-danger" *ngIf="personsForm.get('title').errors?.required && personsForm.get('title').touched"></div>         
         </div>
@@ -11,60 +12,64 @@
             <fieldset>
               <div class="forms">
                 <div class="name group">
-                  <label for="name">Имя</label>
-                  <input type="text" id="name" formControlName="name">
+                  <label class="lable_arr" for="name">Имя</label>
+                  <input type="text" id="name" formControlName="name" required>
                   <span class="bar"></span>
                   <div class="alert-danger" *ngIf="person.get('name').errors?.required && person.get('name').touched"></div> 
               </div>
                 <div class="surname group">
                     <label for="surname">Фамилия</label>
-                    <input type="text" id="surname" formControlName="surname">
+                    <input type="text" id="surname" formControlName="surname" required>
                     <span class="bar"></span>
                     <div class="alert-danger" *ngIf="person.get('surname').errors?.required && person.get('surname').touched"></div> 
                 </div>
                 <div class="pers_num group">
                     <label for="pers_num">Табельный №</label>
-                    <input type="text" id="pers_num" formControlName="pers_num">
+                    <input type="text" id="pers_num" formControlName="pers_num" required>
                     <span class="bar"></span>
                 </div>
                 <div class="length_of_work group">
-                    <label for="length_of_work">Работает с:</label>
-                <input type="date" id="length_of_work" name="length_of_work"  min="2000-01-01" max="2020-01-31" formControlName="length_of_work">
+                <label for="length_of_work">Работает с:</label>
+                <input type="date" id="length_of_work" name="length_of_work"  min="2000-01-01" max="2020-01-31" formControlName="length_of_work" required>
                     <span class="bar"></span>
                 </div>
                 <div class="status group">
                     <label for="status">Статус</label>
-                    <select id="status" formControlName="status">
+                    <select id="status" formControlName="status" required>
                         <option value="Работает">Работает</option>
                         <option value="Отпуск">Отпуск</option>
                         <option value="Больничный">Больничный</option>
                         <option value="Уволен">Уволен</option>
                     </select>
+                    <span class="bar"></span>
                 </div>
                 <div class="phone group">
                     <label for="phone">Телефон</label>
-                    <input  type="text" id="phone" formControlName="phone" prefix="+38" mask="(000) 000 00 00">
+                    <input  type="text" id="phone" formControlName="phone" prefix="+38" mask="(000) 000 00 00" required>
                     <span class="bar"></span>
                 </div>
                 <div class="salary group">
                     <label for="salary">Сумма</label>
-                    <input type="text" id="salary" formControlName="salary" mask="separator.2">
+                    <input type="text" id="salary" formControlName="salary" mask="separator.2" required>
                     <span class="bar"></span>  
                  </div>
                 <div class="remove_person">
-                  <input type="image" id="del_emp" (click)="removePerson(i)" value="Удалить" title="Удалить сотрудника" src="../../../assets/icons8-удалить-навсегда-100.png">
+                  <input type="image" id="del_emp" (click)="removePerson(i)" value="Удалить" title="Удалить сотрудника" src="../../../assets/delete_forever-24px.svg" required>
                 </div>
                 </div>
               </fieldset>
-                </div>
+            </div>
           </div>  
           <div class="add_person">
-            <input type="button" class="add_emp" (click)="addPerson()" value="Добавить" title="Добавить сотрудника">
+            <div class="wrapper" >
+              <button class="hidden-trigger" ></button>
+              <p class="circle" (click)="addPerson()" title="Добавить сотрудника" ><img class="add_img" src="https://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/2x/btw_ic_speeddial_white_24dp_2x.png" alt="" /></p> 
+            </div>
           </div>
           <hr>
           <div class="sumitted">
             <button type="button" class="cancelbtn" routerLinkActive="active" routerLink='/' title="Отменить отправку и вернуться на главную">Отмена</button>
-            <button type="submit" class="signupbtn" title="Отправить ведомость">Отправить</button>
+            <button type="submit" class="pure-material-button-contained" title="Отправить ведомость">Отправить</button>
           </div>  
     </form>          
 </div> 

@@ -21,7 +21,8 @@ export class HomeComponent implements OnInit {
   user = {};
   getObjEmp: any;
   key: any;
-  isShown: any;
+  isShown: boolean = true;
+  checked: boolean = true;
 
   constructor(
       private router: Router,
@@ -102,8 +103,9 @@ export class HomeComponent implements OnInit {
     this.logger.log('open update window sucess');
   };
 
-  public isShownown(el: any) {
+  public isShownown(el) {
     this.isShown = el;
+    this.checked = el;
     this.logger.log('Opened statement sucess ' + el);
 }
     
