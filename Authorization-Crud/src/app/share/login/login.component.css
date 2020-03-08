@@ -6,13 +6,11 @@
   float: left;
   width: 300px;
   margin-left: 15%;
-  margin-top: 8%;
-  border: 1px solid rgb(179, 176, 176);
+  margin-top: 5%;
   border-collapse: collapse;
   background: rgb(251, 255, 251);
-  -webkit-box-shadow: 0 10px 6px -6px #777;
-  -moz-box-shadow: 0 10px 6px -6px #777;
-       box-shadow: 0 10px 6px -6px #777;
+  border: 1px solid #ebebeb;
+  box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px, rgba(0,0,0,0.09804) 0px 1px 2px 0px;
 }
 
 .courses_desktop{
@@ -52,19 +50,34 @@
   text-align: center;
   font-size: 1em;
   margin: 0;
+  color: rgb(92, 92, 92)
 }
 /*##########################################Auth###############################################################*/
+@font-face {
+  font-family: Casual; /* Имя шрифта */
+  src: url(../../../assets/19081.ttf); /* Путь к файлу со шрифтом */
+ }
+
+.titel_desktop{
+  margin: 0 auto;
+  width: 300px;
+  margin-top: 5%;
+  color: rgb(92, 92, 92);
+  font-size: 24px;
+  font-family: Casual;
+  text-align: center;
+}
 
 form {
   width: 300px;
-  /*margin: 2em auto;*/
+  height: 230px;
   margin: 0 auto;
-  margin-top: 5%;
-  padding: 3em 2em 1em 2em;
+  padding: 2em 2em 3em 2em;
   background: rgb(251, 255, 251);
   border: 1px solid #ebebeb;
   box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px, rgba(0,0,0,0.09804) 0px 1px 2px 0px;
-  
+  font-family: 'Roboto';
+  border-radius: 5px;
 }
 
 .group { 
@@ -73,17 +86,18 @@ form {
 }
 input {
   font-size:18px;
-  padding:10px 10px 10px 5px;
+  padding:10px 10px 2px 5px;
   display:block;
   width:100%;
   border:none;
   border-bottom:1px solid #757575;
+  background-color: rgb(251, 255, 251); 
 }
 input:focus 		{ outline:none; }
 
 .aut_form_lable {
   color:#999; 
-  font-size:18px;
+  font-size:16px;
   font-weight:normal;
   position:absolute;
   pointer-events:none;
@@ -96,9 +110,9 @@ input:focus 		{ outline:none; }
 
 /* active state */
 input:focus ~ label, input:valid ~ label 		{
-  top:-20px;
-  font-size:18px;
-  color:#5264AE;
+  top:-15px;
+  font-size:14px;
+  color:#2F80ED;
 }
 
 /* BOTTOM BARS ================================= */
@@ -110,11 +124,11 @@ input:focus ~ label, input:valid ~ label 		{
 
 .bar:before, .bar:after 	{
   content:'';
-  height:2px; 
+  height:1px; 
   width:0;
   bottom:1px; 
   position:absolute;
-  background:#5264AE; 
+  background:#2F80ED; 
   transition:0.2s ease all; 
   -moz-transition:0.2s ease all; 
   -webkit-transition:0.2s ease all;
@@ -167,6 +181,7 @@ input:focus ~ .highlight {
   display: flex;
   justify-content: center;
   padding: 0;
+  margin-top: -20px;
 }
 
 
@@ -241,24 +256,50 @@ input:focus ~ .highlight {
 .icon{
   display: none;
 }
-/*#################################################Converter-DESKTOP###########################################################*/
-.conv_content_desktop {
+
+ /*#############################################################################################################################*/ 
+.errorsText{
+  position: relative;
+  top: -20px;
+  left: 80%;
+
+}
+
+input.ng-touched.ng-invalid
+{
+    border-bottom: 1px solid #e91e63;
+
+}
+.errorsText {
+  position: relative;
+  margin-top: 25px;
+  left: 10%;
+  color: #e91e63;
+  font-size: 14px;
+}
+
+.content_block_desktop,
+.conv_content_desktop{
+  display: block;
+}
+
+/*################################################Converter###########################################################*/
+.conv_desktop{
   float: right;
   width: 300px;
   height: 190px;
   margin-right: 15%;
-  margin-top: 8%;
-  border: 1px solid rgb(179, 176, 176);
-  border-collapse: collapse;
+  margin-top: 5%;
   background: rgb(251, 255, 251);
-  -webkit-box-shadow: 0 10px 6px -6px #777;
-  -moz-box-shadow: 0 10px 6px -6px #777;
-       box-shadow: 0 10px 6px -6px #777;
+  border: 1px solid #ebebeb;
+  box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px, rgba(0,0,0,0.09804) 0px 1px 2px 0px;
 }
 
 .title_desktop{
   text-align: center;
-  margin-top: 0px;
+  font-size: 1em;
+  margin: 0;
+  color: rgb(92, 92, 92)
 }
 
 .content_block_desktop {
@@ -266,277 +307,257 @@ input:focus ~ .highlight {
   justify-content: space-around;
   flex-wrap: wrap;
   margin-top: 10%;
+  height: 170px;
+  }
+
+.select_desktop {
+  font-family: 'Roboto','Helvetica','Arial',sans-serif;
+  position: relative;
+  width: 100px;
+  height: 40px;
+  margin-top: -10px;
+  border-bottom: 1px solid #777
 }
 
-#lit {
-  margin-top: 50px;
-  margin-left: -10px;
-  font-size: 1.3em;
-}
-  
-.lit_rsp {
-  position: absolute;
-
-}
   /* Сбросить  стили*/
-  select {
-    outline: 0;
-    box-shadow: none;
-    border: 0 !important;
-    background: #eff1f5;
-    background-image: none;
-    font-size: 1em;
-    padding: 0;
-    
-    }
+.select-text_desktop {
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
+  font-size: 14px;
+  padding: 0;
+  font-family: 'Roboto','Helvetica','Arial',sans-serif; 
+  background: rgb(251, 255, 251); 
+}
+
+.select-text_desktop{
+  width: 100px;
+  margin-top: 20px;
+}
   
-  select::-ms-expand {
-    display: none;
-    }
-  
-  /*##############################################################################################################*/
-  .select {
-    font-family: 'Roboto','Helvetica','Arial',sans-serif;
-    position: relative;
-    width: 100px;
-    margin-top: 0px;
-    border-bottom: 1px solid #777
+.select-text_desktop::-ms-expand {
+  display: none;
+}
+
+#lit_desktop {
+  position: relative;
+  top: 50%;
   }
-  
-  .select-text {
-    position: relative;
-    font-family: inherit;
-    background-color: transparent;
-    width: 100px;
-    padding: 10px 10px 5px 0;
-    font-size: 14px;
-    border-radius: 0;
-    border: none;
-    border-bottom: 1px solid rgba(0,0,0, 0.12);
-    
-  }
-  
-  /* Remove focus */
-  .select-text:focus {
-    outline: none;
-    border-bottom: 1px solid rgba(0,0,0, 0);
-  }
-  
-    /* Use custom arrow */
-  .select .select-text {
-    appearance: none;
-    -webkit-appearance:none;
-  }
-  
-  .select:after {
-    position: absolute;
-    top: 18px;
-    right: 10px;
-    /* Стилизация стрелки вниз */
-    width: 0;
-    height: 0;
-    padding: 0;
-    content: '';
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-top: 6px solid rgba(0, 0, 0, 0.12);
-    pointer-events: none;
-  }
-  
-  
+
+
+
+.select-text_desktop:focus {
+  outline: none;
+  border-bottom: 1px solid rgba(0,0,0, 0);
+}
+
+.select_desktop .select-text_desktop {
+  appearance: none;
+  -webkit-appearance:none;
+}
+
+.select_desktop:after {
+  position: absolute;
+  top: 23px;
+  right: 10px;
+  /* Стилизация стрелки вниз */
+  width: 0;
+  height: 0;
+  padding: 0;
+  content: '';
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+}
+
   /* LABEL ======================================= */
-  .select-label {
-    color: rgba(0,0,0, 0.26);
-    font-size: 14px;
-    font-weight: normal;
-    position: absolute;
-    pointer-events: none;
-    left: 5px;
-    top: 10px;
-    transition: 0.2s ease all;
+.select-label_desktop {
+  font-family: 'Roboto','Helvetica','Arial',sans-serif;
+  color:#999;
+  font-size: 16px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 15px;
+  transition: 0.2s ease all;
   }
-  
+
   /* активное состояние */
-  .select-text:focus ~ .select-label, .select-text:valid ~ .select-label {
-    color: #2F80ED;
-    top: -10px;
-    left: -1px;
-    transition: 0.2s ease all;
-    font-size: 13px;
+.select-text_desktop:focus ~ .select-label_desktop, .select-text_desktop:valid ~ .select-label_desktop {
+  font-family: 'Roboto','Helvetica','Arial',sans-serif;
+  color: #2F80ED;
+  top: -3px;
+  left: -1px;
+  transition: 0.2s ease all;
+  font-size: 14px;
   }
-  
-  
-  
-  
+
   /* BOTTOM BARS ================================= */
-  .select-bar {
+  .select-bar_desktop {
     position: relative;
     display: block;
     width: 100px;
-  }
-  
-  .select-bar:before, .select-bar:after {
+}
+
+.select-bar_desktop:before, .select-bar_desktop:after {
     content: '';
     height: 2px;
     width: 0;
-    bottom: -1px;
+    bottom: -3px;
     position: absolute;
     background: #2F80ED;
     transition: 0.2s ease all;
+
+}
+
+.select-bar_desktop:before {
+  left: 50%;
+}
+
+.select-bar_desktop:after {
+  right: 50%;
+}
+
+ /* active state */
+ .select-text_desktop:focus ~ .select-bar_desktop:before, .select-text_desktop:focus ~ .select-bar_desktop:after {
+  width: 50%;
+}
+
+.values_desktop{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: 90px;
+  width: 100%;
+  margin: 5px;
   
-  }
-  
-  .select-bar:before {
-    left: 50%;
-  }
-  
-  .select-bar:after {
-    right: 50%;
-  }
-  
-  /* active state */
-  .select-text:focus ~ .select-bar:before, .select-text:focus ~ .select-bar:after {
-    width: 50%;
-  }
-  
-  /* HIGHLIGHTER ================================== */
-  .select-highlight {
-    position: absolute;
-    height: 60%;
-    width: 100px;
-    top: 10%;
-    left: 0;
-    pointer-events: none;
-    opacity: 0.5;
-  }
-  
-  
-  
-  .values{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    height: 100px;
-    width: 100%;
-    margin: 5px;
-    
-  }
-  
-  #value_from{
-    position: relative;
-    width: 100px;
-    font-size: 1em;
-    padding: 5px;
-  
-    top: 10px;
-    border-radius: 0px;
-    margin-bottom: 15px;
-  }
-  
-  #value_in{
-    position: relative;
-    width: 90px;
-    font-size: 1em;
-    padding: 5px;
-    top: 10px;
-    border-radius: 0px;
-    border-bottom: 1px solid #777;
-  }
-  
-  .content_block{
-    border: 1px solid white;
-    background: white;
-  }
-  
-  .val_input{
-    font-family: 'Roboto','Helvetica','Arial',sans-serif;
-    position: relative;
-    width: 100px;
-    margin-top: 20px;
-  }
-  
-  .rasp{
-    width: 20px
-  }
-  
+}
+
+#value_from_desktop{
+  position: relative;
+  width: 100px;
+  font-size: 1em;
+  padding: 5px;
+  left: -5px;
+  border-radius: 0px;
+  margin-bottom: 15px;
+}
+
+#value_in__desktop{
+  position: relative;
+  width: 100px;
+  font-size: 1em;
+  padding: 5px;
+  right: -5px;
+  border-radius: 0px;
+  border-bottom: 1px solid #777;
+}
+
   /*####################################BAR_VAL_INPUT##########################################*/
-  .bar_conv { 
-    position:relative; 
-    display:block; 
-    width: 100px; 
-    right: 0px;
-    top: -3px;
-    }
+.bar_conv_desktop { 
+  position:relative; 
+  display:block; 
+  width: 100px; 
+  right: 5px;
+  top: -13px;
+}
   
-  .bar_conv_in{
-    position:relative; 
-    display:block; 
-    width: 100px; 
-    left: -100px;
-    top: -3px;
-  }
+
+#value_in__desktop ~ .bar_conv_desktop {
+  position:relative;
+  top: 2px;
+  left: 5px;
+}
   
-  #value_in ~ .bar_conv {
-    position:relative;
-    top: 11px;
-  }
-  
-  .bar_conv:before, .bar_conv:after, bar_conv_in:before, bar_conv_in:after   {
-    content:'';
-    height:2px; 
-    width: 0%;
-    bottom:1px; 
-    position:absolute;
-    background:#2F80ED; 
-    transition:0.2s ease all; 
-    -moz-transition:0.2s ease all; 
-    -webkit-transition:0.2s ease all;
-  }
-  .bar_conv:before, bar_conv_in:before {
+.bar_conv_desktop:before, .bar_conv_desktop:after {
+  content:'';
+  height:2px; 
+  width: 0%;
+  bottom:1px; 
+  position:absolute;
+  background:#2F80ED; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+  .bar_conv_desktop:before {
     left:50%;
   }
-  .bar_conv:after, bar_conv_in:after  {
+  .bar_conv_desktop:after {
     right:50%; 
   }
   
   /* active state */
-  input:focus ~ .bar_conv:before,  input:focus ~ .bar_conv:after {
+  input:focus ~ .bar_conv_desktop:before,  input:focus ~ .bar_conv_desktop:after {
     width:50%;
   }
-  
 
 /*################################################MOBILE###########################################################*/
 @media screen and (max-width:  999px){
+  .conv_desktop{
+    margin-right: 50px;
+  }
 
+  .course-container_desktop {
+    margin-left: 50px;
+  }
 
+}
+
+@media screen and (max-width:  720px){
+  .content_desktop_conteiner{
+    display: flex;
+    flex-direction: column;
+
+  }
+  .course-container_desktop {
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .conv_desktop{
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  
 }
 
 @media screen and (max-width:  500px){
 
-  .icon{
-    display: block;
-    display: flex;
-    justify-content: center;
-    margin-top: 2%;
+.icon{
+  display: block;
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
   }
+
+.titel_desktop{
+  display: none;
+}
+
 
 .content_block_desktop,
 .conv_content_desktop{
   display: none;
 }
 
+.conv_desktop{
+  display: none;
+}
 
-
-  form {
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 5%;
-    padding: 2em 2em 1em 2em;
-    background: white;
-    padding-bottom: 10px;
-    border-radius: 5px;
-    -webkit-box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);        
-    box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);
+form {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 5%;
+  padding: 2em 2em 1em 2em;
+  background: (240, 240, 236);
+  padding-bottom: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);        
+  box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);
   }
 
 .course-container_desktop{
@@ -549,26 +570,26 @@ input:focus ~ .highlight {
 
 }
 
-
-
 input 				{
-  font-size:18px;
-  padding:10px 10px 10px 5px;
+  font-size:16px;
+  padding:10px 10px 5px 5px;
   display:block;
   width:100%;
   border:none;
   border-bottom:1px solid #757575;
+ 
 }
 
 .group 			  { 
   position:relative; 
-  margin-bottom:45px; 
+   
 }
 
 .btn{
   position: relative;
-  top: -20px;
+  top: -5px;
 }
+
 
 .bar{
   width: 100%;
@@ -581,12 +602,12 @@ input 				{
 #bg{
   display: block;
   margin-top: -130px;
-  
+  border-radius: 5px;
 }
 
 .module{
   position:relative;  
-  width: 100%;
+  width: 80%;
   margin-left:auto;
   margin-right:auto;
   margin-top: 150px;
@@ -594,6 +615,7 @@ input 				{
   background: rgb(240, 240, 236);
   -webkit-box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);        
   box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);
+  border-radius: 5px;
 }
 
 .module .title_table{
@@ -741,18 +763,11 @@ table{
 
 
 /*#########################################Converter####################################################*/
-.converter_conteiner{
-  display: dlock;
- 
+.conv_content_desktop {
+  display: block;
 }
 
-.content_block {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 10%;
-  height: 170px;
-  }
+
 
 #lit {
   position: absolute;
@@ -760,7 +775,7 @@ table{
   left: 47%;
   font-size: 1.3em;
   }
-/* Сбросить  стили*/
+
 select {
   outline: 0;
   box-shadow: none;
@@ -776,21 +791,30 @@ select::-ms-expand {
   display: none;
   }
 
-/*##############################################################################################################*/
+.select_value{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: 60px;
+  width: 100%;
+  
+}
+
 .select {
   font-family: 'Roboto','Helvetica','Arial',sans-serif;
 	position: relative;
 	width: 100px;
-  margin-top: 20px;
-  border-bottom: 1px solid #777
+  margin-top: 15px;
+  border-bottom: 1px solid #777;
 }
 
 .select-text {
 	position: relative;
 	font-family: inherit;
 	background-color: transparent;
-	width: 75px;
-	padding: 10px 10px 5px 0;
+  width: 75px;
+  padding:  0;
+  margin-top: 25px;
 	font-size: 14px;
 	border-radius: 0;
 	border: none;
@@ -803,13 +827,13 @@ select::-ms-expand {
   left: -20px;
 }
 
-/* Remove focus */
+
 .select-text:focus {
 	outline: none;
 	border-bottom: 1px solid rgba(0,0,0, 0);
 }
 
-	/* Use custom arrow */
+
 .select .select-text {
 	appearance: none;
 	-webkit-appearance:none;
@@ -817,9 +841,8 @@ select::-ms-expand {
 
 .select:after {
 	position: absolute;
-	top: 18px;
+	top: 27px;
 	right: 10px;
-	/* Стилизация стрелки вниз */
 	width: 0;
 	height: 0;
 	padding: 0;
@@ -831,24 +854,22 @@ select::-ms-expand {
 }
 
 
-/* LABEL ======================================= */
 .select-label {
   font-family: 'Roboto','Helvetica','Arial',sans-serif;
 	color:#999;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: normal;
 	position: absolute;
 	pointer-events: none;
 	left: 5px;
-	top: 10px;
+	top: 20px;
 	transition: 0.2s ease all;
 }
 
-/* активное состояние */
 .select-text:focus ~ .select-label, .select-text:valid ~ .select-label {
   font-family: 'Roboto','Helvetica','Arial',sans-serif;
 	color: #2F80ED;
-	top: -15px;
+	top: -5px;
   left: -1px;
 	transition: 0.2s ease all;
 	font-size: 16px;
@@ -857,7 +878,6 @@ select::-ms-expand {
 
 
 
-/* BOTTOM BARS ================================= */
 .select-bar {
 	position: relative;
 	display: block;
@@ -868,7 +888,7 @@ select::-ms-expand {
 	content: '';
 	height: 2px;
 	width: 0;
-	bottom: -10px;
+	bottom: -4px;
 	position: absolute;
 	background: #2F80ED;
 	transition: 0.2s ease all;
@@ -883,12 +903,10 @@ select::-ms-expand {
 	right: 50%;
 }
 
-/* active state */
 .select-text:focus ~ .select-bar:before, .select-text:focus ~ .select-bar:after {
 	width: 50%;
 }
 
-/* HIGHLIGHTER ================================== */
 .select-highlight {
 	position: absolute;
 	height: 60%;
@@ -916,10 +934,11 @@ select::-ms-expand {
   width: 100px;
   font-size: 1em;
   padding: 5px;
-
+  background-color: (240, 240, 236);
   top: 10px;
   border-radius: 0px;
   margin-bottom: 15px;
+  background-color: white;
 }
 
 #value_in{
@@ -930,6 +949,8 @@ select::-ms-expand {
   top: 10px;
   border-radius: 0px;
   border-bottom: 1px solid #777;
+  background-color: white;
+  right: 5px;
 }
 
 .content_block{
@@ -948,7 +969,6 @@ select::-ms-expand {
   width: 20px
 }
 
-/*####################################BAR_VAL_INPUT##########################################*/
 .bar_conv { 
   position:relative; 
   display:block; 
@@ -968,6 +988,7 @@ select::-ms-expand {
 #value_in ~ .bar_conv {
   position:relative;
   top: 11px;
+  right: 5px;
 }
 
 .bar_conv:before, .bar_conv:after, bar_conv_in:before, bar_conv_in:after   {
@@ -988,7 +1009,7 @@ select::-ms-expand {
   right:50%; 
 }
 
-/* active state */
+
 input:focus ~ .bar_conv:before,  input:focus ~ .bar_conv:after {
   width:50%;
 }
@@ -1030,36 +1051,6 @@ input:focus ~ .bar_conv:before,  input:focus ~ .bar_conv:after {
 
 
 
-@media screen and (max-width: 950px) {
-  .course-container{
-    margin-left: 5% ;
-  }
-  .conv_content{
-    margin-right: 10%  ;
-    }
-  }
-
-  @media screen and (max-width: 695px) {
-
-    .course-container{
-      margin: 0;
-      position: absolute;
-      top: 60%;
-      left: 50%;
-      margin-right: -50%;
-      transform: translate(-50%, -50%)
-      
-
-    }
-    .conv_content{
-      margin: 0;
-      position: absolute;
-      top: 90%;
-      left: 50%;
-      margin-right: -50%;
-      transform: translate(-50%, -50%)
-    }
-  }
 
 
   

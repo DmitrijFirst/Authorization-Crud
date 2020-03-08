@@ -591,11 +591,17 @@ tbody tr:hover{
 .mob_btn{
   display: block;
 }
-.mob_btn{
+.mob_btn {
   display: inline-flex;
   margin-left: 10px;
   width: 20px;
   height: 20px;
+  outline: none;
+  overflow: hidden;
+}
+
+.mob_btn:active {
+  transform: scale(1.2);
 }
 
 .mob_title{

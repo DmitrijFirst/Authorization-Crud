@@ -23,6 +23,7 @@ export class AddComponent implements OnInit {
     private logger: LoggerService
     ) {}
 
+    
 
 
   public onFormSubmit() {
@@ -69,6 +70,7 @@ export class AddComponent implements OnInit {
       persons: this.fb.array([],[Validators.required])
   });
   this.logger.log('form initialized success')
+  this.addPerson();
   }
 
 }

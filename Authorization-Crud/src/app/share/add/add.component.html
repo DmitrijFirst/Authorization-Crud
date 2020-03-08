@@ -6,6 +6,7 @@
             <span class="titel_bar"></span> 
             <div class="alert-danger" *ngIf="personsForm.get('title').errors?.required && personsForm.get('title').touched"></div>         
         </div>
+        
 <!--#######################################################################################################################-->
         <div formArrayName="persons" class="persons"> 
           <div *ngFor="let person of personsForm.get('persons').controls; let i = index;" [formGroupName]="i" class="form_arr">

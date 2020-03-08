@@ -80,6 +80,7 @@ public currencyVal(){
         this.getCurr();
     }
 
+
     // быстрый доступ к полям формы
     get f() { return this.loginForm.controls; }
 
@@ -87,8 +88,9 @@ public currencyVal(){
         this.submitted = true;
         // если форма не валидна отменяем
         if (this.loginForm.invalid) {
-            this.logger.warn('data is not correct')
-            return;
+            this.loginForm.markAllAsTouched();
+            this.logger.warn('required fields are not filled')
+             return;
         }
 
         this.loading = true;
