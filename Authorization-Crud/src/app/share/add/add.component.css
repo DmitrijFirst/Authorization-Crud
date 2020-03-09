@@ -15,7 +15,7 @@
 
 .group {
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   margin-right: 15px;
   width: 12%;
   min-width: 120px;
@@ -24,6 +24,7 @@
   margin: 0 auto;
   width: 200px;
   margin-top: 50px;
+  margin-bottom: 40px;
 }
 
 #title {
@@ -36,31 +37,247 @@
   font-weight:normal;
   position:absolute;
   pointer-events:none;
-  left:44%;
-  top:5%;
+  margin-top: -25px;
+  margin-left: 20px;
   transition:0.2s ease all; 
   -moz-transition:0.2s ease all; 
   -webkit-transition:0.2s ease all;
 }
 
-input:focus ~ label, input:valid ~ label 		{
-  top: 15px;
-  left:42.8%;
-  font-size: 14px;
-  color:rgba(24,149,215,1);
+
+
+
+/*################################################################################*/
+
+.lable_arr{
+  position: relative;
+  top:-25px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
 }
 
-input:focus ~ label, input:valid ~ label 		{
-  top: 15px;
-  left:42.8%;
-  font-size: 14px;
-  color:rgba(24,149,215,1);
+
+.lable_arr_status{
+  position: relative;
+  top: 2px;
 }
 
-
+/*################################################################################*/
 .persons{
  margin-top: 20px;
 }
+
+label {
+  color: rgb(99, 96, 96);
+  font-size: 16px;
+  pointer-events: none;
+  display: block;
+}
+
+input:focus ~ .lable_arr_status, input:valid ~ .lable_arr_status 		{
+  top: -25px;
+  font-size:14px;
+  color:#2F80ED;
+}
+
+input:focus ~ label, input:valid ~ label 		{
+  top: -25px;
+  font-size:14px;
+  color:#2F80ED;
+}
+
+/* BOTTOM BARS ================================= */
+.bar, #titel_bar { 
+  position:relative; 
+  display:block; 
+  width:100%; 
+}
+
+.bar:before, .bar:after{
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:-2px; 
+  position:absolute;
+  background:#2F80ED; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.bar:before,
+#titel_bar:before {
+  left:50%;
+}
+.bar:after,
+#titel_bar:after {
+  right:50%; 
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+input:focus ~ #titel_bar:before, input:focus ~ #titel_bar:after {
+  width:50%;
+}
+
+
+#titel_bar:before, #titel_bar:after{
+  content:'';
+  height:2px; 
+  width:0;
+  bottom: -9px; 
+  position:absolute;
+  background:#2F80ED; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+
+#lable_arr_title{
+ margin-top: -25px;
+ margin-left: 20px;
+ font-size:18px; 
+
+}
+
+input:focus ~ #lable_arr_title, input:valid ~ #lable_arr_title 		{
+  position: relative;
+  top: -20px;
+  left: -15px;
+  font-size:14px;
+  color:#2F80ED;
+}
+
+/*#################################################################################*/
+/* select starting stylings ------------------------------*/
+
+
+.select-text {
+  outline: 0;
+  box-shadow: none;
+  border: none;
+  border-bottom: 1px solid #757575;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  width: 135px;
+  margin-top: 20px;
+  padding: 3px;
+  box-sizing: border-box;
+}
+
+
+.select-text:focus {
+	outline: none;
+	border-bottom: 1px solid rgba(0,0,0, 0);
+}
+
+
+.select .select-text {
+	appearance: none;
+	-webkit-appearance:none
+}
+
+.select:after {
+	position: absolute;
+	top: 30px;
+	right: 10px;
+	width: 0;
+	height: 0;
+	padding: 0;
+	content: '';
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid rgba(0, 0, 0, 0.12);
+	pointer-events: none;
+}
+
+
+/* LABEL ======================================= */
+.select-label {
+	color: rgb(99, 96, 96);
+	font-size: 16px;
+	font-weight: normal;
+	position: absolute;
+	pointer-events: none;
+	left: 0;
+	top: 3px;
+  transition: 0.2s ease all;
+}
+
+.select-text:focus ~ .select-label, .select-text:valid ~ .select-label {
+	color: #2F80ED;
+	top: 3px;
+	transition: 0.2s ease all;
+	font-size: 14px;
+}
+
+/* BOTTOM BARS ================================= */
+.select-bar {
+	position: relative;
+	display: block;
+	width: 135px;
+}
+
+.select-bar:before, .select-bar:after {
+	content: '';
+	height: 2px;
+	width: 0;
+	bottom: 0px;
+	position: absolute;
+	background: #2F80ED;
+	transition: 0.2s ease all;
+}
+
+.select-bar:before {
+	left: 50%;
+}
+
+.select-bar:after {
+	right: 50%;
+}
+
+/* active state */
+.select-text:focus ~ .select-bar:before, .select-text:focus ~ .select-bar:after {
+	width: 50%;
+}
+
+
+/*####################################################################################*/
+#name,
+#surname,
+#pers_num,
+#salary,
+#phone{
+  position: relative;
+  top: 18px;
+}
+
+#length_of_work{
+  position: relative;
+  top: 18px;
+  background-color: #f8f8f8;
+}
+
+#status {
+  position: relative;
+  top: 1px;
+}
+
+#phone::-webkit-input-placeholder,
+#phone::-moz-placeholder,
+#phone:-moz-placeholder  ,         
+#phone:-ms-input-placeholder {
+  font-size: 12px;
+}
+
+.status{
+  width: 135px;
+}
+
 
 input {
   font-size: 16px;
@@ -69,22 +286,12 @@ input {
   width: 100%;
   padding: 4px;
   box-sizing: border-box;
-  background-color: whitesmoke;
+  background-color: #f8f8f8;
 }
 input[type=date]{
   padding: 3px;
 }
-select {
-  outline: 0;
-  box-shadow: none;
-  border: none;
-  border-bottom: 1px solid #757575;
-  background-color: whitesmoke;
-  font-size: 16px;
-  width: 100%;
-  padding: 3px;
-  box-sizing: border-box;
-}
+
 
 input:focus {
   outline: none;
@@ -108,68 +315,12 @@ input:focus {
   transition: 0.2s;
 }
 
-label {
-  color: rgb(99, 96, 96);
-  font-size: 16px;
-  pointer-events: none;
-  display: block;
-}
-
-.bar {
-  position: relative;
-  display: block;
-  width: 100%;
-}
-
-.titel_bar {
-  position: relative;
-  display: block;
-  width: 100%;
-  
-}
-.bar:before,
-.bar:after,
-.titel_bar:before,
-.titel_bar:after
-{
-  content: "";
-  height: 2px;
-  width: 0;
-  bottom: 0;
-  position: absolute;
-  background: rgba(24,149,215,1);
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
-}
-
-.bar:before,
-.titel_bar:before {
-  left: 50%;
-}
-
-.bar:after,
-.titel_bar:after {
-  right: 50%;
-}
-
-
-input:focus ~ .titel_bar:before,
-input:focus ~ .titel_bar:after {
-width: 50%;
-}
-
-input:focus ~ .bar:before,
-input:focus ~ .bar:after {
-width: 50%;
-}
-
 fieldset{
   border: 2px solid rgba(229, 241, 229, 0.294);
   width: 90%;
   margin-left: 100px;
   margin-top: 10px;
-  background: whitesmoke;
+  background-color: #f8f8f8;
   -webkit-box-shadow: 0 10px 6px -6px #777;
   -moz-box-shadow: 0 10px 6px -6px #777;
   box-shadow: 0 10px 6px -6px #777;
@@ -515,12 +666,187 @@ input[type=date].ng-touched.ng-invalid,
   color: #e91e63;
 }
 
+
 #title::-webkit-input-placeholder {
   text-align: center;
 }
 
-@media screen and (max-width: 750px){
+
+
+
+
+
+@media screen and (max-width: 1214px){
   fieldset{
-    margin-left: 65px;
+    position: relative;
+    width: 100%;
+    left: -5%;
   }
+
+  input {
+    width: 80%;
+  }
+
+  .bar {
+    width: 80%
+  }
+
+  .select-text {
+    width: 80%;
+  }
+
+  .select-bar {
+    width: 80%;
+  }
+  .select:after {
+  position: absolute;
+	top: 30px;
+	right: 35px;
+  }
+
+  #title{
+    width: 100%;
+  }
+  
+#lable_arr_title {
+  position: relative;
+  left: 0%;
+}
+
+
+.remove_person {
+  position: relative;
+  right: 0.5%;
+}
+
+.group {
+  margin: 0;
+}
+
+.add_person {
+  position: relative;
+  left: 8%;
+}
+
+}
+
+
+@media screen and (max-width: 999px){
+  .persons {
+    margin: 0 auto;
+    width: 70%;
+    
+  }
+  .forms {
+    margin: 0;
+    padding: 0;
+
+  }
+  fieldset{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-left: 10%;
+  }
+
+  .group {
+    width: 40%;
+    
+  }
+
+  .name,
+  .pers_num,
+  .status {
+    margin-left: 5%;
+    margin-right: 2.5%;
+    margin-bottom: 20px;
+  }
+
+  .select:after {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    }
+
+    .salary{
+      margin-left: 100px;
+    }
+
+    .remove_person {
+      position: relative;
+      left: 10%;
+    }
+
+    #title {
+      width: 100%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+
+  .persons{
+    margin-right: 10%;
+  }
+
+
+  .name,
+  .pers_num,
+  .status {
+    margin-left: 0px;
+    margin-bottom: 20px;
+  }
+
+  .surname,
+  .length_of_work,
+  .phone{
+    margin-right: -10px;
+  }
+
+  .group {
+    padding-left: 10px;
+  }
+
+  .select:after {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    }
+
+  .select-label {
+    margin-left: 10px;
+  }
+
+  .salary{
+    margin-left: 50px;
+  }
+
+  .add_person {
+    position: relative;
+    margin-right: 10%;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .persons {
+    width: 100%;
+    margin-left: -10%;
+  }
+  .form_arr {
+    width: 100%;
+  }
+  fieldset {
+    width: 100%;
+  }
+
+  .select:after {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    }
+
+  .add_person {
+    position: relative;
+    margin-right: 10%;
+  }
+
 }

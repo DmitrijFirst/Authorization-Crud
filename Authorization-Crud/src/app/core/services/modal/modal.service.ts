@@ -20,8 +20,9 @@ export class ModalService {
   public openEmpInfo({name,surname,length_of_work,phone,pers_num,status,salary}) {
     return this.dialog.open(EmpInfoComponent, 
     {
-      width: '25%',
-      data : { name,surname,length_of_work,phone,pers_num,status,salary }    
+      width: '300px',
+      data : { name,surname,length_of_work,phone,pers_num,status,salary },
+      panelClass: 'custom-modalbox-emp' 
     });
   }
 
@@ -29,7 +30,8 @@ export class ModalService {
     return this.dialog.open(UpdateComponent, 
       {
         width: '90%',
-        data : { name,surname,length_of_work,phone,pers_num,status,salary,key, index, persons }
+        data : { name,surname,length_of_work,phone,pers_num,status,salary,key, index, persons },
+        panelClass: 'custom-modalbox'
       })
       
   }

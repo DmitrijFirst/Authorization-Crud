@@ -46,7 +46,13 @@
   padding-right: 10px;
 }
 
+.courses_desktop td{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: rgb(24, 22, 22)
+}
+
 .title{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   text-align: center;
   font-size: 1em;
   margin: 0;
@@ -85,7 +91,8 @@ form {
   margin-bottom:45px; 
 }
 input {
-  font-size:18px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size:16px;
   padding:10px 10px 2px 5px;
   display:block;
   width:100%;
@@ -106,6 +113,8 @@ input:focus 		{ outline:none; }
   transition:0.2s ease all; 
   -moz-transition:0.2s ease all; 
   -webkit-transition:0.2s ease all;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
 }
 
 /* active state */
@@ -293,6 +302,8 @@ input.ng-touched.ng-invalid
   background: rgb(251, 255, 251);
   border: 1px solid #ebebeb;
   box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px, rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
 }
 
 .title_desktop{
@@ -311,7 +322,7 @@ input.ng-touched.ng-invalid
   }
 
 .select_desktop {
-  font-family: 'Roboto','Helvetica','Arial',sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   position: relative;
   width: 100px;
   height: 40px;
@@ -374,7 +385,7 @@ input.ng-touched.ng-invalid
 
   /* LABEL ======================================= */
 .select-label_desktop {
-  font-family: 'Roboto','Helvetica','Arial',sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color:#999;
   font-size: 16px;
   font-weight: normal;
@@ -622,6 +633,8 @@ input 				{
   list-style-type:none;
   width: 100%;
   margin-right: 5%;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: rgb(24, 22, 22)
 }
 
 input[name="map"],
@@ -726,7 +739,8 @@ table{
 }
 
 .courses{
-  font-family: 'Helvetica';
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: rgb(24, 22, 22);
   width: 100%;
   padding: 2px;
   font-size:16px;
@@ -812,7 +826,7 @@ select::-ms-expand {
 	position: relative;
 	font-family: inherit;
 	background-color: transparent;
-  width: 75px;
+  width: 100px;
   padding:  0;
   margin-top: 25px;
 	font-size: 14px;
@@ -855,7 +869,7 @@ select::-ms-expand {
 
 
 .select-label {
-  font-family: 'Roboto','Helvetica','Arial',sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 	color:#999;
 	font-size: 16px;
 	font-weight: normal;
@@ -867,12 +881,12 @@ select::-ms-expand {
 }
 
 .select-text:focus ~ .select-label, .select-text:valid ~ .select-label {
-  font-family: 'Roboto','Helvetica','Arial',sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 	color: #2F80ED;
 	top: -5px;
   left: -1px;
 	transition: 0.2s ease all;
-	font-size: 16px;
+	font-size: 14px;
 }
 
 

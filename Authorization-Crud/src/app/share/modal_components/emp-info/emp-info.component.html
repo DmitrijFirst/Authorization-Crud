@@ -1,42 +1,29 @@
-<div>
-  <h4 mat-dialog-title>{{data.name}}&nbsp;&nbsp;{{data.surname}}</h4>
-  <mat-dialog-content>
-    <table class="table_content">
-      <tr>
-        <td>Работает с:</td>
-        <td>{{data.length_of_work}}</td>
-      </tr>
-      <tr>
-        <td>Телефон</td>
-        <td>{{data.phone}}</td>
-      </tr>
-      <tr>
-        <td>Табельный №</td>
-        <td>{{data.pers_num}}</td>
-      </tr>
-      <tr>
-        <td>Статус</td>
-        <td>{{data.status}}</td>
-      </tr>
-    </table>
-  </mat-dialog-content>
-  <div class="btn">
-    <button class="signupbtn" mat-button mat-dialog-close>Закрыть</button>
-  </div>
-    
-</div>
 
-<!--
-        <td>Работает с:</td>
-        <td>{{data.length_of_work}}</td>
-        <td>Телефон</td>
-        <td>{{data.phone}}</td>
-        <td>Табельный №</td>
-        <td>{{data.pers_num}}</td>
-        <td>Статус</td>
-        <td>{{data.status}}</td>
+  <div class="emp_content">
+    <h4 mat-dialog-title>{{data.name}}&nbsp;&nbsp;{{data.surname}}</h4>
+    <mat-dialog-content>
+      <table class="table_content">
+        <tr>
+          <td>Работает с:</td>
+          <td>{{data.length_of_work}}</td>
+        </tr>
+        <tr>
+          <td>Телефон:</td>
+          <td>{{data.phone}}</td>
+        </tr>
+        <tr>
+          <td>Табельный №:</td>
+          <td>{{data.pers_num}}</td>
+        </tr>
+        <tr>
+          <td>Статус:</td>
+          <td>{{data.status}}</td>
+        </tr>
+      </table>
+    </mat-dialog-content>
+    <div class="btn">
+      <button class="pure-material-button-contained" mat-button mat-dialog-close>Закрыть</button>
     </div>
+  </div>
 
 
-
--->

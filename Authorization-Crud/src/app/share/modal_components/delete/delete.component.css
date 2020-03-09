@@ -1,77 +1,12 @@
-.signupbtn{
-  background-color: #e97975;
-  outline:0;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e98c75), color-stop(50%, #f1594e), 
-  color-stop(50%, #f84134), color-stop(100%, #f1430e));
-  border-top: 1px solid #f34223;
-  border-right: 1px solid #f04014;
-  border-bottom: 1px solid #e92d0c;
-  border-left: 1px solid #eb290f;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 0 2px 0 rgba(255, 57, 57, 0.8);
-  box-shadow: inset 0 0 2px 0 rgba(255, 64, 57, 0.8);
-  color: #fff;
-  font: bold 12px/1 "helvetica neue", helvetica, arial, sans-serif;
-  padding: 7px 0;
-  text-shadow: 0 -1px 1px #d9201a;
-  width: 80px;
-}
-
-.signupbtn:hover{
-    background-color: #e85d5d;
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e8625d), color-stop(50%, #e02f22), color-stop(50%, #d92404), color-stop(100%, #de370d));
-    cursor: pointer;
-}
-
-.signupbtn:active{
-    border-top: 1px solid #b3201b;
-    border-right: 1px solid #992017;
-    border-bottom: 1px solid #801313;
-    border-left: 1px solid #992617;
-    -webkit-box-shadow: inset 0 0 5px 2px #a01e1a, 0 1px 0 #eeeeee;
-    box-shadow: inset 0 0 5px 2px #a02e1a, 0 1px 0 #eeeeee; 
-}
-
-.cancelbtn{
-  background-color: #949390;
-  outline:0;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #8d8f92), color-stop(50%, #828488), color-stop(50%, #6b6b6b), color-stop(100%, #78797a));
-  border-top: 1px solid #7e7d7d15;
-  border-right: 1px solid #7f8183;
-  border-bottom: 1px solid #575555;
-  border-left: 1px solid #646568;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 0 2px 0 rgba(179, 183, 189, 0.8);
-  box-shadow: inset 0 0 2px 0 rgba(168, 172, 179, 0.8);
-  color: #fff;
-  font: bold 12px/1 "helvetica neue", helvetica, arial, sans-serif;
-  padding: 7px 0;
-  text-shadow: 0 -1px 1px #a0a5af;
-  width: 80px;
-  margin: 10px;
-  }
-
-.cancelbtn:hover {
-  background-color: #bcbdc0;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #aeb1b8), color-stop(50%, #787b80), color-stop(50%, #76787a), color-stop(100%, #7d7d7e));
-  cursor: pointer;
-  }
-
-.cancelbtn:active{
-  border-top: 1px solid #74767a;
-  border-right: 1px solid #717274;
-  border-bottom: 1px solid #707174;
-  border-left: 1px solid #747579;
-  -webkit-box-shadow: inset 0 0 5px 2px #ccced1, 0 1px 0 #eeeeee;
-  box-shadow: inset 0 0 5px 2px #8f9194, 0 1px 0 #eeeeee; 
-}
 
 .btn {
+  display: flex;
   margin: 0 auto;
 }
 
-
-
+.button_cancel {
+  margin-right:10px ;
+}
 
 .title {
   display: flex;
@@ -79,21 +14,225 @@
   text-align: center; 
   margin-top: 20px;
   border-bottom: 1px solid #888282;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  
 }
 
+h5 {
+  color: rgb(24, 22, 22)
+}
+
+/*######################################################BUTTUNS##################################################################*/
+.delete-material-button-contained {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  padding: 2px 0px 0px 0px;
+  width: 80px;
+  height: 30px;
+  vertical-align: middle;
+  text-align: center;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+  background-color: #e91e63;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+  font-size: 11px;
+  font-weight: 500;
+  overflow: hidden;
+  outline: none;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+
+.delete-material-button-contained::-moz-focus-inner,
+.delete_statement::-moz-focus-inner {
+  border: none;
+}
+
+/* Overlay */
+.delete-material-button-contained::before,
+.delete_statement::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+/* Ripple */
+.delete-material-button-contained::after,
+.delete_statement::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  padding: 50%;
+  width: 32px; /* Safari */
+  height: 32px; /* Safari */
+  background-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1);
+  transition: opacity 1s, transform 0.5s;
+}
+
+/* Hover, Focus */
+.delete-material-button-contained:hover, .del_delete_statement:hover,
+.delete-material-button-contained:focus, .delete_statement:focus {
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.delete-material-button-contained:hover::before, .delete_statement::before {
+  opacity: 0.08;
+}
+
+.delete-material-button-contained:hover:before,.delete_statement:hover:before  {
+  opacity: 0.3;
+}
+
+/* Active */
+.delete-material-button-contained:active, .delete_statement:active {
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.delete-material-button-contained:active::after, .delete_statement:active::after {
+  opacity: 0.32;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0s;
+}
+
+/* Disabled */
+.delete-material-button-contained:disabled, .delete_statement:disabled  {
+  color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+  background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.12);
+  box-shadow: none;
+  cursor: initial;
+}
+
+.delete-material-button-contained:disabled::before, .delete_statement:disabled::before {
+  opacity: 0;
+}
+
+.delete-material-button-contained:disabled::after, .delete_statement:disabled::after{
+  opacity: 0;
+}
+
+/*#############################################*/
+.cancelbtn {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  padding: 2px 0px 0px 0px;
+  width: 80px;
+  height: 30px;
+  vertical-align: middle;
+  text-align: center;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+  background-color: rgb(146, 145, 145);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+  font-size: 11px;
+  font-weight: 500;
+  overflow: hidden;
+  outline: none;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+
+.cancelbtn::-moz-focus-inner {
+  border: none;
+}
+
+/* Overlay */
+.cancelbtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+/* Ripple */
+.cancelbtn::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  padding: 50%;
+  width: 32px; /* Safari */
+  height: 32px; /* Safari */
+  background-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1);
+  transition: opacity 1s, transform 0.5s;
+}
+
+/* Hover, Focus */
+.cancelbtn:hover,
+.cancelbtn:focus {
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.cancelbtn:hover::before {
+  opacity: 0.08;
+}
+
+.cancelbtn:hover:before {
+  opacity: 0.3;
+}
+
+/* Active */
+.cancelbtn:active {
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cancelbtn:active::after {
+  opacity: 0.32;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0s;
+}
+
+/* Disabled */
+.cancelbtn:disabled {
+  color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+  background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.12);
+  box-shadow: none;
+  cursor: initial;
+}
+
+.cancelbtn:disabled::before {
+  opacity: 0;
+}
+
+.cancelbtn:disabled::after {
+  opacity: 0;
+}
+
+
 @media screen and (max-width: 400px) {
-  .cancelbtn, .signupbtn {
-    width: 50%;
-  }
-  .signupbtn {
-    margin-left: 60px;
+  .btn {
+    margin: 0 auto; 
   }
 }
 
 @media screen and (max-width: 310px) {
-  .cancelbtn, .signupbtn {
-    width: 60%;
-    margin-left: 40px;
-  }
+
 
 }

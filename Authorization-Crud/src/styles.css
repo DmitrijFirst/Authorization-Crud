@@ -10,3 +10,40 @@ html, body {
   width: 100%;
  }
 /* */
+
+
+@media screen and (max-width: 1140px){
+  .custom-modalbox .mat-dialog-container {
+    width: 50%;
+    height: 350px;
+    margin: 0 auto;
+  }
+    
+}
+
+@media screen and (max-width: 805px){
+  .custom-modalbox .mat-dialog-container {
+    width: 70%;
+    height: 350px;
+    margin: 0 auto;
+  }
+    
+}
+
+@media screen and (max-width: 565px){
+  .custom-modalbox .mat-dialog-container {
+    width: 90%;
+    height: 350px;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 565px){
+  .custom-modalbox .mat-dialog-container {
+    width: 100%;
+    height: 350px;
+    margin: 0 auto;
+    padding-left: 3px;
+    padding-right: 0%;
+  }
+    
+}
